@@ -58,7 +58,7 @@
     "@zonedigital/prettier-config": "5.2.0",
     "eslint": "8.12.0",
     "eslint-config-prettier": "8.5.0",
-    "eslint-config-react-app": "7.0.0",
+    "eslint-config-react-app": "7.0.1",
     "uuid": "8.3.2"
   },
   "msw": {

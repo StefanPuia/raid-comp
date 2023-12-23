@@ -426,10 +426,10 @@
   dependencies:
     tslib "^2.4.0"
 
-"@haverstack/axios-fetch-adapter@0.10.0":
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/@haverstack/axios-fetch-adapter/-/axios-fetch-adapter-0.10.0.tgz#491b1c5afb1d55e4f25420c1b317e195c838598b"
-  integrity sha512-M3AkVRxBPwTRaCqol6zc4jKYT3o3b2I1aCUf+Y3ODvniNKIn11o382bwuHy5hVXjUbWh+0J6wi3JKPnq2tXX4A==
+"@haverstack/axios-fetch-adapter@0.11.0":
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/@haverstack/axios-fetch-adapter/-/axios-fetch-adapter-0.11.0.tgz#3b1c0b6febd021e440ffb5858d276873fc8d7bc2"
+  integrity sha512-od/GLlILxU06b1fQdYZnumwLBic550/DmuGTiB1nLwrS/JHepXAzfiYBnQHEqy8pnOnZl32A2j3p0oexUc1abQ==
 
 "@humanwhocodes/config-array@^0.11.13":
   version "0.11.13"

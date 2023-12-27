@@ -1006,15 +1006,15 @@
   integrity sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==
 
 "@smui-extra/bottom-app-bar@^7.0.0-beta.15":
-  version "7.0.0-beta.15"
-  resolved "https://registry.yarnpkg.com/@smui-extra/bottom-app-bar/-/bottom-app-bar-7.0.0-beta.15.tgz#bb085f22fe4f39de9cf36308ae74d07edaca5bc1"
-  integrity sha512-JOekv0gZpLuAQErN4RP6WrBjQx9dtKrhbRUBMQExVaGykO/YOEZmUmJcjcDMVOnedy/Jc2KPowf/f8eqFbTjuw==
+  version "7.0.0-beta.16"
+  resolved "https://registry.yarnpkg.com/@smui-extra/bottom-app-bar/-/bottom-app-bar-7.0.0-beta.16.tgz#90404d0fb06663b6d0bf74285cd5b3204f18cb83"
+  integrity sha512-w7SgpEtCMqgKeF9Lm5vzx2RlUP0Vtthr7tja/TZLakqYe15xva+fItQn9NZV96EUC1UuHg+7Y1jYL5UqZ2re6w==
   dependencies:
     "@material/feature-targeting" "^14.0.0"
     "@material/theme" "^14.0.0"
-    "@smui/common" "^7.0.0-beta.15"
-    "@smui/paper" "^7.0.0-beta.15"
-    svelte2tsx "^0.6.21"
+    "@smui/common" "^7.0.0-beta.16"
+    "@smui/paper" "^7.0.0-beta.16"
+    svelte2tsx "^0.6.27"
 
 "@smui/button@^7.0.0-beta.15":
   version "7.0.0-beta.15"
@@ -1059,6 +1059,14 @@
   dependencies:
     "@material/dom" "^14.0.0"
     svelte2tsx "^0.6.21"
+
+"@smui/common@^7.0.0-beta.16":
+  version "7.0.0-beta.16"
+  resolved "https://registry.yarnpkg.com/@smui/common/-/common-7.0.0-beta.16.tgz#9ed3b24b905342df7dc38c092a8e9b7667854973"
+  integrity sha512-PpqhIAWtE6ZZ6XyIkzHGXdMk+iE4QLFdzYXf20cG13O/0bFjOV5ySk2g+Vq2ZWRJawIjMaPcekbCkkowna4vgg==
+  dependencies:
+    "@material/dom" "^14.0.0"
+    svelte2tsx "^0.6.27"
 
 "@smui/dialog@^7.0.0-beta.15":
   version "7.0.0-beta.15"
@@ -1176,6 +1184,19 @@
     "@material/typography" "^14.0.0"
     "@smui/common" "^7.0.0-beta.15"
     svelte2tsx "^0.6.21"
+
+"@smui/paper@^7.0.0-beta.16":
+  version "7.0.0-beta.16"
+  resolved "https://registry.yarnpkg.com/@smui/paper/-/paper-7.0.0-beta.16.tgz#ce90136140916d39eb761ee78f019e338bb946e7"
+  integrity sha512-a8xmsTzAnSS+moz0Vnt/eUNf+9oeyOM36bYioorQX2F/lhFPtUJ/ZOktEtn2JkpHPPm3foyAwz5e1s9IWac4og==
+  dependencies:
+    "@material/elevation" "^14.0.0"
+    "@material/feature-targeting" "^14.0.0"
+    "@material/shape" "^14.0.0"
+    "@material/theme" "^14.0.0"
+    "@material/typography" "^14.0.0"
+    "@smui/common" "^7.0.0-beta.16"
+    svelte2tsx "^0.6.27"
 
 "@smui/ripple@^7.0.0-beta.15":
   version "7.0.0-beta.15"
@@ -3188,6 +3209,14 @@ svelte2tsx@^0.6.21:
   version "0.6.25"
   resolved "https://registry.yarnpkg.com/svelte2tsx/-/svelte2tsx-0.6.25.tgz#5e95150d459a19acc6e4277ad2fc79090fc53e19"
   integrity sha512-hhBKL5X9gGvKQAZ9xLoHnbE9Yb00HxEZJlxcj2drxWK+Tpqcs/bnodjSfCGbqEhvNaUXYNbVL7s4dEXT+o0f6w==
+  dependencies:
+    dedent-js "^1.0.1"
+    pascal-case "^3.1.1"
+
+svelte2tsx@^0.6.27:
+  version "0.6.27"
+  resolved "https://registry.yarnpkg.com/svelte2tsx/-/svelte2tsx-0.6.27.tgz#5b2c21f38608be51cd32de177722f123e57919e5"
+  integrity sha512-E1uPW1o6VsbRz+nUk3fznZ2lSmCITAJoNu8AYefWSvIwE2pSB01i5sId4RMbWNzfcwCQl1DcgGShCPcldl4rvg==
   dependencies:
     dedent-js "^1.0.1"
     pascal-case "^3.1.1"

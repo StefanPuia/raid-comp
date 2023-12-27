@@ -1061,15 +1061,15 @@
     svelte2tsx "^0.6.27"
 
 "@smui/dialog@^7.0.0-beta.15":
-  version "7.0.0-beta.15"
-  resolved "https://registry.yarnpkg.com/@smui/dialog/-/dialog-7.0.0-beta.15.tgz#81a47d58112919fb71b9ed594ac082d7876df476"
-  integrity sha512-5N2/cf+2ObVYXb9rzLJQ2juykNgB/T0je4f12zWQt/PYc8ZhLcZ4+eCz7pUSj02dDXo5pRmBXAkPeYmy26iPXQ==
+  version "7.0.0-beta.16"
+  resolved "https://registry.yarnpkg.com/@smui/dialog/-/dialog-7.0.0-beta.16.tgz#39d3c1105550c4689b15a5d0eb2e3b2b8a239510"
+  integrity sha512-yU5d27tGNsPkWeX0rmiRB+8O1vP7TUpd9Kiu8rkF4Ox2eaAiQJYQt1ZpvDswPC8cxOSpB27Qp9/6x4VGpF9WZA==
   dependencies:
     "@material/button" "^14.0.0"
     "@material/dialog" "^14.0.0"
     "@material/dom" "^14.0.0"
-    "@smui/common" "^7.0.0-beta.15"
-    svelte2tsx "^0.6.21"
+    "@smui/common" "^7.0.0-beta.16"
+    svelte2tsx "^0.6.27"
 
 "@smui/fab@^7.0.0-beta.15":
   version "7.0.0-beta.15"

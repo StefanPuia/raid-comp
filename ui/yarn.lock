@@ -1044,13 +1044,13 @@
     svelte2tsx "^0.6.27"
 
 "@smui/circular-progress@^7.0.0-beta.15":
-  version "7.0.0-beta.15"
-  resolved "https://registry.yarnpkg.com/@smui/circular-progress/-/circular-progress-7.0.0-beta.15.tgz#f677c8c42691bb67e0f9ed7537e8e601b43d0df9"
-  integrity sha512-nqtVr8w1+x4nHkkzb+JK4yAt/DyJDjaFxg6cT/X58FV1r4SAEMSFSobqtQzw0KNT6KCEnhE/MliGNLBNro2ONA==
+  version "7.0.0-beta.16"
+  resolved "https://registry.yarnpkg.com/@smui/circular-progress/-/circular-progress-7.0.0-beta.16.tgz#7b51e316eb3dbe6e80d7e8c39a78cac3483eb005"
+  integrity sha512-vzPnOA5COZjrFhSCetw0DtDZu+r2XNcUDbZZ6GVquOXynHh4NYSROWW1FOZnzyu1PE+C0dfeiFayz2kfKq6fQQ==
   dependencies:
     "@material/circular-progress" "^14.0.0"
-    "@smui/common" "^7.0.0-beta.15"
-    svelte2tsx "^0.6.21"
+    "@smui/common" "^7.0.0-beta.16"
+    svelte2tsx "^0.6.27"
 
 "@smui/common@^7.0.0-beta.15":
   version "7.0.0-beta.15"

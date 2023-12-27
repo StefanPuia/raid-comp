@@ -1016,7 +1016,7 @@
     "@smui/paper" "^7.0.0-beta.16"
     svelte2tsx "^0.6.27"
 
-"@smui/button@^7.0.0-beta.15":
+"@smui/button@^7.0.0-beta.15", "@smui/button@^7.0.0-beta.16":
   version "7.0.0-beta.16"
   resolved "https://registry.yarnpkg.com/@smui/button/-/button-7.0.0-beta.16.tgz#5b4ad5f275cdafafb3b37ae1d8fb1cace9f2b0ef"
   integrity sha512-Zci9DIcXhzqjjXXtoowLyUY5+c0way3PtO3MjWsr+BnVjMwItehuGowQZqsBqpsg1PzQ+E8JoSXSKUT+3oAZVg==
@@ -1032,16 +1032,16 @@
     svelte2tsx "^0.6.27"
 
 "@smui/card@^7.0.0-beta.15":
-  version "7.0.0-beta.15"
-  resolved "https://registry.yarnpkg.com/@smui/card/-/card-7.0.0-beta.15.tgz#1dfce49a50593565b6e086c75cad27f6d3196df2"
-  integrity sha512-fGBpgmO3N5kDz5oTFxqIF++ks8/h9I1ef0yD2OgyTYQ5vzYb+N/5NRmjV9g8QitPV2BRYeRLkrOYfn3nnjOCBg==
+  version "7.0.0-beta.16"
+  resolved "https://registry.yarnpkg.com/@smui/card/-/card-7.0.0-beta.16.tgz#9d83a75d7941719b516e41d6335de6341ece0c1f"
+  integrity sha512-oFOt5auDAdNLFXbAtFPPn2/DnV0TU2kXd/A5yeEWqBsoyTQBY0qY+o/Z0OxVvQyi/iglSqFAzXZ8sahprHlVHA==
   dependencies:
     "@material/card" "^14.0.0"
-    "@smui/button" "^7.0.0-beta.15"
-    "@smui/common" "^7.0.0-beta.15"
-    "@smui/icon-button" "^7.0.0-beta.15"
-    "@smui/ripple" "^7.0.0-beta.15"
-    svelte2tsx "^0.6.21"
+    "@smui/button" "^7.0.0-beta.16"
+    "@smui/common" "^7.0.0-beta.16"
+    "@smui/icon-button" "^7.0.0-beta.16"
+    "@smui/ripple" "^7.0.0-beta.16"
+    svelte2tsx "^0.6.27"
 
 "@smui/circular-progress@^7.0.0-beta.15":
   version "7.0.0-beta.15"
@@ -1109,6 +1109,17 @@
     "@smui/common" "^7.0.0-beta.15"
     "@smui/ripple" "^7.0.0-beta.15"
     svelte2tsx "^0.6.21"
+
+"@smui/icon-button@^7.0.0-beta.16":
+  version "7.0.0-beta.16"
+  resolved "https://registry.yarnpkg.com/@smui/icon-button/-/icon-button-7.0.0-beta.16.tgz#b0566c8e9f3da83d35856e5a033c08e35893d388"
+  integrity sha512-//TpkLRZH/FmSp37sBrPZEur0RoWCYXLjZnjnX5pSgKlfF6Dx/Ng2pUpc4i0CPchM+Z0QIkBuV0zyhbtY0pH9Q==
+  dependencies:
+    "@material/density" "^14.0.0"
+    "@material/icon-button" "^14.0.0"
+    "@smui/common" "^7.0.0-beta.16"
+    "@smui/ripple" "^7.0.0-beta.16"
+    svelte2tsx "^0.6.27"
 
 "@smui/layout-grid@^7.0.0-beta.15":
   version "7.0.0-beta.15"

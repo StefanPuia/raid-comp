@@ -1120,7 +1120,7 @@
     "@smui/common" "^7.0.0-beta.15"
     svelte2tsx "^0.6.21"
 
-"@smui/list@7.0.0-beta.16":
+"@smui/list@7.0.0-beta.16", "@smui/list@^7.0.0-beta.16":
   version "7.0.0-beta.16"
   resolved "https://registry.yarnpkg.com/@smui/list/-/list-7.0.0-beta.16.tgz#398d96f989a7e2252710c7d5a7cf5fbfb1b1219a"
   integrity sha512-efWNwuDKwBKmbeqJV3MB9uWZFMtaJr6TZ2RiPzeatKtW9+4h2wzIK//wkg71FcrU+uRZnEuQHmGnjIwmwFyE3w==
@@ -1154,17 +1154,27 @@
     "@smui/common" "^7.0.0-beta.15"
     svelte2tsx "^0.6.21"
 
+"@smui/menu-surface@^7.0.0-beta.16":
+  version "7.0.0-beta.16"
+  resolved "https://registry.yarnpkg.com/@smui/menu-surface/-/menu-surface-7.0.0-beta.16.tgz#6127c076d49483aba8eeaed238414a685f088ce3"
+  integrity sha512-6Fwn4Z4O4ndI4t/x4RimERdwIobA4os7Mv5EHRTwt6SFBxCr7gNJrPauTLlDpC45VaySP47Yc8aTIJiPMF4xnQ==
+  dependencies:
+    "@material/animation" "^14.0.0"
+    "@material/menu-surface" "^14.0.0"
+    "@smui/common" "^7.0.0-beta.16"
+    svelte2tsx "^0.6.27"
+
 "@smui/menu@^7.0.0-beta.15":
-  version "7.0.0-beta.15"
-  resolved "https://registry.yarnpkg.com/@smui/menu/-/menu-7.0.0-beta.15.tgz#4bd280f66e08da3ef9496979e44d2d11f4d77a7b"
-  integrity sha512-hvw8iRuWvo1Lc1O6MaAtO99vIUQMlheK5vvG046WZlzwuiZMulBvtipc74nhM69BdrTTDAob69xsZXHih3LHVw==
+  version "7.0.0-beta.16"
+  resolved "https://registry.yarnpkg.com/@smui/menu/-/menu-7.0.0-beta.16.tgz#9c1d153638007e431bf890b15010e34817cf5a41"
+  integrity sha512-HEiEASsubNanE+GtpL3fonqRJywOY1Aj1GtuH7NpghX5Ee6ymfTYlXBmCvAAoNxiF3sdf1/cKhzGe4ltFD/QSw==
   dependencies:
     "@material/dom" "^14.0.0"
     "@material/menu" "^14.0.0"
-    "@smui/common" "^7.0.0-beta.15"
-    "@smui/list" "^7.0.0-beta.15"
-    "@smui/menu-surface" "^7.0.0-beta.15"
-    svelte2tsx "^0.6.21"
+    "@smui/common" "^7.0.0-beta.16"
+    "@smui/list" "^7.0.0-beta.16"
+    "@smui/menu-surface" "^7.0.0-beta.16"
+    svelte2tsx "^0.6.27"
 
 "@smui/notched-outline@^7.0.0-beta.15":
   version "7.0.0-beta.15"

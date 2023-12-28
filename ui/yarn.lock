@@ -1258,18 +1258,18 @@
     svelte2tsx "^0.6.27"
 
 "@smui/snackbar@^7.0.0-beta.15":
-  version "7.0.0-beta.15"
-  resolved "https://registry.yarnpkg.com/@smui/snackbar/-/snackbar-7.0.0-beta.15.tgz#f2dee817cf640ad65e358117141d273169c9c54f"
-  integrity sha512-ewZWhNcbHV5b/GeRtm4YgfsrgsAV4ZjvbbyR/DknNyY6ciGE20JD1ugOvQNcBySdUVpMfeRlfcqCg734vquIfQ==
+  version "7.0.0-beta.16"
+  resolved "https://registry.yarnpkg.com/@smui/snackbar/-/snackbar-7.0.0-beta.16.tgz#188cbcf7518f3be4bbaa5ebc9b82802bce91d567"
+  integrity sha512-rlikd3ZW8dLiPcU1KUXvfgo6xLUP7N1pq6gaScGxmvOxU509ouWOGQlx0BoGbLh5aqIy87Z7sI8Mi68FuTqccg==
   dependencies:
     "@material/dom" "^14.0.0"
     "@material/feature-targeting" "^14.0.0"
     "@material/snackbar" "^14.0.0"
-    "@smui/button" "^7.0.0-beta.15"
-    "@smui/common" "^7.0.0-beta.15"
-    "@smui/icon-button" "^7.0.0-beta.15"
-    "@smui/ripple" "^7.0.0-beta.15"
-    svelte2tsx "^0.6.21"
+    "@smui/button" "^7.0.0-beta.16"
+    "@smui/common" "^7.0.0-beta.16"
+    "@smui/icon-button" "^7.0.0-beta.16"
+    "@smui/ripple" "^7.0.0-beta.16"
+    svelte2tsx "^0.6.27"
 
 "@smui/textfield@^7.0.0-beta.15":
   version "7.0.0-beta.15"

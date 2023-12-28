@@ -1082,15 +1082,6 @@
     "@smui/ripple" "^7.0.0-beta.16"
     svelte2tsx "^0.6.27"
 
-"@smui/floating-label@^7.0.0-beta.15":
-  version "7.0.0-beta.15"
-  resolved "https://registry.yarnpkg.com/@smui/floating-label/-/floating-label-7.0.0-beta.15.tgz#1bd2256c3082c9e697f5c880e28de786dcff1a2a"
-  integrity sha512-KRjZjO8AGE5uKHewmn05vyAxIi6XOGo8a4jn8b0+dIJcYxaPpmtacH4PeQHw4vOR88cX/0DqqxSz6+Fkrt+SIA==
-  dependencies:
-    "@material/floating-label" "^14.0.0"
-    "@smui/common" "^7.0.0-beta.15"
-    svelte2tsx "^0.6.21"
-
 "@smui/floating-label@^7.0.0-beta.16":
   version "7.0.0-beta.16"
   resolved "https://registry.yarnpkg.com/@smui/floating-label/-/floating-label-7.0.0-beta.16.tgz#d32df4fbe989cd5f03d7e05af23b6576c6be18eb"
@@ -1119,15 +1110,6 @@
     "@material/layout-grid" "^14.0.0"
     "@smui/common" "^7.0.0-beta.16"
     svelte2tsx "^0.6.27"
-
-"@smui/line-ripple@^7.0.0-beta.15":
-  version "7.0.0-beta.15"
-  resolved "https://registry.yarnpkg.com/@smui/line-ripple/-/line-ripple-7.0.0-beta.15.tgz#559af19dfe9551493fc9bf5d829ea3019edc564a"
-  integrity sha512-tfdEybgQlLiotELlWknLzb5l6pT47uGfMGYzLs5AVf74CU/zAhp8NiicHUUmI95qY5P2z2xHYYpdLTs1wZ5c9A==
-  dependencies:
-    "@material/line-ripple" "^14.0.0"
-    "@smui/common" "^7.0.0-beta.15"
-    svelte2tsx "^0.6.21"
 
 "@smui/line-ripple@^7.0.0-beta.16":
   version "7.0.0-beta.16"
@@ -1171,16 +1153,6 @@
     "@smui/list" "^7.0.0-beta.16"
     "@smui/menu-surface" "^7.0.0-beta.16"
     svelte2tsx "^0.6.27"
-
-"@smui/notched-outline@^7.0.0-beta.15":
-  version "7.0.0-beta.15"
-  resolved "https://registry.yarnpkg.com/@smui/notched-outline/-/notched-outline-7.0.0-beta.15.tgz#2b95211448c24938304d6360c66baa4ea8cf4962"
-  integrity sha512-9oVSIYmb1/GcCFYm1M0xVy4J5/A2Ysa4H6gm3RIL9/ke3F9EmmALmCs1lmtGu4Vwyo0ES5KroW2Tly2SzMfB2g==
-  dependencies:
-    "@material/notched-outline" "^14.0.0"
-    "@smui/common" "^7.0.0-beta.15"
-    "@smui/floating-label" "^7.0.0-beta.15"
-    svelte2tsx "^0.6.21"
 
 "@smui/notched-outline@^7.0.0-beta.16":
   version "7.0.0-beta.16"
@@ -1272,21 +1244,21 @@
     svelte2tsx "^0.6.27"
 
 "@smui/textfield@^7.0.0-beta.15":
-  version "7.0.0-beta.15"
-  resolved "https://registry.yarnpkg.com/@smui/textfield/-/textfield-7.0.0-beta.15.tgz#7f5019bd85d8a1974333607a2b5e6b41189e07b8"
-  integrity sha512-98lGaVJRH3K5aXVUAa8o/8rHRQ/Vwu9q6phupSrPW4BEmEEEezb/fzKExTOgm0c241dy4nDRLkdH9IdtObTA8w==
+  version "7.0.0-beta.16"
+  resolved "https://registry.yarnpkg.com/@smui/textfield/-/textfield-7.0.0-beta.16.tgz#0bfd90cc08a33184746d3903090348a56bddd3f2"
+  integrity sha512-cFqQ7pDdjPtG6EByA35F/BgqXrOLAR0VfNGRFsIWlof6+IBCrKStxeBOZ8QGQjQkxUpLS8nFwV57zTzWjIWanQ==
   dependencies:
     "@material/dom" "^14.0.0"
     "@material/feature-targeting" "^14.0.0"
     "@material/ripple" "^14.0.0"
     "@material/rtl" "^14.0.0"
     "@material/textfield" "^14.0.0"
-    "@smui/common" "^7.0.0-beta.15"
-    "@smui/floating-label" "^7.0.0-beta.15"
-    "@smui/line-ripple" "^7.0.0-beta.15"
-    "@smui/notched-outline" "^7.0.0-beta.15"
-    "@smui/ripple" "^7.0.0-beta.15"
-    svelte2tsx "^0.6.21"
+    "@smui/common" "^7.0.0-beta.16"
+    "@smui/floating-label" "^7.0.0-beta.16"
+    "@smui/line-ripple" "^7.0.0-beta.16"
+    "@smui/notched-outline" "^7.0.0-beta.16"
+    "@smui/ripple" "^7.0.0-beta.16"
+    svelte2tsx "^0.6.27"
 
 "@smui/tooltip@^7.0.0-beta.15":
   version "7.0.0-beta.15"

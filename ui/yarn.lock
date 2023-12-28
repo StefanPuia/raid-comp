@@ -1177,16 +1177,6 @@
     "@smui/common" "^7.0.0-beta.16"
     svelte2tsx "^0.6.27"
 
-"@smui/ripple@^7.0.0-beta.15":
-  version "7.0.0-beta.15"
-  resolved "https://registry.yarnpkg.com/@smui/ripple/-/ripple-7.0.0-beta.15.tgz#22fb96f02b9351df40567f8ac435a3660214c65c"
-  integrity sha512-l0c94p60gxbsClH0KzA2meJ2IGHc7ZUMyWqODkLNz7ziUYxk3VZvWf/Y7Ca+64IJj0keCGPMpFauFaJO8h3Gtw==
-  dependencies:
-    "@material/dom" "^14.0.0"
-    "@material/ripple" "^14.0.0"
-    "@smui/common" "^7.0.0-beta.15"
-    svelte2tsx "^0.6.21"
-
 "@smui/ripple@^7.0.0-beta.16":
   version "7.0.0-beta.16"
   resolved "https://registry.yarnpkg.com/@smui/ripple/-/ripple-7.0.0-beta.16.tgz#07c20990cf02ab58e24bb9d0603be8c711ab4f7e"
@@ -1261,13 +1251,13 @@
     svelte2tsx "^0.6.27"
 
 "@smui/tooltip@^7.0.0-beta.15":
-  version "7.0.0-beta.15"
-  resolved "https://registry.yarnpkg.com/@smui/tooltip/-/tooltip-7.0.0-beta.15.tgz#8f698d96de80324c77eca60ef3627a0ecb768bd7"
-  integrity sha512-Vwkoa/l4PocEWIk9LOFGJ5rt5nEd27/L9ZL0rU2g0asZFHhYDiqiz0XjyvJXYFt5Q6iFR/f6JXUx4cZnw9n3hQ==
+  version "7.0.0-beta.16"
+  resolved "https://registry.yarnpkg.com/@smui/tooltip/-/tooltip-7.0.0-beta.16.tgz#24f6bc4678b222d07243b672363d30c89bb73bcd"
+  integrity sha512-NlR3sqLfJILTm9ApUfAEXOARXyBoDDRta90ViQwQbA+xZw6LzCC90w/GexrXZ6ISFXej2G1WILus9+U3p/q9aA==
   dependencies:
     "@material/tooltip" "^14.0.0"
-    "@smui/common" "^7.0.0-beta.15"
-    svelte2tsx "^0.6.21"
+    "@smui/common" "^7.0.0-beta.16"
+    svelte2tsx "^0.6.27"
 
 "@sveltejs/adapter-auto@^2.0.0":
   version "2.1.1"
@@ -3193,14 +3183,6 @@ svelte-turnstile@0.5.0:
   integrity sha512-FD/XOfyN2gOr7csfThLyrS/sSsRd2zgVfm5pwE1KvpWQHJYqx1HL/PQ92WEw8peL+SPqoKYx2619aZ65uPUsxg==
   dependencies:
     turnstile-types "^1.1.2"
-
-svelte2tsx@^0.6.21:
-  version "0.6.25"
-  resolved "https://registry.yarnpkg.com/svelte2tsx/-/svelte2tsx-0.6.25.tgz#5e95150d459a19acc6e4277ad2fc79090fc53e19"
-  integrity sha512-hhBKL5X9gGvKQAZ9xLoHnbE9Yb00HxEZJlxcj2drxWK+Tpqcs/bnodjSfCGbqEhvNaUXYNbVL7s4dEXT+o0f6w==
-  dependencies:
-    dedent-js "^1.0.1"
-    pascal-case "^3.1.1"
 
 svelte2tsx@^0.6.27:
   version "0.6.27"

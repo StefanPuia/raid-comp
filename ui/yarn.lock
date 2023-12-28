@@ -1177,16 +1177,6 @@
     "@smui/common" "^7.0.0-beta.16"
     svelte2tsx "^0.6.27"
 
-"@smui/ripple@^7.0.0-beta.15":
-  version "7.0.0-beta.15"
-  resolved "https://registry.yarnpkg.com/@smui/ripple/-/ripple-7.0.0-beta.15.tgz#22fb96f02b9351df40567f8ac435a3660214c65c"
-  integrity sha512-l0c94p60gxbsClH0KzA2meJ2IGHc7ZUMyWqODkLNz7ziUYxk3VZvWf/Y7Ca+64IJj0keCGPMpFauFaJO8h3Gtw==
-  dependencies:
-    "@material/dom" "^14.0.0"
-    "@material/ripple" "^14.0.0"
-    "@smui/common" "^7.0.0-beta.15"
-    svelte2tsx "^0.6.21"
-
 "@smui/ripple@^7.0.0-beta.16":
   version "7.0.0-beta.16"
   resolved "https://registry.yarnpkg.com/@smui/ripple/-/ripple-7.0.0-beta.16.tgz#07c20990cf02ab58e24bb9d0603be8c711ab4f7e"
@@ -3003,7 +2993,7 @@ sander@^0.5.0:
     mkdirp "^0.5.1"
     rimraf "^2.5.2"
 
-sass@^1.66.1:
+sass@^1.69.5:
   version "1.69.5"
   resolved "https://registry.yarnpkg.com/sass/-/sass-1.69.5.tgz#23e18d1c757a35f2e52cc81871060b9ad653dfde"
   integrity sha512-qg2+UCJibLr2LCVOt3OlPhr/dqVHWOa9XtZf2OjbLs/T4VPSJ00udtgJxH3neXZm+QqX8B+3cU7RaLqp1iVfcQ==
@@ -3056,14 +3046,14 @@ slash@^3.0.0:
   integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
 
 smui-theme@^7.0.0-beta.15:
-  version "7.0.0-beta.15"
-  resolved "https://registry.yarnpkg.com/smui-theme/-/smui-theme-7.0.0-beta.15.tgz#67232afe1b22a6737de711443eaa1799847c7632"
-  integrity sha512-9lHALAoIRrvOIXUCzNjQYzAEwIO92q7ZxJg48NSJmgda43aB/8Zl0iHQfwXqsEkFLmrAXacYt4Kh0jKKRzit0A==
+  version "7.0.0-beta.16"
+  resolved "https://registry.yarnpkg.com/smui-theme/-/smui-theme-7.0.0-beta.16.tgz#c2de3804bd82186c8e3b3962be72df402ecbadca"
+  integrity sha512-w1FtFwRth6xEtiJUhrNY7n3EdLaWTTxrOQMqwGSG7sMxg6uzp8uaiBc2gxAmvs+bS7r5Hi14WrJBFXkU+PQcAg==
   dependencies:
     "@material/theme" "^14.0.0"
     https-proxy-agent "^7.0.2"
     node-fetch "^2.7.0"
-    sass "^1.66.1"
+    sass "^1.69.5"
     yargs "^17.7.2"
 
 sorcery@^0.11.0:

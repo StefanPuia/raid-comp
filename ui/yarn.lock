@@ -1025,9 +1025,9 @@
     svelte2tsx "^0.6.27"
 
 "@smui/button@^7.0.0-beta.15", "@smui/button@^7.0.0-beta.16":
-  version "7.0.0-beta.16"
-  resolved "https://registry.yarnpkg.com/@smui/button/-/button-7.0.0-beta.16.tgz#5b4ad5f275cdafafb3b37ae1d8fb1cace9f2b0ef"
-  integrity sha512-Zci9DIcXhzqjjXXtoowLyUY5+c0way3PtO3MjWsr+BnVjMwItehuGowQZqsBqpsg1PzQ+E8JoSXSKUT+3oAZVg==
+  version "7.0.0-beta.18"
+  resolved "https://registry.yarnpkg.com/@smui/button/-/button-7.0.0-beta.18.tgz#8f32d9806edd6e4e8cc8b0ae595cc0d207b3c649"
+  integrity sha512-7RRrM49qRuLQazwOblGSqW/KPyzGI6zyH/nezzcEgItnz33rtRx7uRQUNUsknroPE2lGSx2wbuWxQz+ZIkSiPQ==
   dependencies:
     "@material/button" "^14.0.0"
     "@material/elevation" "^14.0.0"
@@ -1035,8 +1035,8 @@
     "@material/ripple" "^14.0.0"
     "@material/shape" "^14.0.0"
     "@material/theme" "^14.0.0"
-    "@smui/common" "^7.0.0-beta.16"
-    "@smui/ripple" "^7.0.0-beta.16"
+    "@smui/common" "^7.0.0-beta.18"
+    "@smui/ripple" "^7.0.0-beta.18"
     svelte2tsx "^0.6.27"
 
 "@smui/card@^7.0.0-beta.15":
@@ -1214,6 +1214,16 @@
     "@material/dom" "^14.0.0"
     "@material/ripple" "^14.0.0"
     "@smui/common" "^7.0.0-beta.16"
+    svelte2tsx "^0.6.27"
+
+"@smui/ripple@^7.0.0-beta.18":
+  version "7.0.0-beta.18"
+  resolved "https://registry.yarnpkg.com/@smui/ripple/-/ripple-7.0.0-beta.18.tgz#48c9693dc4514836b7a0c9bb7db145e11078bba0"
+  integrity sha512-HegU/75nnaORFwrhojzeyYW4M9FD1nh59zgaWkw3lJK61wbo3bPmIkjPnytpItZXW4GsZfTRJ1ooCr9iiX1otQ==
+  dependencies:
+    "@material/dom" "^14.0.0"
+    "@material/ripple" "^14.0.0"
+    "@smui/common" "^7.0.0-beta.18"
     svelte2tsx "^0.6.27"
 
 "@smui/segmented-button@^7.0.0-beta.15":

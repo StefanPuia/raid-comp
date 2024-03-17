@@ -1024,7 +1024,7 @@
     "@smui/paper" "^7.0.0-beta.18"
     svelte2tsx "^0.6.27"
 
-"@smui/button@^7.0.0-beta.15", "@smui/button@^7.0.0-beta.16":
+"@smui/button@^7.0.0-beta.15", "@smui/button@^7.0.0-beta.16", "@smui/button@^7.0.0-beta.18":
   version "7.0.0-beta.18"
   resolved "https://registry.yarnpkg.com/@smui/button/-/button-7.0.0-beta.18.tgz#8f32d9806edd6e4e8cc8b0ae595cc0d207b3c649"
   integrity sha512-7RRrM49qRuLQazwOblGSqW/KPyzGI6zyH/nezzcEgItnz33rtRx7uRQUNUsknroPE2lGSx2wbuWxQz+ZIkSiPQ==
@@ -1040,15 +1040,15 @@
     svelte2tsx "^0.6.27"
 
 "@smui/card@^7.0.0-beta.15":
-  version "7.0.0-beta.16"
-  resolved "https://registry.yarnpkg.com/@smui/card/-/card-7.0.0-beta.16.tgz#9d83a75d7941719b516e41d6335de6341ece0c1f"
-  integrity sha512-oFOt5auDAdNLFXbAtFPPn2/DnV0TU2kXd/A5yeEWqBsoyTQBY0qY+o/Z0OxVvQyi/iglSqFAzXZ8sahprHlVHA==
+  version "7.0.0-beta.18"
+  resolved "https://registry.yarnpkg.com/@smui/card/-/card-7.0.0-beta.18.tgz#f8d6f250140383207941f3e251f166798beacbc7"
+  integrity sha512-A37m5Uuuu32kHuaoumuDHct2EHxEVmUPtbH3asqNki/UptCimqgx0LFVU7zSCCXx3T3rFtVX6ECTG0wv3dZCzA==
   dependencies:
     "@material/card" "^14.0.0"
-    "@smui/button" "^7.0.0-beta.16"
-    "@smui/common" "^7.0.0-beta.16"
-    "@smui/icon-button" "^7.0.0-beta.16"
-    "@smui/ripple" "^7.0.0-beta.16"
+    "@smui/button" "^7.0.0-beta.18"
+    "@smui/common" "^7.0.0-beta.18"
+    "@smui/icon-button" "^7.0.0-beta.18"
+    "@smui/ripple" "^7.0.0-beta.18"
     svelte2tsx "^0.6.27"
 
 "@smui/circular-progress@^7.0.0-beta.15":
@@ -1116,6 +1116,17 @@
     "@material/icon-button" "^14.0.0"
     "@smui/common" "^7.0.0-beta.16"
     "@smui/ripple" "^7.0.0-beta.16"
+    svelte2tsx "^0.6.27"
+
+"@smui/icon-button@^7.0.0-beta.18":
+  version "7.0.0-beta.18"
+  resolved "https://registry.yarnpkg.com/@smui/icon-button/-/icon-button-7.0.0-beta.18.tgz#11651484f9dee89f799730b140afeefb1d96dc6d"
+  integrity sha512-wLrUUdukOr78NKiRK9N6L3FJXvCpzY6DeZij9C4KlIhvrakeiCjWLEUtHYlIsdQfCE5PZkqGmOUAPWj3lEu0Ug==
+  dependencies:
+    "@material/density" "^14.0.0"
+    "@material/icon-button" "^14.0.0"
+    "@smui/common" "^7.0.0-beta.18"
+    "@smui/ripple" "^7.0.0-beta.18"
     svelte2tsx "^0.6.27"
 
 "@smui/layout-grid@^7.0.0-beta.15":

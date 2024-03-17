@@ -1014,14 +1014,14 @@
   integrity sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==
 
 "@smui-extra/bottom-app-bar@^7.0.0-beta.15":
-  version "7.0.0-beta.16"
-  resolved "https://registry.yarnpkg.com/@smui-extra/bottom-app-bar/-/bottom-app-bar-7.0.0-beta.16.tgz#90404d0fb06663b6d0bf74285cd5b3204f18cb83"
-  integrity sha512-w7SgpEtCMqgKeF9Lm5vzx2RlUP0Vtthr7tja/TZLakqYe15xva+fItQn9NZV96EUC1UuHg+7Y1jYL5UqZ2re6w==
+  version "7.0.0-beta.18"
+  resolved "https://registry.yarnpkg.com/@smui-extra/bottom-app-bar/-/bottom-app-bar-7.0.0-beta.18.tgz#4e5ed21f45f339c99f9659b72c1b9545371ec892"
+  integrity sha512-QOqxk7TmEd6ewtw2FmTdd1fXOhJ3Mjp0cMBOrUViLkrO2DwGxhLmhBI5MLeJaWkbUPZGoovTCPC44s7eEKSOmQ==
   dependencies:
     "@material/feature-targeting" "^14.0.0"
     "@material/theme" "^14.0.0"
-    "@smui/common" "^7.0.0-beta.16"
-    "@smui/paper" "^7.0.0-beta.16"
+    "@smui/common" "^7.0.0-beta.18"
+    "@smui/paper" "^7.0.0-beta.18"
     svelte2tsx "^0.6.27"
 
 "@smui/button@^7.0.0-beta.15", "@smui/button@^7.0.0-beta.16":
@@ -1064,6 +1064,14 @@
   version "7.0.0-beta.16"
   resolved "https://registry.yarnpkg.com/@smui/common/-/common-7.0.0-beta.16.tgz#9ed3b24b905342df7dc38c092a8e9b7667854973"
   integrity sha512-PpqhIAWtE6ZZ6XyIkzHGXdMk+iE4QLFdzYXf20cG13O/0bFjOV5ySk2g+Vq2ZWRJawIjMaPcekbCkkowna4vgg==
+  dependencies:
+    "@material/dom" "^14.0.0"
+    svelte2tsx "^0.6.27"
+
+"@smui/common@^7.0.0-beta.18":
+  version "7.0.0-beta.18"
+  resolved "https://registry.yarnpkg.com/@smui/common/-/common-7.0.0-beta.18.tgz#926ae0631b62152353d568dbad475e0e8f961982"
+  integrity sha512-BH70iF23eGKK57YReDG5nerJR/7lomncVAcKCJ35KEso90S+eu7lZwDg5kUdzVzDRNdS+WkTrDKPhKmo3R2sEQ==
   dependencies:
     "@material/dom" "^14.0.0"
     svelte2tsx "^0.6.27"
@@ -1172,7 +1180,7 @@
     "@smui/floating-label" "^7.0.0-beta.16"
     svelte2tsx "^0.6.27"
 
-"@smui/paper@^7.0.0-beta.15", "@smui/paper@^7.0.0-beta.16":
+"@smui/paper@^7.0.0-beta.15":
   version "7.0.0-beta.16"
   resolved "https://registry.yarnpkg.com/@smui/paper/-/paper-7.0.0-beta.16.tgz#ce90136140916d39eb761ee78f019e338bb946e7"
   integrity sha512-a8xmsTzAnSS+moz0Vnt/eUNf+9oeyOM36bYioorQX2F/lhFPtUJ/ZOktEtn2JkpHPPm3foyAwz5e1s9IWac4og==
@@ -1183,6 +1191,19 @@
     "@material/theme" "^14.0.0"
     "@material/typography" "^14.0.0"
     "@smui/common" "^7.0.0-beta.16"
+    svelte2tsx "^0.6.27"
+
+"@smui/paper@^7.0.0-beta.18":
+  version "7.0.0-beta.18"
+  resolved "https://registry.yarnpkg.com/@smui/paper/-/paper-7.0.0-beta.18.tgz#02ff0006f938ef145df71dea5950cda3079e7fbe"
+  integrity sha512-FE3YzcmNOQo/MKlD0PPQRp/bI5D8DwOqh/9c5LbzRnGm8oLad2QtZ62HdcZn30q+dpZ7ATcDWPSIR7TXvJgy2A==
+  dependencies:
+    "@material/elevation" "^14.0.0"
+    "@material/feature-targeting" "^14.0.0"
+    "@material/shape" "^14.0.0"
+    "@material/theme" "^14.0.0"
+    "@material/typography" "^14.0.0"
+    "@smui/common" "^7.0.0-beta.18"
     svelte2tsx "^0.6.27"
 
 "@smui/ripple@^7.0.0-beta.16":

@@ -1024,7 +1024,7 @@
     "@smui/paper" "^7.0.0-beta.18"
     svelte2tsx "^0.6.27"
 
-"@smui/button@^7.0.0-beta.15", "@smui/button@^7.0.0-beta.16", "@smui/button@^7.0.0-beta.18":
+"@smui/button@^7.0.0-beta.15", "@smui/button@^7.0.0-beta.18":
   version "7.0.0-beta.18"
   resolved "https://registry.yarnpkg.com/@smui/button/-/button-7.0.0-beta.18.tgz#8f32d9806edd6e4e8cc8b0ae595cc0d207b3c649"
   integrity sha512-7RRrM49qRuLQazwOblGSqW/KPyzGI6zyH/nezzcEgItnz33rtRx7uRQUNUsknroPE2lGSx2wbuWxQz+ZIkSiPQ==
@@ -1108,7 +1108,7 @@
     "@smui/common" "^7.0.0-beta.18"
     svelte2tsx "^0.6.27"
 
-"@smui/icon-button@^7.0.0-beta.15", "@smui/icon-button@^7.0.0-beta.16":
+"@smui/icon-button@^7.0.0-beta.15":
   version "7.0.0-beta.16"
   resolved "https://registry.yarnpkg.com/@smui/icon-button/-/icon-button-7.0.0-beta.16.tgz#b0566c8e9f3da83d35856e5a033c08e35893d388"
   integrity sha512-//TpkLRZH/FmSp37sBrPZEur0RoWCYXLjZnjnX5pSgKlfF6Dx/Ng2pUpc4i0CPchM+Z0QIkBuV0zyhbtY0pH9Q==
@@ -1277,17 +1277,17 @@
     svelte2tsx "^0.6.27"
 
 "@smui/snackbar@^7.0.0-beta.15":
-  version "7.0.0-beta.16"
-  resolved "https://registry.yarnpkg.com/@smui/snackbar/-/snackbar-7.0.0-beta.16.tgz#188cbcf7518f3be4bbaa5ebc9b82802bce91d567"
-  integrity sha512-rlikd3ZW8dLiPcU1KUXvfgo6xLUP7N1pq6gaScGxmvOxU509ouWOGQlx0BoGbLh5aqIy87Z7sI8Mi68FuTqccg==
+  version "7.0.0-beta.18"
+  resolved "https://registry.yarnpkg.com/@smui/snackbar/-/snackbar-7.0.0-beta.18.tgz#e80d11c43b2727008ffb5efd475fcf18b79b533f"
+  integrity sha512-dOLnUJb7jAbJv8P/ty2Tva5bgsPZgu5grImOTaUL1x8Ua9gBXjiITCg2MqJIDdrpCydlHLSCWBUtTdaLvbnLBw==
   dependencies:
     "@material/dom" "^14.0.0"
     "@material/feature-targeting" "^14.0.0"
     "@material/snackbar" "^14.0.0"
-    "@smui/button" "^7.0.0-beta.16"
-    "@smui/common" "^7.0.0-beta.16"
-    "@smui/icon-button" "^7.0.0-beta.16"
-    "@smui/ripple" "^7.0.0-beta.16"
+    "@smui/button" "^7.0.0-beta.18"
+    "@smui/common" "^7.0.0-beta.18"
+    "@smui/icon-button" "^7.0.0-beta.18"
+    "@smui/ripple" "^7.0.0-beta.18"
     svelte2tsx "^0.6.27"
 
 "@smui/textfield@^7.0.0-beta.15":

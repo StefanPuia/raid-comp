@@ -1139,7 +1139,19 @@
     "@smui/common" "^7.0.0-beta.16"
     svelte2tsx "^0.6.27"
 
-"@smui/list@7.0.0-beta.16", "@smui/list@^7.0.0-beta.16":
+"@smui/list@7.0.0-beta.18":
+  version "7.0.0-beta.18"
+  resolved "https://registry.yarnpkg.com/@smui/list/-/list-7.0.0-beta.18.tgz#185052fe69be857d26c9170159fa23e91e2e3490"
+  integrity sha512-DzhuTTpWt2VLX4oX7vXjRmuEgNQZyia24CJPuuo+t3/MbgkQGFQmGrrya2N8yc8EX51eC2h5FSp0Se09WZkBDg==
+  dependencies:
+    "@material/dom" "^14.0.0"
+    "@material/feature-targeting" "^14.0.0"
+    "@material/list" "^14.0.0"
+    "@smui/common" "^7.0.0-beta.18"
+    "@smui/ripple" "^7.0.0-beta.18"
+    svelte2tsx "^0.6.27"
+
+"@smui/list@^7.0.0-beta.16":
   version "7.0.0-beta.16"
   resolved "https://registry.yarnpkg.com/@smui/list/-/list-7.0.0-beta.16.tgz#398d96f989a7e2252710c7d5a7cf5fbfb1b1219a"
   integrity sha512-efWNwuDKwBKmbeqJV3MB9uWZFMtaJr6TZ2RiPzeatKtW9+4h2wzIK//wkg71FcrU+uRZnEuQHmGnjIwmwFyE3w==

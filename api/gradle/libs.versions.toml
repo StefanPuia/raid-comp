@@ -2,7 +2,7 @@
 azureFunctionsPlugin = "1.15.0"
 lombok = "1.18.32"
 mapstruct = "1.5.5.Final"
-micronautPlugin = "4.3.4"
+micronautPlugin = "4.3.5"
 opencsv = "5.9"
 
 [libraries]

@@ -1280,12 +1280,12 @@
     svelte2tsx "^0.6.27"
 
 "@smui/tooltip@^7.0.0-beta.15":
-  version "7.0.0-beta.16"
-  resolved "https://registry.yarnpkg.com/@smui/tooltip/-/tooltip-7.0.0-beta.16.tgz#24f6bc4678b222d07243b672363d30c89bb73bcd"
-  integrity sha512-NlR3sqLfJILTm9ApUfAEXOARXyBoDDRta90ViQwQbA+xZw6LzCC90w/GexrXZ6ISFXej2G1WILus9+U3p/q9aA==
+  version "7.0.0-beta.18"
+  resolved "https://registry.yarnpkg.com/@smui/tooltip/-/tooltip-7.0.0-beta.18.tgz#2436fa7d6cde592159c95afb5026367e8bb850a1"
+  integrity sha512-ELBJb04hXrjhpr6GJlPwVAUf0+kb+F3/RPJCxRYf3ghXy3BDPvDKmxOn3Y8SaNEsUvoUFOL8fLaCAmfEFh9e2A==
   dependencies:
     "@material/tooltip" "^14.0.0"
-    "@smui/common" "^7.0.0-beta.16"
+    "@smui/common" "^7.0.0-beta.18"
     svelte2tsx "^0.6.27"
 
 "@sveltejs/adapter-auto@^2.0.0":

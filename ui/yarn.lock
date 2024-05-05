@@ -1072,15 +1072,15 @@
     svelte2tsx "^0.7.8"
 
 "@smui/fab@^7.0.0-beta.15":
-  version "7.0.0-beta.18"
-  resolved "https://registry.yarnpkg.com/@smui/fab/-/fab-7.0.0-beta.18.tgz#2330dc070f53aa8dc00d311d135cd070ea77b653"
-  integrity sha512-u1rYLFWqal0di2WzPv/nmpXoRXLhqL6nuDxZ6lrxYgGpnNgsMueHqXCj/sLo+xHyIaEItXAblY5JLEEgrP1JIg==
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@smui/fab/-/fab-7.0.0.tgz#c42d5260dca31ae0ec207ecc8d6a96fac888c1ea"
+  integrity sha512-d8jPe9fyTMD0YMBS48RYFb3JITGonHvD7DRlf4iOYzkBCpv7amGbzJSJn88TWx/665FJugQfUKxD/IkooHVthQ==
   dependencies:
     "@material/fab" "^14.0.0"
     "@material/feature-targeting" "^14.0.0"
-    "@smui/common" "^7.0.0-beta.18"
-    "@smui/ripple" "^7.0.0-beta.18"
-    svelte2tsx "^0.6.27"
+    "@smui/common" "^7.0.0"
+    "@smui/ripple" "^7.0.0"
+    svelte2tsx "^0.7.8"
 
 "@smui/floating-label@^7.0.0-beta.18":
   version "7.0.0-beta.18"

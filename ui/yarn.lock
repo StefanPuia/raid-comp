@@ -1125,13 +1125,13 @@
     svelte2tsx "^0.6.27"
 
 "@smui/layout-grid@^7.0.0-beta.15":
-  version "7.0.0-beta.18"
-  resolved "https://registry.yarnpkg.com/@smui/layout-grid/-/layout-grid-7.0.0-beta.18.tgz#6d718d6406a130efd6f391dfb64b60392082846a"
-  integrity sha512-wY9qqYxnNS3Lab6SqSE7sjQUbXm5mEVtNqjkGxH2q1oDQ3Ts6fLUUW+ojvQYN9O94uL/+yTNhWLiYiF/fXey4Q==
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@smui/layout-grid/-/layout-grid-7.0.0.tgz#c4016eae125c3b3871fbd46cbf5fed795c6d7d3f"
+  integrity sha512-LF4Lh8FwZa9swh5/Yxf1aTiqBTrq3txmExTsCl9UcbGpOLXGS5ITXDJO9YWePj9YtT/GlNHEcGishP1gChkCTQ==
   dependencies:
     "@material/layout-grid" "^14.0.0"
-    "@smui/common" "^7.0.0-beta.18"
-    svelte2tsx "^0.6.27"
+    "@smui/common" "^7.0.0"
+    svelte2tsx "^0.7.8"
 
 "@smui/line-ripple@^7.0.0-beta.18":
   version "7.0.0-beta.18"

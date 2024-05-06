@@ -1529,9 +1529,9 @@ acorn@^8.10.0, acorn@^8.9.0:
   integrity sha512-Y9rRfJG5jcKOE0CLisYbojUjIrIEE7AGMzA/Sm4BslANhbS+cDMpgBdcPT91oJ7OuJ9hYJBx59RjbhxVnrF8Xg==
 
 agent-base@^7.0.2:
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/agent-base/-/agent-base-7.1.0.tgz#536802b76bc0b34aa50195eb2442276d613e3434"
-  integrity sha512-o/zjMZRhJxny7OyEF+Op8X+efiELC7k7yOjMzgfzVqOzXqkBkWI79YoTdOtsuWd5BWhAGAuOY/Xa6xpiaWXiNg==
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/agent-base/-/agent-base-7.1.1.tgz#bdbded7dfb096b751a2a087eeeb9664725b2e317"
+  integrity sha512-H0TSyFNDMomMNJQBn8wFV5YC/2eJ+VXECwOadZJT554xP6cODZHPX3H9QMQECxvrgiSOP1pHjy1sMWQVYJOUOA==
   dependencies:
     debug "^4.3.4"
 
@@ -2339,7 +2339,7 @@ has-flag@^4.0.0:
   resolved "https://registry.yarnpkg.com/has-flag/-/has-flag-4.0.0.tgz#944771fd9c81c81265c4d6941860da06bb59479b"
   integrity sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==
 
-https-proxy-agent@^7.0.2:
+https-proxy-agent@^7.0.4:
   version "7.0.4"
   resolved "https://registry.yarnpkg.com/https-proxy-agent/-/https-proxy-agent-7.0.4.tgz#8e97b841a029ad8ddc8731f26595bad868cb4168"
   integrity sha512-wlwpilI7YdjSkWaQ/7omYBMTliDcmCN8OLihO6I9B86g06lMyAoqgoDpV0XqoaPOKj+0DIdAvnsWfyAAhmimcg==
@@ -3028,10 +3028,10 @@ sander@^0.5.0:
     mkdirp "^0.5.1"
     rimraf "^2.5.2"
 
-sass@^1.69.5:
-  version "1.72.0"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.72.0.tgz#5b9978943fcfb32b25a6a5acb102fc9dabbbf41c"
-  integrity sha512-Gpczt3WA56Ly0Mn8Sl21Vj94s1axi9hDIzDFn9Ph9x3C3p4nNyvsqJoQyVXKou6cBlfFWEgRW4rT8Tb4i3XnVA==
+sass@^1.76.0:
+  version "1.76.0"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.76.0.tgz#fe15909500735ac154f0dc7386d656b62b03987d"
+  integrity sha512-nc3LeqvF2FNW5xGF1zxZifdW3ffIz5aBb7I7tSvOoNu7z1RQ6pFt9MBuiPtjgaI62YWrM/txjWlOCFiGtf2xpw==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
     immutable "^4.0.0"
@@ -3081,14 +3081,14 @@ slash@^3.0.0:
   integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
 
 smui-theme@^7.0.0-beta.15:
-  version "7.0.0-beta.18"
-  resolved "https://registry.yarnpkg.com/smui-theme/-/smui-theme-7.0.0-beta.18.tgz#ab9c91c9de710dc48400e9c901e838331fd9df92"
-  integrity sha512-38W+D2m9rkNjCkZByUgohqEkhZkrsGoyPrraZ0fHUzP6UTWcSvTCf5pX/j6FWG/mtfUAM5rx1TwqEFEf1wSuLg==
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/smui-theme/-/smui-theme-7.0.0.tgz#1fd21987ba8df13519a30d954d0462c03276d270"
+  integrity sha512-v/lBUxCJm5h/tYcaSixMoAhg5aZ40V4sDKOo/kn08/COtHqFGvSiTPbnhRLcM+pospOiKOiH0f6gpi7dEVB+WQ==
   dependencies:
     "@material/theme" "^14.0.0"
-    https-proxy-agent "^7.0.2"
+    https-proxy-agent "^7.0.4"
     node-fetch "^2.7.0"
-    sass "^1.69.5"
+    sass "^1.76.0"
     yargs "^17.7.2"
 
 sorcery@^0.11.0:
@@ -3101,12 +3101,7 @@ sorcery@^0.11.0:
     minimist "^1.2.0"
     sander "^0.5.0"
 
-"source-map-js@>=0.6.2 <2.0.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.1.0.tgz#9e7d5cb46f0689fb6691b30f226937558d0fa94b"
-  integrity sha512-9vC2SfsJzlej6MAaMPLu8HiBSHGdRAJ9hVFYN1ibZoNkeanmDmLUcIrj6G9DGL7XMJ54AKg/G75akXl1/izTOw==
-
-source-map-js@^1.0.1, source-map-js@^1.0.2, source-map-js@^1.2.0:
+"source-map-js@>=0.6.2 <2.0.0", source-map-js@^1.0.1, source-map-js@^1.0.2, source-map-js@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.2.0.tgz#16b809c162517b5b8c3e7dcd315a2a5c2612b2af"
   integrity sha512-itJW8lvSA0TXEphiRoawsCksnlf8SyvmFzIhltqAHluXd88pkCd+cXJVHTDwdCr0IzwptSm035IHQktUu1QUMg==

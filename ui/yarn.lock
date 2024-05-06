@@ -1252,16 +1252,16 @@
     svelte2tsx "^0.6.27"
 
 "@smui/segmented-button@^7.0.0-beta.15":
-  version "7.0.0-beta.18"
-  resolved "https://registry.yarnpkg.com/@smui/segmented-button/-/segmented-button-7.0.0-beta.18.tgz#489356b9e9e82ebaacea14672de7144b067cffa2"
-  integrity sha512-Mvgp0HD+UkG2iLlENkWONisoKe2HGZwZ2Bm8DHEy19dA+DDaq0vNTIWmRM9AOMs60gX42E8wdKBZMlIZzZJjnw==
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@smui/segmented-button/-/segmented-button-7.0.0.tgz#530e5fe0a3d5406f4a8ea15b972318312b140f01"
+  integrity sha512-Bx4A0dzCvdBMxeKzOh9LuCJHYBGQlwP0fXCp+gt21xE4vc9zDul3v8kjsVRY1tvrk2UA7AmPEP8nVBz0qOH71Q==
   dependencies:
     "@material/base" "^14.0.0"
     "@material/ripple" "^14.0.0"
     "@material/segmented-button" "^14.0.0"
-    "@smui/common" "^7.0.0-beta.18"
-    "@smui/ripple" "^7.0.0-beta.18"
-    svelte2tsx "^0.6.27"
+    "@smui/common" "^7.0.0"
+    "@smui/ripple" "^7.0.0"
+    svelte2tsx "^0.7.8"
 
 "@smui/select@7.0.0-beta.18":
   version "7.0.0-beta.18"

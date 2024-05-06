@@ -34,7 +34,7 @@
     "@smui/menu": "^7.0.0-beta.15",
     "@smui/paper": "^7.0.0-beta.15",
     "@smui/segmented-button": "^7.0.0-beta.15",
-    "@smui/select": "7.0.0-beta.18",
+    "@smui/select": "7.0.0",
     "@smui/snackbar": "^7.0.0-beta.15",
     "@smui/textfield": "^7.0.0-beta.15",
     "@smui/tooltip": "^7.0.0-beta.15",

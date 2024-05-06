@@ -1052,7 +1052,7 @@
     "@smui/common" "^7.0.0"
     svelte2tsx "^0.7.8"
 
-"@smui/common@^7.0.0", "@smui/common@^7.0.0-beta.15", "@smui/common@^7.0.0-beta.16", "@smui/common@^7.0.0-beta.18":
+"@smui/common@^7.0.0", "@smui/common@^7.0.0-beta.15", "@smui/common@^7.0.0-beta.16":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@smui/common/-/common-7.0.0.tgz#8d6a127b15765310cff8baeb23cf3f1365e3d91b"
   integrity sha512-/JUf25KMIDLFNfiuMSMs2g7dEZZFUnDJDxpbT3FlGEY/HKoEf0W9GnbmIOzPje1wxW9ajKHN2SIYDPx9so1vnw==
@@ -1090,15 +1090,6 @@
     "@material/floating-label" "^14.0.0"
     "@smui/common" "^7.0.0"
     svelte2tsx "^0.7.8"
-
-"@smui/floating-label@^7.0.0-beta.18":
-  version "7.0.0-beta.18"
-  resolved "https://registry.yarnpkg.com/@smui/floating-label/-/floating-label-7.0.0-beta.18.tgz#0ffdbd6a24ff051dfa6b6bfbb171879835c4b3cc"
-  integrity sha512-cSS1SQRQaROd+GOwjDWiJONWS3nuZpHlr36EZ/DKxS1wfGTJ7M4OC5Cmq0bvY0PZ3tvyfYUTqWbuKvoyMJm+Vw==
-  dependencies:
-    "@material/floating-label" "^14.0.0"
-    "@smui/common" "^7.0.0-beta.18"
-    svelte2tsx "^0.6.27"
 
 "@smui/icon-button@^7.0.0":
   version "7.0.0"
@@ -1139,15 +1130,6 @@
     "@material/line-ripple" "^14.0.0"
     "@smui/common" "^7.0.0"
     svelte2tsx "^0.7.8"
-
-"@smui/line-ripple@^7.0.0-beta.18":
-  version "7.0.0-beta.18"
-  resolved "https://registry.yarnpkg.com/@smui/line-ripple/-/line-ripple-7.0.0-beta.18.tgz#bf6ec39e455799a89755d30f358e75fc3cd85c07"
-  integrity sha512-i0LHYOcAFEjmvSP5BMgf4V/o0O/USiKc8UL9ZWkX2X3kuJGU3Lyc+ZM+hkOSNgw97BdP0xpJumvoHTwZXHv+zg==
-  dependencies:
-    "@material/line-ripple" "^14.0.0"
-    "@smui/common" "^7.0.0-beta.18"
-    svelte2tsx "^0.6.27"
 
 "@smui/list@7.0.0", "@smui/list@^7.0.0":
   version "7.0.0"
@@ -1193,16 +1175,6 @@
     "@smui/floating-label" "^7.0.0"
     svelte2tsx "^0.7.8"
 
-"@smui/notched-outline@^7.0.0-beta.18":
-  version "7.0.0-beta.18"
-  resolved "https://registry.yarnpkg.com/@smui/notched-outline/-/notched-outline-7.0.0-beta.18.tgz#abfa4e3908cbb649547d5c80a9e3b04ae12b6439"
-  integrity sha512-spWtGvIC/naY1O+/s/o/YP+mPXkRBGKqtIdLQZh21SgV+yPGwFGH6UlEG+BUo5h8I3YNubl1Bui/EAt5+p0ymQ==
-  dependencies:
-    "@material/notched-outline" "^14.0.0"
-    "@smui/common" "^7.0.0-beta.18"
-    "@smui/floating-label" "^7.0.0-beta.18"
-    svelte2tsx "^0.6.27"
-
 "@smui/paper@^7.0.0", "@smui/paper@^7.0.0-beta.15":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@smui/paper/-/paper-7.0.0.tgz#8f074b971901511c123868fa8542ef48e5ba96ba"
@@ -1234,16 +1206,6 @@
     "@material/dom" "^14.0.0"
     "@material/ripple" "^14.0.0"
     "@smui/common" "^7.0.0-beta.16"
-    svelte2tsx "^0.6.27"
-
-"@smui/ripple@^7.0.0-beta.18":
-  version "7.0.0-beta.18"
-  resolved "https://registry.yarnpkg.com/@smui/ripple/-/ripple-7.0.0-beta.18.tgz#48c9693dc4514836b7a0c9bb7db145e11078bba0"
-  integrity sha512-HegU/75nnaORFwrhojzeyYW4M9FD1nh59zgaWkw3lJK61wbo3bPmIkjPnytpItZXW4GsZfTRJ1ooCr9iiX1otQ==
-  dependencies:
-    "@material/dom" "^14.0.0"
-    "@material/ripple" "^14.0.0"
-    "@smui/common" "^7.0.0-beta.18"
     svelte2tsx "^0.6.27"
 
 "@smui/segmented-button@^7.0.0-beta.15":
@@ -1293,21 +1255,21 @@
     svelte2tsx "^0.7.8"
 
 "@smui/textfield@^7.0.0-beta.15":
-  version "7.0.0-beta.18"
-  resolved "https://registry.yarnpkg.com/@smui/textfield/-/textfield-7.0.0-beta.18.tgz#a94eee67d0da15befba54eb6d964f41fb00101b6"
-  integrity sha512-teTZNjC9uu1Ig1UoxJo52WMsCfNA7sdDQTgC/j+t0ZNkJ9oX1epfFFuIdUlwgbuWq3njK1HeVPf/7rK819/niA==
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@smui/textfield/-/textfield-7.0.0.tgz#3b8646907fc4bfa95f5e583af92d07fc81a2775f"
+  integrity sha512-3p/pipFrj6xuA6YUhIEHf4fxInMENI3EFHVYeF1wU0vERSojtqBw+NnAscgv/PHKv4X6nFY3ZvD/9cVf7S4frA==
   dependencies:
     "@material/dom" "^14.0.0"
     "@material/feature-targeting" "^14.0.0"
     "@material/ripple" "^14.0.0"
     "@material/rtl" "^14.0.0"
     "@material/textfield" "^14.0.0"
-    "@smui/common" "^7.0.0-beta.18"
-    "@smui/floating-label" "^7.0.0-beta.18"
-    "@smui/line-ripple" "^7.0.0-beta.18"
-    "@smui/notched-outline" "^7.0.0-beta.18"
-    "@smui/ripple" "^7.0.0-beta.18"
-    svelte2tsx "^0.6.27"
+    "@smui/common" "^7.0.0"
+    "@smui/floating-label" "^7.0.0"
+    "@smui/line-ripple" "^7.0.0"
+    "@smui/notched-outline" "^7.0.0"
+    "@smui/ripple" "^7.0.0"
+    svelte2tsx "^0.7.8"
 
 "@smui/tooltip@^7.0.0-beta.15":
   version "7.0.0-beta.16"

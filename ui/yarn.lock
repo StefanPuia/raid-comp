@@ -1142,7 +1142,7 @@
     "@smui/common" "^7.0.0-beta.18"
     svelte2tsx "^0.6.27"
 
-"@smui/list@7.0.0":
+"@smui/list@7.0.0", "@smui/list@^7.0.0":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@smui/list/-/list-7.0.0.tgz#005d128fe1b3a651e91fbb2d7267fe17b91e88ad"
   integrity sha512-kZnpfbkFtIs9vZCr2xxDTO5Dcdj6WAtGa+82sN5zGg6hC5q8KMGKOxNIFdTz2hw5a6Bg//Zg2mK5AB4tVM4LBw==
@@ -1166,6 +1166,16 @@
     "@smui/ripple" "^7.0.0-beta.18"
     svelte2tsx "^0.6.27"
 
+"@smui/menu-surface@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@smui/menu-surface/-/menu-surface-7.0.0.tgz#4725349c00a964c6116a2d6fbb5e894a5de9dc05"
+  integrity sha512-KnPgCjtk3Gqo3fU+wOz7vKr1kRkCeOlrn2i4yAdW2cWoL/3HAmDWrHy/mpnG+vr2RfLK6Tw30V9L5PpFhKgrSQ==
+  dependencies:
+    "@material/animation" "^14.0.0"
+    "@material/menu-surface" "^14.0.0"
+    "@smui/common" "^7.0.0"
+    svelte2tsx "^0.7.8"
+
 "@smui/menu-surface@^7.0.0-beta.18":
   version "7.0.0-beta.18"
   resolved "https://registry.yarnpkg.com/@smui/menu-surface/-/menu-surface-7.0.0-beta.18.tgz#2bab493b8e09f5a1fb3cef4580c95823c150b716"
@@ -1177,16 +1187,16 @@
     svelte2tsx "^0.6.27"
 
 "@smui/menu@^7.0.0-beta.15", "@smui/menu@^7.0.0-beta.18":
-  version "7.0.0-beta.18"
-  resolved "https://registry.yarnpkg.com/@smui/menu/-/menu-7.0.0-beta.18.tgz#c2c2efea18ca9218af7611f6cc5e2d47b20e8fba"
-  integrity sha512-j5o2qG/riuBdgZJxQff0x7uDzD2rRqryAzPUsu2CrMFb9LbK98MDXdggjJkFhirXS67/i7tW8/acE6P2hkeQeQ==
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@smui/menu/-/menu-7.0.0.tgz#4361678512fb919eec5ec6f2a7b6eeab9109c4ea"
+  integrity sha512-3l24nZlW7WdNdVy8i/UT71UPZXdql+0GkRpI5Wy/GsZc2pOCSd1IWWkoiEqX00c5uTCfqX2S25mnKiOdvzKBwg==
   dependencies:
     "@material/dom" "^14.0.0"
     "@material/menu" "^14.0.0"
-    "@smui/common" "^7.0.0-beta.18"
-    "@smui/list" "^7.0.0-beta.18"
-    "@smui/menu-surface" "^7.0.0-beta.18"
-    svelte2tsx "^0.6.27"
+    "@smui/common" "^7.0.0"
+    "@smui/list" "^7.0.0"
+    "@smui/menu-surface" "^7.0.0"
+    svelte2tsx "^0.7.8"
 
 "@smui/notched-outline@^7.0.0-beta.18":
   version "7.0.0-beta.18"

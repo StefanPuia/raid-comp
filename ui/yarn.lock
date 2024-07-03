@@ -3205,10 +3205,10 @@ svelte-preprocess@^5.1.3:
     sorcery "^0.11.0"
     strip-indent "^3.0.0"
 
-svelte-turnstile@0.6.1:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/svelte-turnstile/-/svelte-turnstile-0.6.1.tgz#2b43988f699bd3ecb99ff9e71bc1696b23fdd607"
-  integrity sha512-SyNWssHCJhsLErVJZnTc1BpONmjSD+5ilYya9gE4+CU3MbC3kyRqcUDxBVitRfGHMOcAKuGBk8/DNU1VV8++ZQ==
+svelte-turnstile@0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/svelte-turnstile/-/svelte-turnstile-0.7.0.tgz#531aa969012ad99e72e811c99210a8248794bffb"
+  integrity sha512-bTrvAPyCKcwY8hTa5XN4dTUSu0VIZtjdgQydigvwWqLm21mSwlj+tZV9tBeSWVxdY6qXIxnAeLWHp7jUWQgiCg==
   dependencies:
     turnstile-types "^1.2.1"
 

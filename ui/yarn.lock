@@ -1272,13 +1272,13 @@
     svelte2tsx "^0.7.8"
 
 "@smui/tooltip@^7.0.0-beta.15":
-  version "7.0.0-beta.16"
-  resolved "https://registry.yarnpkg.com/@smui/tooltip/-/tooltip-7.0.0-beta.16.tgz#24f6bc4678b222d07243b672363d30c89bb73bcd"
-  integrity sha512-NlR3sqLfJILTm9ApUfAEXOARXyBoDDRta90ViQwQbA+xZw6LzCC90w/GexrXZ6ISFXej2G1WILus9+U3p/q9aA==
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@smui/tooltip/-/tooltip-7.0.0.tgz#07fa2103c7147e8d7bc6db763f0b7964adc09612"
+  integrity sha512-19fzYEerNnpPnpuf7uq6XrcXrE9x3n1Y3Z51+q1U/PmWGCj72n+QazhQNpxFM308DKpmsXdXXUpCP+HzLbB2Yg==
   dependencies:
     "@material/tooltip" "^14.0.0"
-    "@smui/common" "^7.0.0-beta.16"
-    svelte2tsx "^0.6.27"
+    "@smui/common" "^7.0.0"
+    svelte2tsx "^0.7.8"
 
 "@sveltejs/adapter-auto@^2.0.0":
   version "2.1.1"
@@ -3223,9 +3223,9 @@ svelte2tsx@^0.6.27:
     pascal-case "^3.1.1"
 
 svelte2tsx@^0.7.8:
-  version "0.7.8"
-  resolved "https://registry.yarnpkg.com/svelte2tsx/-/svelte2tsx-0.7.8.tgz#5e95afa71629364bc72b8ea97d2a9ac1c3dc9549"
-  integrity sha512-ABK3RDFcy59AqAiU1N5Kxu1RnKrb1GDMrQjLgNgJfE8Q+coCKpjCAPtUVKQM2HnmuqeNWcT3NqfXbE+ZmN5Pow==
+  version "0.7.16"
+  resolved "https://registry.yarnpkg.com/svelte2tsx/-/svelte2tsx-0.7.16.tgz#b90a63380063ff5e54e60dbcd34c0effba160c86"
+  integrity sha512-faI3t1N5I7RkrXGMLfUdfWg6DTPi8RisfES/00QzXh+faU2pQ3r/W2dUD0ENGh+qNzltIcjbfCW9PES9JkaSXg==
   dependencies:
     dedent-js "^1.0.1"
     pascal-case "^3.1.1"
@@ -3308,7 +3308,12 @@ ts-api-utils@^1.0.1:
   resolved "https://registry.yarnpkg.com/ts-api-utils/-/ts-api-utils-1.2.0.tgz#48c31073e7ae7868d27ffabef993a2de8c2b006f"
   integrity sha512-d+3WxW4r8WQy2cZWpNRPPGExX8ffOLGcIhheUANKbL5Sqjbhkneki76fRAWeXkaslV2etTb4tSJBSxOsH5+CJw==
 
-tslib@^2.0.3, tslib@^2.1.0, tslib@^2.4.0, tslib@^2.4.1:
+tslib@^2.0.3, tslib@^2.1.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.7.0.tgz#d9b40c5c40ab59e8738f297df3087bf1a2690c01"
+  integrity sha512-gLXCKdN1/j47AiHiOkJN69hJmcbGTHI0ImLmbYLHykhgeN0jVGola9yVjFgzCUklsZQMW55o+dW7IXv3RCXDzA==
+
+tslib@^2.4.0, tslib@^2.4.1:
   version "2.6.3"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.6.3.tgz#0438f810ad7a9edcde7a241c3d80db693c8cbfe0"
   integrity sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==

@@ -5,7 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "@cloudflare/workers-types": "4.20250320.0",
-    "wrangler": "3.105.1"
+    "wrangler": "3.114.2"
   },
   "scripts": {
     "dev": "wrangler dev",

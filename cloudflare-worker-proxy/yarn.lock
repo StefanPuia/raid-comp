@@ -638,10 +638,10 @@ workerd@1.20250310.0:
     "@cloudflare/workerd-linux-arm64" "1.20250310.0"
     "@cloudflare/workerd-windows-64" "1.20250310.0"
 
-wrangler@3.114.2:
-  version "3.114.2"
-  resolved "https://registry.yarnpkg.com/wrangler/-/wrangler-3.114.2.tgz#1c2060576b814851ee1d3611f064bfbf52df9ac4"
-  integrity sha512-sOaHzB+5i8TXhbfAjWfXdEczuDxeU2M7cSYHWmvvG/oRIajcMGCX98qsUXn0SPDrQwTRHFNFR/OruPiIOj8SHA==
+wrangler@3.114.3:
+  version "3.114.3"
+  resolved "https://registry.yarnpkg.com/wrangler/-/wrangler-3.114.3.tgz#8fb01717d16049fa9cabe6577917b882e198b26a"
+  integrity sha512-H87s4USPQhRQmN8V4Q2Fh+0ZGiuWVrVwVKoxjdgEtpR88gVQEN5Ua9C3TQDaXCppsdAFl/J4lxLoxfJaW2XFdQ==
   dependencies:
     "@cloudflare/kv-asset-handler" "0.3.4"
     "@cloudflare/unenv-preset" "2.0.2"

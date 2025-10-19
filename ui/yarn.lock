@@ -1014,16 +1014,15 @@
   resolved "https://registry.yarnpkg.com/@sinclair/typebox/-/typebox-0.27.8.tgz#6667fac16c436b5434a387a34dedb013198f6e6e"
   integrity sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==
 
-"@smui-extra/bottom-app-bar@^7.0.0-beta.15":
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/@smui-extra/bottom-app-bar/-/bottom-app-bar-7.0.0.tgz#df7dd9633f8032671b8302e25e115626881cf5da"
-  integrity sha512-oaoeuwcibwZVxe0bRa9PaBe12FfM0TxAVoqml0OthEtqARpRsS23HcfTyPDOoZ9i6JTmjzuHEMJA1043llsq6Q==
+"@smui-extra/bottom-app-bar@^8.0.0":
+  version "8.0.3"
+  resolved "https://registry.yarnpkg.com/@smui-extra/bottom-app-bar/-/bottom-app-bar-8.0.3.tgz#e99825f286fbbcc6d6326708e981eb2fc8317894"
+  integrity sha512-qDSOoy8bXMa956vszkCBc55bs5XRcnbNUuJgCJ52VB/K8Rh0zn8oHWv07HuErw4Qw0x0+RRQslESmmYWNLiSWg==
   dependencies:
     "@material/feature-targeting" "^14.0.0"
     "@material/theme" "^14.0.0"
-    "@smui/common" "^7.0.0"
-    "@smui/paper" "^7.0.0"
-    svelte2tsx "^0.7.8"
+    "@smui/common" "^8.0.3"
+    "@smui/paper" "^8.0.3"
 
 "@smui/button@^7.0.0", "@smui/button@^7.0.0-beta.15":
   version "7.0.0"
@@ -1068,6 +1067,13 @@
   dependencies:
     "@material/dom" "^14.0.0"
     svelte2tsx "^0.7.8"
+
+"@smui/common@^8.0.3":
+  version "8.0.3"
+  resolved "https://registry.yarnpkg.com/@smui/common/-/common-8.0.3.tgz#1aa8a20acb22727677322bf023ba096b2318346f"
+  integrity sha512-Zgsp8KE4NH0+eLihHdhxYSzbV8M2w0B53BnM+5WvEEEJWzHcKhpvYNHTT6tG909IsIrU7uNNVJosNIw7leU8Wg==
+  dependencies:
+    "@material/dom" "^14.0.0"
 
 "@smui/dialog@^7.0.0-beta.15":
   version "7.0.0"
@@ -1184,7 +1190,7 @@
     "@smui/floating-label" "^7.0.0"
     svelte2tsx "^0.7.8"
 
-"@smui/paper@^7.0.0", "@smui/paper@^7.0.0-beta.15":
+"@smui/paper@^7.0.0-beta.15":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@smui/paper/-/paper-7.0.0.tgz#8f074b971901511c123868fa8542ef48e5ba96ba"
   integrity sha512-yRwO7LHciZUjL2odN3Z4zd8RDGVVVMRVBpO8zZRGWa9pvk9hQoQI5gJIZLf9bjifZvwe2TN2hls8dsG8Awjfkw==
@@ -1196,6 +1202,18 @@
     "@material/typography" "^14.0.0"
     "@smui/common" "^7.0.0"
     svelte2tsx "^0.7.8"
+
+"@smui/paper@^8.0.3":
+  version "8.0.3"
+  resolved "https://registry.yarnpkg.com/@smui/paper/-/paper-8.0.3.tgz#e02b56de70dc68828b1817be5e7ff76721104e74"
+  integrity sha512-0/GjT180ecFCEgKc1hV+vlNawuYJHsNXdK3RGUI4ZGIMSxQ7V/YweI111vR4tsEK1H00ktFdHw0rRFeXhvAMQA==
+  dependencies:
+    "@material/elevation" "^14.0.0"
+    "@material/feature-targeting" "^14.0.0"
+    "@material/shape" "^14.0.0"
+    "@material/theme" "^14.0.0"
+    "@material/typography" "^14.0.0"
+    "@smui/common" "^8.0.3"
 
 "@smui/ripple@^7.0.0":
   version "7.0.0"

@@ -10,10 +10,10 @@
     "@jridgewell/gen-mapping" "^0.3.5"
     "@jridgewell/trace-mapping" "^0.3.24"
 
-"@cloudflare/workers-types@^4.20230404.0":
-  version "4.20231025.0"
-  resolved "https://registry.yarnpkg.com/@cloudflare/workers-types/-/workers-types-4.20231025.0.tgz#ac4d7e6a346670774a7d36cce1444786607f8dfe"
-  integrity sha512-TkcZkntUTOcvJ4vgmwpNfLTclpMbmbClZCe62B25/VTukmyv91joRa4eKzSjzCZUXTbFHNmVdOpmGaaJU2U3+A==
+"@cloudflare/workers-types@^4.20250507.0":
+  version "4.20260108.0"
+  resolved "https://registry.yarnpkg.com/@cloudflare/workers-types/-/workers-types-4.20260108.0.tgz#f7d3de8f2c9f965446fb6225364063b14c1811f5"
+  integrity sha512-0SuzZ7SeMB35X0wL2rhsEQG1dmfAGY8N8z7UwrkFb6hxerxwXP4QuIzcF8HtCJTRTjChmarxV+HQC+ADB4UK1A==
 
 "@esbuild/aix-ppc64@0.19.12":
   version "0.19.12"
@@ -1296,14 +1296,13 @@
   dependencies:
     import-meta-resolve "^4.0.0"
 
-"@sveltejs/adapter-cloudflare@2.3.4":
-  version "2.3.4"
-  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-cloudflare/-/adapter-cloudflare-2.3.4.tgz#a694af14b836fba44d2e34af711aaea94442e51f"
-  integrity sha512-+5Msbm7svrZjaBt0KapNh2zEaMRfrhbTRBWRXrFa+w+KFRQnHjFIPvWz/NQ11XKVu7dRe7mkzqvqieL2b0hpJw==
+"@sveltejs/adapter-cloudflare@7.2.4":
+  version "7.2.4"
+  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-cloudflare/-/adapter-cloudflare-7.2.4.tgz#2cb10ddb24c800f24cfc67a14fd7ac3ad60241dd"
+  integrity sha512-uD8VlOuGXGuZWL+zbBYSjtmC4WDtlonUodfqAZ/COd5uIy2Z0QptIicB/nkTrGNI9sbmzgf7z0N09CHyWYlUvQ==
   dependencies:
-    "@cloudflare/workers-types" "^4.20230404.0"
-    esbuild "^0.18.11"
-    worktop "0.8.0-next.15"
+    "@cloudflare/workers-types" "^4.20250507.0"
+    worktop "0.8.0-next.18"
 
 "@sveltejs/kit@^1.27.4":
   version "1.30.4"
@@ -1972,7 +1971,7 @@ es6-weak-map@^2.0.3:
     es6-iterator "^2.0.3"
     es6-symbol "^3.1.1"
 
-esbuild@^0.18.10, esbuild@^0.18.11:
+esbuild@^0.18.10:
   version "0.18.20"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.18.20.tgz#4709f5a34801b43b799ab7d6d82f7284a9b7a7a6"
   integrity sha512-ceqxoedUrcayh7Y7ZX6NdbbDzGROiyVBgC4PriJThBKSVPWnnFHZAkfI1lJT8QFkOwH4qOS2SJkS4wvpGl8BpA==
@@ -2804,7 +2803,7 @@ mri@^1.1.0:
   resolved "https://registry.yarnpkg.com/mri/-/mri-1.2.0.tgz#6721480fec2a11a4889861115a48b6cbe7cc8f0b"
   integrity sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==
 
-mrmime@^1.0.0, mrmime@^1.0.1:
+mrmime@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/mrmime/-/mrmime-1.0.1.tgz#5f90c825fad4bdd41dc914eff5d1a8cfdaf24f27"
   integrity sha512-hzzEagAgDyoU1Q6yg5uI+AorQgdvMCur3FcKf7NhMKWsaYg+RnbTyHRa/9IlLF9rf455MOCtcqqrQQ83pPP7Uw==
@@ -3095,10 +3094,10 @@ readdirp@~3.6.0:
   dependencies:
     picomatch "^2.2.1"
 
-regexparam@^2.0.0:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/regexparam/-/regexparam-2.0.1.tgz#c912f5dae371e3798100b3c9ce22b7414d0889fa"
-  integrity sha512-zRgSaYemnNYxUv+/5SeoHI0eJIgTL/A2pUtXUPLHQxUldagouJ9p+K6IbIZ/JiQuCEv2E2B1O11SjVQy3aMCkw==
+regexparam@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/regexparam/-/regexparam-3.0.0.tgz#1673e09d41cb7fd41eaafd4040a6aa90daa0a21a"
+  integrity sha512-RSYAtP31mvYLkAHrOlh25pCNQ5hWnT106VukGaaFfuJrZFkGRX5GhUAdPqpSDXxOhA2c4akmRuplv1mRqnBn6Q==
 
 require-directory@^2.1.1:
   version "2.1.1"
@@ -3638,13 +3637,13 @@ word-wrap@^1.2.5:
   resolved "https://registry.yarnpkg.com/word-wrap/-/word-wrap-1.2.5.tgz#d2c45c6dd4fbce621a66f136cbe328afd0410b34"
   integrity sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA==
 
-worktop@0.8.0-next.15:
-  version "0.8.0-next.15"
-  resolved "https://registry.yarnpkg.com/worktop/-/worktop-0.8.0-next.15.tgz#f91d4a686fe43b813fbfd49bd3d4566dcddd4bd4"
-  integrity sha512-0ycNO52P6nVwsjr1y20zuf0nqJatAb8L7MODBfQIxbxndHV5O4s50oZZMHWhJG1RLpHwbK0Epq8aaQK4E2GlgQ==
+worktop@0.8.0-next.18:
+  version "0.8.0-next.18"
+  resolved "https://registry.yarnpkg.com/worktop/-/worktop-0.8.0-next.18.tgz#546b1ece7b34d01708ac2abec7c1110cd8874bfd"
+  integrity sha512-+TvsA6VAVoMC3XDKR5MoC/qlLqDixEfOBysDEKnPIPou/NvoPWCAuXHXMsswwlvmEuvX56lQjvELLyLuzTKvRw==
   dependencies:
-    mrmime "^1.0.0"
-    regexparam "^2.0.0"
+    mrmime "^2.0.0"
+    regexparam "^3.0.0"
 
 wrap-ansi@^7.0.0:
   version "7.0.0"

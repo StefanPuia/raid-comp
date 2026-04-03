@@ -1,7 +1,5 @@
 parameters:
   - name: environment
-  - name: containerName
-  - name: containerPort
 
 stages:
   - stage: deploy_env_${{ parameters.environment }}
@@ -33,15 +31,15 @@ stages:
                     containerRegistry: $(dockerRegistryServiceConnection)
                   condition: always()
 
-                - script: docker rm -f ${{ parameters.containerName }}
+                - script: docker rm -f $(containerName)
                   displayName: Remove existing container
 
                 - script: |
                     docker run -d \
-                      --name ${{ parameters.containerName }} \
+                      --name $(containerName) \
                       --restart always \
                       --add-host=host.docker.internal:host-gateway \
-                      -p ${{ parameters.containerPort }}:8080 \
+                      -p $(containerPort):8080 \
                       -e PORT \
                       -e JDBC_URL \
                       $(dockerRegistry)/$(dockerImage):$(dockerImageVersion)

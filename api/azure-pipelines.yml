@@ -103,14 +103,10 @@ stages:
         condition: always()
 
   - ${{ if eq(variables.isMain, true) }}:
-      - template: api/azure/deploy-environment.yml
+      - template: azure/deploy-environment.yml
         parameters:
           environment: dev
-          containerName: raidcomp-dev
-          containerPort: 10030
 
-      - template: api/azure/deploy-environment.yml
+      - template: azure/deploy-environment.yml
         parameters:
           environment: prod
-          containerName: raidcomp-prod
-          containerPort: 10031

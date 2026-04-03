@@ -9,9 +9,10 @@ import type { Build as ModelBuild } from '$lib/types';
 import type { GameVersionSlug } from '$lib/versioning/GameVersion';
 import fetchAdapter from '@haverstack/axios-fetch-adapter';
 import { ApiError, AppErrorId } from '$lib/service/error';
+import { PUBLIC_API_BASE_PATH } from '$env/static/public';
 
 const service = axios.create({
-	baseURL: dev ? 'http://localhost:8080' : '/api',
+	baseURL: dev ? 'http://localhost:8080' : PUBLIC_API_BASE_PATH,
 	adapter: fetchAdapter,
 });
 

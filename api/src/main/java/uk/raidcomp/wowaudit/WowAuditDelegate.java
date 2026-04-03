@@ -1,9 +1,9 @@
 package uk.raidcomp.wowaudit;
 
-import jakarta.inject.Singleton;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 import uk.raidcomp.wowaudit.client.WowAuditClient;
 import uk.raidcomp.wowaudit.config.WowAuditConfiguration;
 import uk.raidcomp.wowaudit.dto.WowAuditCharacter;
@@ -11,7 +11,7 @@ import uk.raidcomp.wowaudit.dto.WowAuditTeam;
 import uk.raidcomp.wowaudit.mappers.TeamMapper;
 import uk.raidcomp.wowaudit.model.Team;
 
-@Singleton
+@Service
 @AllArgsConstructor
 public class WowAuditDelegate {
   private final WowAuditConfiguration configuration;

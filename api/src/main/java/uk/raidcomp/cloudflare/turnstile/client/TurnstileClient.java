@@ -1,19 +1,16 @@
 package uk.raidcomp.cloudflare.turnstile.client;
 
-import io.micronaut.http.annotation.Body;
-import io.micronaut.http.annotation.Header;
-import io.micronaut.http.annotation.Post;
-import io.micronaut.http.client.annotation.Client;
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.service.annotation.HttpExchange;
+import org.springframework.web.service.annotation.PostExchange;
 import uk.raidcomp.cloudflare.turnstile.dto.ValidationRequestDto;
 import uk.raidcomp.cloudflare.turnstile.dto.ValidationResponseDto;
 
-import static io.micronaut.http.HttpHeaders.ACCEPT;
-import static io.micronaut.http.HttpHeaders.USER_AGENT;
-
-@Client(id = "turnstile")
-@Header(name = USER_AGENT, value = "raidcomp.uk")
-@Header(name = ACCEPT, value = "application/json")
+@HttpExchange(accept = APPLICATION_JSON_VALUE, headers = "User-Agent=raidcomp.uk")
 public interface TurnstileClient {
-  @Post("/turnstile/v0/siteverify")
-  ValidationResponseDto validate(@Body ValidationRequestDto body);
+
+  @PostExchange("/turnstile/v0/siteverify")
+  ValidationResponseDto validate(@RequestBody ValidationRequestDto body);
 }

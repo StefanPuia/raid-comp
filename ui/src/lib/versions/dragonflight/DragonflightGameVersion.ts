@@ -1,12 +1,12 @@
 import { GameVersion, GameVersionSlug } from '$lib/versioning/GameVersion';
-import { versionSource } from '$lib/versions/live/source';
+import { versionSource } from './source';
 
-export class LiveGameVersion extends GameVersion {
+export class DragonflightGameVersion extends GameVersion {
 	constructor() {
 		super(versionSource);
 	}
 
 	getSlug(): GameVersionSlug {
-		return GameVersionSlug.LIVE;
+		return GameVersionSlug.DRAGONFLIGHT;
 	}
 }

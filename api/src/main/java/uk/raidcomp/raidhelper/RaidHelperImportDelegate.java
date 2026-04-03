@@ -1,12 +1,12 @@
 package uk.raidcomp.raidhelper;
 
-import jakarta.inject.Singleton;
 import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 import uk.raidcomp.api.model.imported.ImportedBuild;
 import uk.raidcomp.raidhelper.csv.RaidHelperImportParser;
 import uk.raidcomp.raidhelper.mapper.PlayerSignupMapper;
 
-@Singleton
+@Service
 @AllArgsConstructor
 public class RaidHelperImportDelegate {
   private final RaidHelperImportParser parser;

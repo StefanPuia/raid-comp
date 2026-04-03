@@ -1,11 +1,9 @@
 package uk.raidcomp.api.data.repository;
 
-import io.micronaut.data.cosmos.annotation.CosmosRepository;
-import io.micronaut.data.repository.CrudRepository;
-import java.util.List;
+import java.time.Instant;
+import org.springframework.data.repository.CrudRepository;
 import uk.raidcomp.api.data.entity.BuildEntity;
 
-@CosmosRepository
 public interface BuildRepository extends CrudRepository<BuildEntity, String> {
-  List<BuildEntity> findByLastSeenLessThanEquals(long lastSeenMaxEpoch);
+  long deleteByLastSeenBefore(Instant lastSeenMax);
 }

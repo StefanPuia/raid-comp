@@ -12,6 +12,7 @@ public interface PlayerMapper {
   @Mapping(target = "groupId", source = "group")
   Player toDomain(PlayerDto dto);
 
+  @Mapping(target = "id", ignore = true)
   PlayerEntity toModel(Player player);
 
   Player toDomain(PlayerEntity player);

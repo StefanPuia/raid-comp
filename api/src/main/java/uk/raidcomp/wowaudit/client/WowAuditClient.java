@@ -1,24 +1,21 @@
 package uk.raidcomp.wowaudit.client;
 
-import io.micronaut.http.annotation.Get;
-import io.micronaut.http.annotation.Header;
-import io.micronaut.http.client.annotation.Client;
+import static org.springframework.http.HttpHeaders.AUTHORIZATION;
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+
 import java.util.List;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.service.annotation.GetExchange;
+import org.springframework.web.service.annotation.HttpExchange;
 import uk.raidcomp.wowaudit.dto.WowAuditCharacter;
 import uk.raidcomp.wowaudit.dto.WowAuditTeam;
 
-import static io.micronaut.http.HttpHeaders.ACCEPT;
-import static io.micronaut.http.HttpHeaders.AUTHORIZATION;
-import static io.micronaut.http.HttpHeaders.USER_AGENT;
-
-@Client(id = "wowaudit", path = "/v1")
-@Header(name = USER_AGENT, value = "raidcomp.uk")
-@Header(name = ACCEPT, value = "application/json")
+@HttpExchange(value = "/v1", accept = APPLICATION_JSON_VALUE, headers = "User-Agent=raidcomp.uk")
 public interface WowAuditClient {
 
-  @Get("/team")
-  WowAuditTeam getTeam(@Header(AUTHORIZATION) String apiKey);
+  @GetExchange("/team")
+  WowAuditTeam getTeam(@RequestHeader(AUTHORIZATION) String apiKey);
 
-  @Get("/characters")
-  List<WowAuditCharacter> getCharacters(@Header(AUTHORIZATION) String apiKey);
+  @GetExchange("/characters")
+  List<WowAuditCharacter> getCharacters(@RequestHeader(AUTHORIZATION) String apiKey);
 }

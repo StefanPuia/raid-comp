@@ -1,12 +1,12 @@
 package uk.raidcomp.api.delegate;
 
-import jakarta.inject.Singleton;
 import java.time.Instant;
 import java.time.ZoneOffset;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 import uk.raidcomp.api.data.entity.BuildEntity;
 import uk.raidcomp.api.data.repository.BuildRepository;
 import uk.raidcomp.api.mapper.BuildMapper;
@@ -15,7 +15,7 @@ import uk.raidcomp.api.model.Build;
 import uk.raidcomp.api.model.Player;
 import uk.raidcomp.game.version.GameVersion;
 
-@Singleton
+@Service
 @AllArgsConstructor
 public class BuildDelegate {
   public static final int MAX_BUILD_AGE = 30;
@@ -34,8 +34,8 @@ public class BuildDelegate {
     final Optional<BuildEntity> build = repository.findById(buildId);
     build.ifPresent(
         buildEntity -> {
-          buildEntity.setLastSeen(Instant.now().toEpochMilli());
-          repository.update(buildEntity);
+          buildEntity.setLastSeen(Instant.now());
+          repository.save(buildEntity);
         });
     return build.map(buildMapper::toDomain);
   }
@@ -44,7 +44,7 @@ public class BuildDelegate {
       final GameVersion gameVersion, final String name, final List<Player> players) {
     final BuildEntity build = new BuildEntity();
     build.setId(generateBuildId());
-    build.setGameVersion(gameVersion.getValue());
+    build.setGameVersion(gameVersion);
     build.setName(name);
     build.setPlayers(players.stream().map(playerMapper::toModel).toList());
     return buildMapper.toDomain(repository.save(build));
@@ -53,9 +53,6 @@ public class BuildDelegate {
   public long deleteOldBuilds() {
     final Instant earliest =
         Instant.now().atOffset(ZoneOffset.UTC).minusDays(MAX_BUILD_AGE).toInstant();
-    final List<BuildEntity> builds =
-        repository.findByLastSeenLessThanEquals(earliest.toEpochMilli());
-    repository.deleteAll(builds);
-    return builds.size();
+    return repository.deleteByLastSeenBefore(earliest);
   }
 }

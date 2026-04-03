@@ -2,16 +2,16 @@ package uk.raidcomp.raidhelper.csv;
 
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
-import jakarta.inject.Singleton;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.springframework.stereotype.Component;
 import uk.raidcomp.raidhelper.model.RaidHelperEvent;
 import uk.raidcomp.raidhelper.model.RaidHelperSignup;
 
-@Singleton
+@Component
 public class RaidHelperImportParser {
   public RaidHelperEvent parse(final String raw) {
     final String[] lines = raw.split("\n");

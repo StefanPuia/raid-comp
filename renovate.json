@@ -10,6 +10,19 @@
   "labels": [
     "dependencies"
   ],
+  "customManagers": [
+    {
+      "managerFilePatterns": [
+        "/^gradle/libs.versions.toml$/"
+      ],
+      "customType": "regex",
+      "matchStrings": [
+        "googleJavaFormat = \"(?<currentValue>.*?)\""
+      ],
+      "depNameTemplate": "com.google.googlejavaformat:google-java-format",
+      "datasourceTemplate": "maven"
+    }
+  ],
   "packageRules": [
     {
       "matchUpdateTypes": [
@@ -20,8 +33,5 @@
       ],
       "automerge": true
     }
-  ],
-  "baseBranches": [
-    "dev"
   ]
 }

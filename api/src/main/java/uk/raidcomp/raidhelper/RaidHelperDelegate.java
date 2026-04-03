@@ -1,10 +1,13 @@
 package uk.raidcomp.raidhelper;
 
-import io.micronaut.runtime.http.scope.RequestScope;
+import static java.util.function.Predicate.not;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
+import org.springframework.stereotype.Service;
+import org.springframework.web.context.annotation.RequestScope;
 import uk.raidcomp.api.delegate.BuildDelegate;
 import uk.raidcomp.api.model.Build;
 import uk.raidcomp.api.model.GroupId;
@@ -17,8 +20,7 @@ import uk.raidcomp.wowaudit.WowAuditDelegate;
 import uk.raidcomp.wowaudit.model.Team;
 import uk.raidcomp.wowaudit.model.TeamCharacter;
 
-import static java.util.function.Predicate.not;
-
+@Service
 @RequestScope
 public class RaidHelperDelegate {
   private final RaidHelperImportDelegate importDelegate;

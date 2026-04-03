@@ -1,0 +1,9 @@
+name: cloud-view
+
+services:
+  mysql:
+    image: mysql:9
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - "3306:3306"

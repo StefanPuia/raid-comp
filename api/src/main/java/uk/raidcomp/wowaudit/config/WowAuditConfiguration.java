@@ -1,14 +1,12 @@
 package uk.raidcomp.wowaudit.config;
 
-import io.micronaut.context.annotation.ConfigurationProperties;
-import io.micronaut.context.annotation.Requires;
-import java.util.Arrays;
-import java.util.List;
-
 import static java.util.function.Predicate.not;
 
+import java.util.Arrays;
+import java.util.List;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+
 @ConfigurationProperties(WowAuditConfiguration.PREFIX)
-@Requires(property = WowAuditConfiguration.PREFIX)
 public record WowAuditConfiguration(String keys) {
   public static final String PREFIX = "wowaudit";
 

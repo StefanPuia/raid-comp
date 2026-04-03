@@ -1,10 +1,10 @@
 package uk.raidcomp.api.model.imported;
 
+import static java.util.function.Predicate.not;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-
-import static java.util.function.Predicate.not;
 
 public record PlayerName(String raw) {
 

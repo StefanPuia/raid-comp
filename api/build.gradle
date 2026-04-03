@@ -1,7 +1,26 @@
+buildscript {
+    dependencies {
+        classpath "org.flywaydb:flyway-mysql:12.3.0"
+    }
+}
+
 plugins {
-    alias(libs.plugins.micronaut)
-    alias(libs.plugins.micronaut.aot)
-    alias(libs.plugins.azure.functions)
+    id 'java'
+    alias(libs.plugins.spring.boot)
+    alias(libs.plugins.spring.dependency.management)
+    alias(libs.plugins.lombok)
+    alias(libs.plugins.spotless)
+    alias(libs.plugins.flyway)
+    alias(libs.plugins.dotenv)
+}
+
+group = 'uk.raidcomp'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
 }
 
 repositories {
@@ -9,78 +28,51 @@ repositories {
 }
 
 dependencies {
-    annotationProcessor libs.lombok
-    annotationProcessor libs.micronaut.data.document.processor
-    annotationProcessor libs.micronaut.http.validation
-    annotationProcessor libs.micronaut.serde.processor
-    annotationProcessor libs.micronaut.validation.processor
+    annotationProcessor libs.immutables.value
+    annotationProcessor libs.lombok.mapstruct.binding
     annotationProcessor libs.mapstruct.processor
+    annotationProcessor libs.mapstruct.spring.processor
 
-    compileOnly libs.lombok
-
-    implementation libs.azure.functions.java.library
-    implementation libs.mapstruct
-    implementation libs.micronaut.azure.function
-    implementation libs.micronaut.data.azure.cosmos
-    implementation libs.micronaut.http.client
-    implementation libs.micronaut.serde.jackson
-    implementation libs.micronaut.validation
+    implementation libs.bundles.immutables
+    implementation libs.mapstruct.core
+    implementation libs.mapstruct.spring.core
+    implementation libs.spring.boot.starter.data.jpa
+    implementation libs.spring.boot.starter.flyway
+    implementation libs.spring.boot.starter.oauth2.resource.server
+    implementation libs.spring.boot.starter.security
+    implementation libs.spring.boot.starter.validation
+    implementation libs.spring.boot.starter.web
+    implementation libs.spring.boot.starter.webclient
     implementation libs.opencsv
 
-    runtimeOnly libs.logback.classic
-    runtimeOnly libs.snakeyaml
-
-    testImplementation libs.micronaut.http.client
+    runtimeOnly libs.flyway.core
+    runtimeOnly libs.flyway.mysql
+    runtimeOnly libs.mysql.connector
 }
 
-version = "1.0"
-group = "uk.raidcomp"
-
-application {
-    mainClass.set("uk.raidcomp.api.Application")
-}
-java {
-    sourceCompatibility = JavaVersion.toVersion("17")
-    targetCompatibility = JavaVersion.toVersion("17")
+tasks.named('test') {
+    useJUnitPlatform()
 }
 
-graalvmNative.toolchainDetection = false
-micronaut {
-    runtime("azure_function")
-    testRuntime("junit5")
-    processing {
-        incremental(true)
-        annotations("uk.raidcomp.*")
-    }
-    aot {
-        // Please review carefully the optimizations enabled below
-        // Check https://micronaut-projects.github.io/micronaut-aot/latest/guide/ for more details
-        optimizeServiceLoading = false
-        convertYamlToJava = false
-        precomputeOperations = true
-        cacheEnvironment = true
-        optimizeClassLoading = true
-        deduceEnvironment = true
-        optimizeNetty = true
+spotless {
+    java {
+        target 'src/main/java/**/*.java', 'src/test/java/**/*.java'
+        importOrder()
+        removeUnusedImports()
+        googleJavaFormat(libs.versions.googleJavaFormat.get())
+                .reflowLongStrings()
+                .groupArtifact('com.google.googlejavaformat:google-java-format')
     }
 }
 
-azurefunctions {
-    localDebug = "transport=dt_socket,server=y,suspend=n,address=5005"
-    resourceGroup = "raid-comp"
-    appName = "raidcomp-api"
-    pricingTier = "Consumption"
-    region = "uksouth"
-    authentication {
-        type = 'azure_cli'
-    }
-    deployment {
-        type = 'run_from_zip'
-    }
-    runtime {
-        os = "linux"
-        javaVersion = "Java 17"
-    }
+bootRun {
+    environment(System.getenv() + env.allVariables())
 }
 
-
+flyway {
+    url = jdbcUrl
+    user = jdbcUsername
+    password = jdbcPassword
+    schemas = [jdbcSchema]
+    validateOnMigrate = false
+}

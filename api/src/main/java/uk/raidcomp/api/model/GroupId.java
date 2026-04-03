@@ -1,17 +1,11 @@
 package uk.raidcomp.api.model;
 
-import io.micronaut.context.annotation.Secondary;
-import io.micronaut.core.annotation.NonNull;
-import io.micronaut.core.annotation.Nullable;
-import io.micronaut.core.type.Argument;
-import io.micronaut.serde.Decoder;
-import io.micronaut.serde.Encoder;
-import io.micronaut.serde.Serde;
-import jakarta.inject.Singleton;
-import java.io.IOException;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import java.util.Objects;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
 public enum GroupId {
   NONE("none"),
   GROUP1(1),
@@ -44,35 +38,16 @@ public enum GroupId {
         .orElseThrow();
   }
 
-  @Singleton
-  @Secondary
-  public static class GroupIdSerde implements Serde<GroupId> {
+  @JsonCreator
+  public static GroupId deserialize(final String value) {
+    return Arrays.stream(values())
+        .filter(group -> group.stringValue.equalsIgnoreCase(value))
+        .findFirst()
+        .orElseThrow();
+  }
 
-    @Override
-    public @Nullable GroupId deserialize(
-        @NonNull final Decoder decoder,
-        @NonNull final DecoderContext context,
-        @NonNull final Argument<? super GroupId> type)
-        throws IOException {
-      final String value = decoder.decodeString();
-      return Arrays.stream(values())
-          .filter(group -> group.stringValue.equalsIgnoreCase(value))
-          .findFirst()
-          .orElseThrow();
-    }
-
-    @Override
-    public void serialize(
-        @NonNull final Encoder encoder,
-        @NonNull final EncoderContext context,
-        @NonNull final Argument<? extends GroupId> type,
-        @NonNull final GroupId value)
-        throws IOException {
-      if (Objects.nonNull(value.intValue)) {
-        encoder.encodeInt(value.intValue);
-      } else {
-        encoder.encodeString(value.stringValue);
-      }
-    }
+  @JsonValue
+  public Object serialize() {
+    return intValue != null ? intValue : stringValue;
   }
 }

@@ -12,6 +12,7 @@ public enum RaidHelperSpec {
   UNHOLY("Unholy", WarcraftPlayerSpec.DEATH_KNIGHT_UNHOLY),
   HAVOC("Havoc", WarcraftPlayerSpec.DEMON_HUNTER_HAVOC),
   VENGEANCE("Vengeance", WarcraftPlayerSpec.DEMON_HUNTER_VENGEANCE),
+  DEVOURER("Devourer", WarcraftPlayerSpec.DEMON_HUNTER_DEVOURER),
   BALANCE("Balance", WarcraftPlayerSpec.DRUID_BALANCE),
   FERAL("Feral", WarcraftPlayerSpec.DRUID_FERAL),
   GUARDIAN("Guardian", WarcraftPlayerSpec.DRUID_GUARDIAN),

@@ -1,6 +1,6 @@
-import type { PageLoad } from "./$types";
-import { constructParameters } from "$lib/buildRouting";
+import type { PageLoad } from './$types';
+import { constructParameters } from '$lib/buildRouting';
 
 export const load: PageLoad = ({ params }) => {
-  return constructParameters(params);
+	return constructParameters(params);
 };

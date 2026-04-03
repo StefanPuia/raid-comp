@@ -1,5 +1,11 @@
 package uk.raidcomp.api.mapper;
 
+import static uk.raidcomp.game.WarcraftRole.HEALER;
+import static uk.raidcomp.game.WarcraftRole.MELEE_DPS;
+import static uk.raidcomp.game.WarcraftRole.RANGED_DPS;
+import static uk.raidcomp.game.WarcraftRole.TANK;
+import static uk.raidcomp.game.WarcraftRole.UNKNOWN;
+
 import java.util.Objects;
 import java.util.Optional;
 import org.mapstruct.Mapper;
@@ -16,12 +22,6 @@ import uk.raidcomp.api.model.Player;
 import uk.raidcomp.game.WarcraftPlayerSpec;
 import uk.raidcomp.game.WarcraftRole;
 import uk.raidcomp.game.version.GameVersion;
-
-import static uk.raidcomp.game.WarcraftRole.HEALER;
-import static uk.raidcomp.game.WarcraftRole.MELEE_DPS;
-import static uk.raidcomp.game.WarcraftRole.RANGED_DPS;
-import static uk.raidcomp.game.WarcraftRole.TANK;
-import static uk.raidcomp.game.WarcraftRole.UNKNOWN;
 
 @Mapper(config = MapstructConfig.class, uses = PlayerMapper.class)
 public abstract class BuildMapper {
@@ -40,10 +40,10 @@ public abstract class BuildMapper {
   @Mapping(target = "team", ignore = true)
   public abstract ImportBuildResponseDto toImportDto(Build build);
 
-  @Mapping(target = "tanks", source = ".", qualifiedByName = "mapTanks")
-  @Mapping(target = "healers", source = ".", qualifiedByName = "mapHealers")
-  @Mapping(target = "dps", source = ".", qualifiedByName = "mapDps")
-  @Mapping(target = "unknown", source = ".", qualifiedByName = "mapUnknown")
+  @Mapping(target = "tanks", source = "build", qualifiedByName = "mapTanks")
+  @Mapping(target = "healers", source = "build", qualifiedByName = "mapHealers")
+  @Mapping(target = "dps", source = "build", qualifiedByName = "mapDps")
+  @Mapping(target = "unknown", source = "build", qualifiedByName = "mapUnknown")
   @Mapping(target = "total", expression = "java(build.players().size())")
   public abstract BuildMetaResponseDto toMeta(Build build);
 
@@ -60,7 +60,7 @@ public abstract class BuildMapper {
   @Deprecated(forRemoval = true)
   @Named("mapGameVersion")
   protected GameVersion mapGameVersion(final String gameVersion) {
-    return Optional.ofNullable(gameVersion).map(GameVersion::of).orElse(GameVersion.LIVE);
+    return Optional.ofNullable(gameVersion).map(GameVersion::deserialize).orElse(GameVersion.LIVE);
   }
 
   @Named("mapDps")

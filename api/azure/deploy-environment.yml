@@ -1,10 +1,11 @@
 parameters:
   - name: environment
+  - name: dependsOn
 
 stages:
   - stage: deploy_env_${{ parameters.environment }}
     displayName: Deploy ${{ parameters.environment }}
-    dependsOn: buildAndPackage
+    dependsOn: ${{ parameters.dependsOn }}
     jobs:
       - deployment: deploy_env_${{ parameters.environment }}
         pool: self-hosted-scale-set-02
@@ -42,8 +43,12 @@ stages:
                       -p $(containerPort):8080 \
                       -e PORT \
                       -e JDBC_URL \
+                      -e WOWAUDIT_API_KEY \
+                      -e TURNSTILE_SECRET_KEY \
                       $(dockerRegistry)/$(dockerImage):$(dockerImageVersion)
                   displayName: Start container
                   env:
                     PORT: 8080
                     JDBC_URL: $(database-url)
+                    WOWAUDIT_API_KEY: $(WOWAUDIT_API_KEY)
+                    TURNSTILE_SECRET_KEY: $(TURNSTILE_SECRET_KEY)

@@ -106,7 +106,9 @@ stages:
       - template: azure/deploy-environment.yml
         parameters:
           environment: dev
+          dependsOn: buildAndPackage
 
       - template: azure/deploy-environment.yml
         parameters:
           environment: prod
+          dependsOn: deploy_env_dev

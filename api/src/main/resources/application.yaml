@@ -3,7 +3,7 @@ spring:
     name: raidcomp-api
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     show-sql: false
   datasource:
     url: ${JDBC_URL:jdbc:mysql://root:root@localhost:3306/raidcomp}

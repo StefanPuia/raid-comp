@@ -1,0 +1,116 @@
+pr: none
+
+trigger:
+  paths:
+    include:
+      - api
+
+variables:
+  isMain: ${{ eq(variables['Build.SourceBranch'], 'refs/heads/main') }}
+  GRADLE_USER_HOME: $(Pipeline.Workspace)/.gradle
+  gradleCacheVersion: v1
+  dockerRegistryServiceConnection: azureContainerRegistry2-raidcomp
+  dockerRegistry: stefanpuia.azurecr.io
+  dockerImage: raidcomp
+  dockerImageVersion: $(Build.BuildNumber)
+  workingDirectory: $(Build.SourcesDirectory)/api
+  dockerContainerNameDev: raidcomp-dev
+  dockerContainerPortDev: 10030
+  dockerContainerNameProd: raidcomp-prod
+  dockerContainerPortProd: 10031
+
+stages:
+#  - ${{ if ne(variables.isMain, true) }}:
+#      - stage: check
+#        displayName: Check
+#        jobs:
+#          - job: check
+#            displayName: Check
+#            steps:
+#              - task: JavaToolInstaller@0
+#                displayName: Set java version to 25
+#                inputs:
+#                  versionSpec: '25'
+#                  jdkArchitectureOption: 'x64'
+#                  jdkSourceOption: 'PreInstalled'
+#
+#              - task: Cache@2
+#                inputs:
+#                  key: '"$(gradleCacheVersion)" | "gradle" | "$(Agent.OS)" | $(workingDirectory)/**/build.gradle'
+#                  restoreKeys: |
+#                    "$(gradleCacheVersion)" | "gradle" | "$(Agent.OS)"
+#                    "$(gradleCacheVersion)" | "gradle"
+#                    "$(gradleCacheVersion)"
+#                  path: $(GRADLE_USER_HOME)
+#                displayName: Configure gradle caching
+#
+#              - task: Gradle@3
+#                displayName: Gradle Build
+#                env:
+#                  DOCKER_IMAGE: $(dockerRegistry)/$(dockerImage)
+#                  DOCKER_IMAGE_VERSION: $(dockerImageVersion)
+#                inputs:
+#                  options: '--build-cache -Duser.language=en -Duser.country=GB'
+#                  tasks: 'clean check'
+#                  testResultsFiles: '**/TEST-*.xml'
+#                  publishJUnitResults: true
+#                  gradleWrapperFile: $(workingDirectory)/gradlew
+#                  workingDirectory: $(workingDirectory)
+#
+#              # stop the Gradle daemon to ensure no files are left open (impacting the save cache operation later)
+#              - script: |
+#                  ./gradlew --stop
+#                displayName: Stop the Gradle daemon
+#                workingDirectory: $(workingDirectory)
+
+  - stage: buildAndPackage
+    displayName: Build and Package
+    jobs:
+      - job: build
+        displayName: Build
+        pool: self-hosted-scale-set-02
+        variables:
+          - group: build
+        steps:
+          - task: Docker@2
+            displayName: Build docker image
+            inputs:
+              command: build
+              Dockerfile: $(workingDirectory)/Dockerfile
+              buildContext: $(workingDirectory)
+              repository: $(dockerRegistry)/$(dockerImage)
+              tags: $(dockerImageVersion)
+
+          - task: Docker@2
+            displayName: Login to ACR
+            inputs:
+              command: login
+              containerRegistry: $(dockerRegistryServiceConnection)
+
+          - task: Docker@2
+            displayName: Push image
+            inputs:
+              command: push
+              containerRegistry: $(dockerRegistryServiceConnection)
+              repository: $(dockerImage)
+              tags: $(dockerImageVersion)
+
+          - task: Docker@2
+            displayName: Docker Logout
+            inputs:
+              command: logout
+              containerRegistry: $(dockerRegistryServiceConnection)
+        condition: always()
+
+  - ${{ if eq(variables.isMain, true) }}:
+      - template: api/azure/deploy-environment.yml
+        parameters:
+          environment: dev
+          containerName: raidcomp-dev
+          containerPort: 10030
+
+      - template: api/azure/deploy-environment.yml
+        parameters:
+          environment: prod
+          containerName: raidcomp-prod
+          containerPort: 10031

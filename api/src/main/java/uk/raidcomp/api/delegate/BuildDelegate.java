@@ -7,6 +7,7 @@ import java.util.Optional;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import uk.raidcomp.api.data.entity.BuildEntity;
 import uk.raidcomp.api.data.repository.BuildRepository;
 import uk.raidcomp.api.mapper.BuildMapper;
@@ -17,6 +18,7 @@ import uk.raidcomp.game.version.GameVersion;
 
 @Service
 @AllArgsConstructor
+@Transactional
 public class BuildDelegate {
   public static final int MAX_BUILD_AGE = 30;
   public static final String PRUNE_SCHEDULE_CRON = "0 0 0 * * *";

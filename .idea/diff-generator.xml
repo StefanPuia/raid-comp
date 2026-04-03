@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DiffGenerationConfig">
+    <option name="snapshotDb" value="false" />
+    <option name="snapshotModelValue" value="raidcomp-api.main:raidcomp-api.main" />
+    <option name="sourceDbValue" value="5ca1fc07-9676-4e17-9fb1-fbc8d9c8da2b" />
+    <option name="sourceDiffType" value="DB" />
+    <option name="targetDbValue" value="5ca1fc07-9676-4e17-9fb1-fbc8d9c8da2b__raidcomp_dev" />
+  </component>
+</project>

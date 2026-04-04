@@ -13,3 +13,7 @@ wowaudit:
 
 turnstile:
   secretKey: ${TURNSTILE_SECRET_KEY:1x0000000000000000000000000000000AA}
+
+build:
+  import:
+    allowedIpRange: ${BUILD_IMPORT_ALLOWED_IP_RANGE:127.0.0.1}

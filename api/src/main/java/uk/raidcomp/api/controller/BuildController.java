@@ -1,9 +1,12 @@
 package uk.raidcomp.api.controller;
 
 import jakarta.validation.Valid;
+import java.time.Duration;
 import lombok.AllArgsConstructor;
+import org.springframework.http.CacheControl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.ResponseEntity.BodyBuilder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,12 +31,16 @@ public class BuildController {
   private final BuildMapper buildMapper;
   private final PlayerMapper playerMapper;
 
+  private BodyBuilder cacheableOkResponse() {
+    return ResponseEntity.ok().cacheControl(CacheControl.maxAge(Duration.ofDays(30)).cachePublic());
+  }
+
   @GetMapping("/{buildId}")
   public ResponseEntity<BuildResponseDto> getSingleBuild(@PathVariable final String buildId) {
     return buildDelegate
         .findById(buildId)
         .map(buildMapper::toDto)
-        .map(ResponseEntity::ok)
+        .map(cacheableOkResponse()::body)
         .orElseGet(ResponseEntity.notFound()::build);
   }
 
@@ -42,7 +49,7 @@ public class BuildController {
     return buildDelegate
         .findById(buildId)
         .map(buildMapper::toMeta)
-        .map(ResponseEntity::ok)
+        .map(cacheableOkResponse()::body)
         .orElseGet(ResponseEntity.notFound()::build);
   }
 

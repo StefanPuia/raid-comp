@@ -4,26 +4,20 @@
 	import { ApiError } from '$lib/service/error';
 
 	export let error: unknown;
+	let apiError: ApiError;
+	$: apiError = ApiError.deserialize(error);
 
-	const goBack = () => {
-		window.location.href = '/';
-	};
 	const reload = () => {
 		window.location.reload();
 	};
-
-	let message = $_('error.unspecific');
-	if (error instanceof ApiError) {
-		message = $_(`error.${error.id}`);
-	}
 </script>
 
 <div class="page">
 	<div class="wrapper">
 		<div class="title">
-			<h2>{message}</h2>
+			<h2>{$_(`error.${apiError.id}`)}</h2>
 		</div>
-		<Button on:click={goBack} variant="raised" style="margin-right: var(--spacing-xs);">
+		<Button href="/" variant="raised" style="margin-right: var(--spacing-xs);">
 			<Label>{$_('error.goBack')}</Label>
 		</Button>
 		<Button

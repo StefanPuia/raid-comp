@@ -13,7 +13,7 @@ export const load: LayoutServerLoad = async ({ parent, params, setHeaders }) => 
 			build = (await getBuild(params.buildId)).data;
 		} catch (err) {
 			if (err instanceof ApiError) {
-				error = err;
+				error = err.serialize();
 			} else {
 				console.error(err);
 			}
@@ -27,7 +27,7 @@ export const load: LayoutServerLoad = async ({ parent, params, setHeaders }) => 
 	}
 
 	return {
-		gameVersion: validateVersion(params.gameVersion != 'g' ? params.gameVersion : undefined),
+		gameVersion: validateVersion(params.gameVersion),
 		build,
 		error,
 	};

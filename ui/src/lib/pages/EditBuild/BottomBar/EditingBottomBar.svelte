@@ -57,10 +57,10 @@
 	</Section>
 </BottomAppBar>
 
-<ResetBuildDialog open={resetBuildOpen} />
-<ChangeGameVersionDialog {context} open={changeVersionDialog} />
+<ResetBuildDialog bind:open={resetBuildOpen} />
+<ChangeGameVersionDialog {context} bind:open={changeVersionDialog} />
 <EditPlayerDialog bind:open={editPlayerDialog} {context} />
-<SaveBuildDialog {context} open={saveBuildOpen} />
+<SaveBuildDialog {context} bind:open={saveBuildOpen} />
 
 <style>
 	.display-large {

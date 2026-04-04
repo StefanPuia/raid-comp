@@ -24,8 +24,6 @@ if (isMockEnabled()) {
 service.interceptors.response.use(
 	(response) => response,
 	(error: AxiosError) => {
-		console.log(error);
-
 		const status = error.response?.status;
 		let errorId: AppErrorId;
 		if (status === 400) {

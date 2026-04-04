@@ -1,10 +1,9 @@
 import type { PageLoad } from './$types';
-import { constructCreateParameters } from '$lib/buildRouting';
+import { validateVersion } from '$lib/versioning/validate';
 
-export const load: PageLoad = ({ params }) => {
-	try {
-		return constructCreateParameters(params);
-	} catch (err) {
-		window.location.href = '/';
-	}
+export const load: PageLoad = async ({ parent }) => {
+	return {
+		...(await parent()),
+		gameVersion: validateVersion(),
+	};
 };

@@ -27,13 +27,26 @@
 			return build;
 		}
 
-		if (!params.build) {
-			return null;
+		let editing: Build | null = null;
+		if (params.build) {
+			editing = createBuildData(params.build, context);
+		} else {
+			editing = {
+				gameVersion: context.gameVersion.getSlug(),
+				buildId: '',
+				name: $_('build.new'),
+				players: [],
+				meta: {
+					total: 0,
+					tanks: 0,
+					healers: 0,
+					dps: 0,
+					unknown: 0,
+					description: $_('build.new'),
+				},
+			};
 		}
-
-		const editing = createBuildData(params.build, context);
 		routeToCorrectBuildUrl(context.gameVersion.getSlug(), editing);
-
 		return editing;
 	});
 

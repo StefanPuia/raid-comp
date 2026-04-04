@@ -102,12 +102,12 @@ stages:
               containerRegistry: $(dockerRegistryServiceConnection)
         condition: always()
 
-  - ${{ if eq(variables.isMain, true) }}:
-      - template: azure/deploy-environment.yml
-        parameters:
-          environment: dev
-          dependsOn: buildAndPackage
+  - template: azure/deploy-environment.yml
+    parameters:
+      environment: dev
+      dependsOn: buildAndPackage
 
+  - ${{ if eq(variables.isMain, true) }}:
       - template: azure/deploy-environment.yml
         parameters:
           environment: prod

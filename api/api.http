@@ -1,5 +1,5 @@
 ### get build
-GET {{host}}/builds/c7692ee4
+GET {{host}}/builds/c6b4adf1
 
 ### create build
 POST {{host}}/builds

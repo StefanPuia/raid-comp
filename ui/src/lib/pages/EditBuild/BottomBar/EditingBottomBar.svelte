@@ -4,27 +4,38 @@
 	import Tooltip, { Wrapper } from '@smui/tooltip';
 	import Fab, { Icon } from '@smui/fab';
 	import ResetBuildDialog from '../ResetBuildDialog.svelte';
-	import { currentlyEditingPlayerId, editPlayerDialogOpen } from '$lib/store';
 	import SaveBuildDialog from '$lib/pages/EditBuild/SaveBuildDialog.svelte';
 	import EditPlayerDialog from '$lib/pages/EditBuild/EditPlayerDialog.svelte';
 	import ChangeGameVersionDialog from '$lib/pages/EditBuild/ChangeGameVersionDialog.svelte';
 	import LeftSide from '$lib/pages/EditBuild/BottomBar/LeftSide.svelte';
 	import BurgerMenu from '$lib/pages/EditBuild/BottomBar/BurgerMenu.svelte';
 	import RightSide from '$lib/pages/EditBuild/BottomBar/RightSide.svelte';
+	import type { VersionedContext } from '$lib/versioning/VersionedContext';
 
-	const openEditPlayerDialog = () => {
-		$editPlayerDialogOpen = true;
-		$currentlyEditingPlayerId = null;
-	};
+	export let context: VersionedContext;
+	export let toggleGrouped: () => void;
+
+	let changeVersionDialog = false;
+	let editPlayerDialog = false;
+	let saveBuildOpen = false;
+	let resetBuildOpen = false;
 </script>
 
 <BottomAppBar variant="static" color={'secondary'}>
 	<Section>
 		<div class="display-small">
-			<BurgerMenu />
+			<BurgerMenu
+				{toggleGrouped}
+				openSaveBuildDialog={() => (saveBuildOpen = true)}
+				openChangeGameVersionDialog={() => (changeVersionDialog = true)}
+				openResetBuildDialog={() => (resetBuildOpen = true)}
+			/>
 		</div>
 		<div class="display-large">
-			<LeftSide />
+			<LeftSide
+				openChangeGameVersionDialog={() => (changeVersionDialog = true)}
+				openResetBuildDialog={() => (resetBuildOpen = true)}
+			/>
 		</div>
 	</Section>
 	<Section>
@@ -32,7 +43,7 @@
 			<Fab
 				aria-label={$_('cta.addPlayer')}
 				color={'primary'}
-				on:click={() => openEditPlayerDialog()}
+				on:click={() => (editPlayerDialog = true)}
 			>
 				<Icon class="material-icons">add</Icon>
 			</Fab>
@@ -41,14 +52,15 @@
 	</Section>
 	<Section>
 		<div class="display-large">
-			<RightSide />
+			<RightSide {toggleGrouped} openSaveBuildDialog={() => (saveBuildOpen = true)} />
 		</div>
 	</Section>
 </BottomAppBar>
-<ResetBuildDialog />
-<ChangeGameVersionDialog />
-<EditPlayerDialog />
-<SaveBuildDialog />
+
+<ResetBuildDialog open={resetBuildOpen} />
+<ChangeGameVersionDialog {context} open={changeVersionDialog} />
+<EditPlayerDialog bind:open={editPlayerDialog} {context} />
+<SaveBuildDialog {context} open={saveBuildOpen} />
 
 <style>
 	.display-large {

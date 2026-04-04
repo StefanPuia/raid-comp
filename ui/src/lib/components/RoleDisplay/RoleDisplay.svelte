@@ -2,7 +2,11 @@
 	import { PlayerRole } from '$lib/consts';
 	import LayoutGrid, { Cell, InnerGrid } from '@smui/layout-grid';
 	import SingleRoleDisplay from '$lib/components/RoleDisplay/SingleRoleDisplay.svelte';
-	import { build } from '$lib/store';
+	import type { Build } from '$lib/types';
+	import type { VersionedContext } from '$lib/versioning/VersionedContext';
+
+	export let build: Build;
+	export let context: VersionedContext;
 
 	const spanDevices = {
 		desktop: 4,
@@ -15,22 +19,22 @@
 	<Cell {spanDevices}>
 		<InnerGrid>
 			<Cell span={12}>
-				<SingleRoleDisplay role={PlayerRole.Tank} />
+				<SingleRoleDisplay role={PlayerRole.Tank} {build} {context} />
 			</Cell>
 			<Cell span={12}>
-				<SingleRoleDisplay role={PlayerRole.Healer} />
+				<SingleRoleDisplay role={PlayerRole.Healer} {build} {context} />
 			</Cell>
 		</InnerGrid>
 	</Cell>
 	<Cell {spanDevices}>
-		<SingleRoleDisplay role={PlayerRole.RangedDPS} />
+		<SingleRoleDisplay role={PlayerRole.RangedDPS} {build} {context} />
 	</Cell>
 	<Cell {spanDevices}>
-		<SingleRoleDisplay role={PlayerRole.MeleeDPS} />
+		<SingleRoleDisplay role={PlayerRole.MeleeDPS} {build} {context} />
 	</Cell>
-	{#if $build.players.find((p) => p.spec?.role === PlayerRole.Unknown)}
+	{#if build.players.find((p) => p.spec?.role === PlayerRole.Unknown)}
 		<Cell span={12}>
-			<SingleRoleDisplay role={PlayerRole.Unknown} displayAsGrid />
+			<SingleRoleDisplay role={PlayerRole.Unknown} displayAsGrid {build} {context} />
 		</Cell>
 	{/if}
 </LayoutGrid>

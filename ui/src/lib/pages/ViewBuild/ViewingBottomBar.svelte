@@ -3,7 +3,10 @@
 	import BottomAppBar, { Section } from '@smui-extra/bottom-app-bar';
 	import Tooltip, { Wrapper } from '@smui/tooltip';
 	import IconButton from '@smui/icon-button';
-	import { build, displayGrouped } from '$lib/store';
+	import type { Build } from '$lib/types';
+
+	export let build: Build;
+	export let grouped: boolean | undefined;
 </script>
 
 <BottomAppBar variant="static" color={'secondary'}>
@@ -30,27 +33,25 @@
 		<!--            <Tooltip yPos="above">{$_("cta.importBuild")}</Tooltip>-->
 		<!--        </Wrapper>-->
 		<Wrapper>
-			<a href="/build">
-				<IconButton
-					class="material-icons"
-					aria-label={$_('cta.newBuild')}
-					style="color: var(--palette-success-main)"
-				>
-					add_box
-				</IconButton>
-			</a>
+			<IconButton
+				class="material-icons"
+				aria-label={$_('cta.newBuild')}
+				style="color: var(--palette-success-main)"
+				href="/build"
+			>
+				add_box
+			</IconButton>
 			<Tooltip yPos="above">{$_('cta.newBuild')}</Tooltip>
 		</Wrapper>
 		<Wrapper>
-			<a href="/build/{$build.buildId}/edit">
-				<IconButton
-					class="material-icons"
-					aria-label={$_('cta.editBuild')}
-					style="color: var(--palette-info-main)"
-				>
-					edit
-				</IconButton>
-			</a>
+			<IconButton
+				class="material-icons"
+				aria-label={$_('cta.editBuild')}
+				style="color: var(--palette-info-main)"
+				href="/build/{build.buildId}/edit"
+			>
+				edit
+			</IconButton>
 			<Tooltip yPos="above">{$_('cta.editBuild')}</Tooltip>
 		</Wrapper>
 		<Wrapper>
@@ -58,7 +59,7 @@
 				class="material-icons"
 				aria-label={$_('cta.changeViewMode')}
 				style="color: var(--palette-info-main)"
-				on:click={() => ($displayGrouped = !$displayGrouped)}
+				href={'/build' + (grouped ? '/' : '/g/') + build.buildId}
 			>
 				grid_view
 			</IconButton>

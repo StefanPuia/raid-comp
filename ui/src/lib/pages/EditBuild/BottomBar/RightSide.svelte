@@ -1,8 +1,10 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
-	import { displayGrouped, saveBuildDialogOpen } from '$lib/store.js';
-	import Tooltip, { Wrapper } from '@smui/tooltip/src/index.js';
-	import IconButton from '@smui/icon-button/src/index.js';
+	import Tooltip, { Wrapper } from '@smui/tooltip/src/index';
+	import IconButton from '@smui/icon-button/src/index';
+
+	export let toggleGrouped: () => void;
+	export let openSaveBuildDialog: () => void;
 </script>
 
 <Wrapper>
@@ -20,7 +22,7 @@
 		class="material-icons"
 		aria-label={$_('cta.changeViewMode')}
 		style="color: var(--palette-info-main)"
-		on:click={() => ($displayGrouped = !$displayGrouped)}
+		on:click={() => toggleGrouped()}
 	>
 		grid_view
 	</IconButton>
@@ -31,7 +33,7 @@
 		class="material-icons"
 		aria-label={$_('cta.saveBuild')}
 		style="color: var(--palette-success-main)"
-		on:click={() => ($saveBuildDialogOpen = true)}
+		on:click={() => openSaveBuildDialog()}
 	>
 		save
 	</IconButton>

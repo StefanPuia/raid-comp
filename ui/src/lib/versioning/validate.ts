@@ -9,5 +9,5 @@ export const validateVersion = (version?: string): GameVersionSlug => {
 		return lookup;
 	}
 
-	throw error(400, 'Game version not supported');
+	throw error(400, `Game version ${version} not supported`);
 };

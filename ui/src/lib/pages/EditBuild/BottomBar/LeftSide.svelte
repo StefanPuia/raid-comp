@@ -1,8 +1,10 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
-	import { changeGameVersionDialogOpen, resetBuildDialogOpen } from '$lib/store.js';
 	import Tooltip, { Wrapper } from '@smui/tooltip/src/index.js';
 	import IconButton from '@smui/icon-button/src/index.js';
+
+	export let openResetBuildDialog: () => void;
+	export let openChangeGameVersionDialog: () => void;
 </script>
 
 <Wrapper>
@@ -10,7 +12,7 @@
 		class="material-icons"
 		aria-label={$_('cta.resetBuild')}
 		style="color: var(--palette-error-main)"
-		on:click={() => ($resetBuildDialogOpen = true)}
+		on:click={() => openResetBuildDialog()}
 	>
 		delete_forever
 	</IconButton>
@@ -32,7 +34,7 @@
 		class="material-icons"
 		aria-label={$_('cta.changeGameVersion')}
 		style="color: var(--palette-info-main)"
-		on:click={() => ($changeGameVersionDialogOpen = true)}
+		on:click={() => openChangeGameVersionDialog()}
 	>
 		extension
 	</IconButton>

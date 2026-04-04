@@ -1,18 +1,17 @@
 <script lang="ts">
 	import Paper, { Content } from '@smui/paper';
-	import type { BuildPlayer } from '$lib/types';
+	import type { Build, BuildPlayer } from '$lib/types';
 	import { _ } from 'svelte-i18n';
-	import { build } from '$lib/store';
 	import Player from '$lib/components/Player.svelte';
+	import type { VersionedContext } from '$lib/versioning/VersionedContext';
 
 	export let group: number | 'none';
 	export let displayAsGrid: boolean = false;
 
+	export let build: Build;
+	export let context: VersionedContext;
 	let players: BuildPlayer[];
-
-	$: {
-		players = $build.players.filter((p) => p.group === group);
-	}
+	$: players = build.players.filter((p) => p.group === group);
 </script>
 
 <Paper>
@@ -27,13 +26,13 @@
 		{#if displayAsGrid}
 			<div class="spread">
 				{#each players as player}
-					<Player {player} />
+					<Player {player} {context} />
 				{/each}
 			</div>
 		{:else}
 			<div>
 				{#each players as player}
-					<Player {player} />
+					<Player {player} {context} />
 				{/each}
 			</div>
 		{/if}

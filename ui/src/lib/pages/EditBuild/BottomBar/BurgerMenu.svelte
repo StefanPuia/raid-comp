@@ -4,13 +4,12 @@
 	import { _ } from 'svelte-i18n';
 	import Tooltip, { Wrapper } from '@smui/tooltip';
 	import IconButton from '@smui/icon-button';
-	import {
-		changeGameVersionDialogOpen,
-		displayGrouped,
-		resetBuildDialogOpen,
-		saveBuildDialogOpen,
-	} from '$lib/store';
 	import { Icon } from '@smui/fab';
+
+	export let toggleGrouped: () => void;
+	export let openSaveBuildDialog: () => void;
+	export let openChangeGameVersionDialog: () => void;
+	export let openResetBuildDialog: () => void;
 
 	let menu: Menu;
 </script>
@@ -29,24 +28,24 @@
 
 <Menu bind:this={menu}>
 	<List>
-		<Item on:SMUI:action={() => ($saveBuildDialogOpen = true)}>
+		<Item on:SMUI:action={() => openSaveBuildDialog()}>
 			<Icon class="material-icons" style="color: var(--palette-success-main)">save</Icon>
 			<Text>{$_('cta.saveBuild')}</Text>
 		</Item>
-		<Item on:SMUI:action={() => ($displayGrouped = !$displayGrouped)}>
+		<Item on:SMUI:action={() => toggleGrouped()}>
 			<Icon class="material-icons" style="color: var(--palette-info-main)">grid_view</Icon>
 			<Text>{$_('cta.changeViewMode')}</Text>
 		</Item>
 		<Item on:SMUI:action={() => {}}>
 			<Icon class="material-icons" style="color: var(--palette-warning-light)"
-				>system_update_alt</Icon
-			>
+				>system_update_alt
+			</Icon>
 			<Text>{$_('cta.importBuild')}</Text>
 		</Item>
 
 		<Separator />
 
-		<Item on:SMUI:action={() => ($changeGameVersionDialogOpen = true)}>
+		<Item on:SMUI:action={() => openChangeGameVersionDialog()}>
 			<Icon class="material-icons" style="color: var(--palette-info-main)">extension</Icon>
 			<Text>{$_('cta.changeGameVersion')}</Text>
 		</Item>
@@ -54,7 +53,7 @@
 			<Icon class="material-icons" style="color: var(--palette-warning-main)">bug_report</Icon>
 			<Text>{$_('cta.reportBug')}</Text>
 		</Item>
-		<Item on:SMUI:action={() => ($resetBuildDialogOpen = true)}>
+		<Item on:SMUI:action={() => openResetBuildDialog()}>
 			<Icon class="material-icons" style="color: var(--palette-error-main)">delete_forever</Icon>
 			<Text>{$_('cta.resetBuild')}</Text>
 		</Item>

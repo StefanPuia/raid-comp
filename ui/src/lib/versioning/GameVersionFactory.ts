@@ -3,8 +3,6 @@ import type { GameVersion } from '$lib/versioning/GameVersion';
 import { GameVersionSlug } from '$lib/versioning/GameVersion';
 import type { IconProvider } from '$lib/versioning/IconProvider';
 import type { VersionedContext } from '$lib/versioning/VersionedContext';
-import { WotlkGameVersion } from '$lib/versions/wotlk/WotlkGameVersion';
-import { WotlkIconProvider } from '$lib/versions/wotlk/WotlkconProvider';
 import { DragonflightIconProvider } from '$lib/versions/dragonflight/DragonflightIconProvider';
 import { MidnightIconProvider } from '$lib/versions/midnight/MidnightIconProvider';
 import { DragonflightGameVersion } from '$lib/versions/dragonflight/DragonflightGameVersion';
@@ -17,10 +15,10 @@ export class GameVersionFactory {
 				return new MidnightIconProvider();
 			case GameVersionSlug.DRAGONFLIGHT:
 				return new DragonflightIconProvider();
-			case GameVersionSlug.WOTLK:
-				return new WotlkIconProvider();
+			// case GameVersionSlug.WOTLK:
+			// 	return new WotlkIconProvider();
 			default:
-				throw error(400, 'Game version not supported');
+				throw error(400, `Game version ${gameVersion} not supported`);
 		}
 	}
 
@@ -30,10 +28,10 @@ export class GameVersionFactory {
 				return new MidnightGameVersion();
 			case GameVersionSlug.DRAGONFLIGHT:
 				return new DragonflightGameVersion();
-			case GameVersionSlug.WOTLK:
-				return new WotlkGameVersion();
+			// case GameVersionSlug.WOTLK:
+			// 	return new WotlkGameVersion();
 			default:
-				throw error(400, 'Game version not supported');
+				throw error(400, `Game version ${gameVersion} not supported`);
 		}
 	}
 

@@ -2,28 +2,24 @@
 	import WarcraftIcon from '$lib/components/WarcraftIcon.svelte';
 	import { PlayerRole } from '$lib/consts';
 	import { _ } from 'svelte-i18n';
-	import { build, context } from '$lib/store';
+	import type { VersionedContext } from '$lib/versioning/VersionedContext';
+	import type { Build } from '$lib/types';
 
-	let total: number;
-	let tanks: number;
-	let healers: number;
-	let rangedDPS: number;
-	let meleeDPS: number;
+	export let build: Build;
+	export let context: VersionedContext;
 
-	$: {
-		total = $build.players.length;
-		tanks = $build.players.filter((p) => p.spec?.isTank()).length;
-		healers = $build.players.filter((p) => p.spec?.isHealer()).length;
-		rangedDPS = $build.players.filter((p) => p.spec?.isRangedDPS()).length;
-		meleeDPS = $build.players.filter((p) => p.spec?.isMeleeDPS()).length;
-	}
+	const total = build.players.length;
+	const tanks = build.players.filter((p) => p.spec?.isTank()).length;
+	const healers = build.players.filter((p) => p.spec?.isHealer()).length;
+	const rangedDPS = build.players.filter((p) => p.spec?.isRangedDPS()).length;
+	const meleeDPS = build.players.filter((p) => p.spec?.isMeleeDPS()).length;
 </script>
 
 <div class="roles">
 	{#if total}
 		<div class="role">
 			<WarcraftIcon
-				src={$context.iconProvider.getSrc('inv_misc_groupneedmore')}
+				src={context.iconProvider.getSrc('inv_misc_groupneedmore')}
 				label={$_('build.roles.total')}
 			/>
 			<span>{total}</span>
@@ -32,7 +28,7 @@
 	{#if tanks}
 		<div class="role">
 			<WarcraftIcon
-				src={$context.iconProvider.getForRole(PlayerRole.Tank)}
+				src={context.iconProvider.getForRole(PlayerRole.Tank)}
 				label={$_('build.roles.Tank')}
 			/>
 			<span>{tanks}</span>
@@ -41,7 +37,7 @@
 	{#if healers}
 		<div class="role">
 			<WarcraftIcon
-				src={$context.iconProvider.getForRole(PlayerRole.Healer)}
+				src={context.iconProvider.getForRole(PlayerRole.Healer)}
 				label={$_('build.roles.Healer')}
 			/>
 			<span>{healers}</span>
@@ -50,7 +46,7 @@
 	{#if rangedDPS}
 		<div class="role">
 			<WarcraftIcon
-				src={$context.iconProvider.getForRole(PlayerRole.RangedDPS)}
+				src={context.iconProvider.getForRole(PlayerRole.RangedDPS)}
 				label={$_('build.roles.RangedDPS')}
 			/>
 			<span>{rangedDPS}</span>
@@ -59,7 +55,7 @@
 	{#if meleeDPS}
 		<div class="role">
 			<WarcraftIcon
-				src={$context.iconProvider.getForRole(PlayerRole.MeleeDPS)}
+				src={context.iconProvider.getForRole(PlayerRole.MeleeDPS)}
 				label={$_('build.roles.MeleeDPS')}
 			/>
 			<span>{meleeDPS}</span>

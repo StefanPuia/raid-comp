@@ -43,7 +43,7 @@
 		},
 		"changeVersion": {
 			"title": "Change the game version",
-			"confirm": "Changing the game version will clear your build. Are you sure?",
+			"confirm": "Changing the game version will clear your current build. Are you sure?",
 			"label": "Game version",
 			"current": "Current version"
 		},

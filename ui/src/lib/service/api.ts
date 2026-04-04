@@ -47,6 +47,9 @@ service.interceptors.response.use(
 export const getBuild = (buildId: string, config?: AxiosRequestConfig) =>
 	service.get<Build>(`/builds/${buildId}`, config);
 
+export const getBuildMeta = (buildId: string, config?: AxiosRequestConfig) =>
+	service.get<BuildMetaResponse>(`/builds/${buildId}/meta`, config);
+
 export const createBuild = (data: createBuildRequest, config?: AxiosRequestConfig) =>
 	service.post<{ buildId: string }>(`/builds`, data, config);
 
@@ -63,11 +66,20 @@ export type BuildPlayer = {
 };
 
 export type Build = {
-	gameVersion?: GameVersionSlug;
+	gameVersion: GameVersionSlug;
 	buildId: string;
 	name: string;
 	players: BuildPlayer[];
 };
+
+export interface BuildMetaResponse {
+	name: string;
+	total: number;
+	tanks: number;
+	healers: number;
+	dps: number;
+	unknown?: number;
+}
 
 export const mapToApi = (build: ModelBuild): Build => ({
 	gameVersion: build.gameVersion,

@@ -2,13 +2,16 @@
 	import List, { Item, Text } from '@smui/list';
 	import Dialog, { Actions, Content, Title } from '@smui/dialog';
 	import Button, { Label } from '@smui/button';
-	import { changeGameVersionDialogOpen, context } from '$lib/store';
 	import { _ } from 'svelte-i18n';
 	import { GameVersionSlug } from '$lib/versioning/GameVersion';
 	import WarcraftIcon from '$lib/components/WarcraftIcon.svelte';
 	import { GameVersionFactory } from '$lib/versioning/GameVersionFactory';
+	import type { VersionedContext } from '$lib/versioning/VersionedContext';
 
-	const currentVersion = $context.gameVersion.getSlug();
+	export let context: VersionedContext;
+	export let open: boolean;
+
+	const currentVersion = context.gameVersion.getSlug();
 
 	const versions = Object.values(GameVersionSlug)
 		.filter((v) => v !== currentVersion)
@@ -25,19 +28,15 @@
 	let selectedVersion: string;
 </script>
 
-<Dialog
-	bind:open={$changeGameVersionDialogOpen}
-	aria-labelledby="simple-title"
-	aria-describedby="simple-content"
->
+<Dialog bind:open aria-labelledby="simple-title" aria-describedby="simple-content">
 	<Title id="simple-title">{$_('build.changeVersion.title')}</Title>
 	<Content id="simple-content">
-		<p>
+		<p style="color: var(--palette-error-main); font-weight: bold;">
 			{$_('build.changeVersion.confirm')}
 		</p>
 		<p>
 			{$_('build.changeVersion.current')}:
-			<WarcraftIcon src={$context.iconProvider.getVersionIcon()} />
+			<WarcraftIcon src={context.iconProvider.getVersionIcon()} />
 			<span class="current"><strong>{$_(`versions.${currentVersion}`)}</strong></span>
 		</p>
 

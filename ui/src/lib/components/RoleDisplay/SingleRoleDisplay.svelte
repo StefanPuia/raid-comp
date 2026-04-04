@@ -1,29 +1,25 @@
 <script lang="ts">
 	import Paper, { Content } from '@smui/paper';
-	import type { BuildPlayer } from '$lib/types';
+	import type { Build, BuildPlayer } from '$lib/types';
 	import type { PlayerRole } from '$lib/consts';
 	import WarcraftIcon from '$lib/components/WarcraftIcon.svelte';
 	import { _ } from 'svelte-i18n';
-	import { build, context } from '$lib/store';
 	import Player from '$lib/components/Player.svelte';
+	import type { VersionedContext } from '$lib/versioning/VersionedContext';
 
 	export let role: PlayerRole;
 	export let displayAsGrid: boolean = false;
+	export let build: Build;
+	export let context: VersionedContext;
 
 	let players: BuildPlayer[];
-
-	$: {
-		players = $build.players.filter((p) => p.spec?.role === role);
-	}
+	$: players = build.players.filter((p) => p.spec?.role === role);
 </script>
 
 <Paper>
 	<Content>
 		<div class="header">
-			<WarcraftIcon
-				src={$context.iconProvider.getForRole(role)}
-				label={$_(`build.roles.${role}`)}
-			/>
+			<WarcraftIcon src={context.iconProvider.getForRole(role)} label={$_(`build.roles.${role}`)} />
 			<span>{$_(`build.roles.${role}`)}</span>
 			<span class="count">
 				{players.length}
@@ -33,13 +29,13 @@
 		{#if displayAsGrid}
 			<div class="spread">
 				{#each players as player}
-					<Player {player} />
+					<Player {player} {context} />
 				{/each}
 			</div>
 		{:else}
 			<div>
 				{#each players as player}
-					<Player {player} />
+					<Player {player} {context} />
 				{/each}
 			</div>
 		{/if}

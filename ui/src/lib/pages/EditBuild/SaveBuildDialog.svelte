@@ -3,25 +3,31 @@
 	import Snackbar from '@smui/snackbar';
 	import Dialog, { Actions, Content, Title } from '@smui/dialog';
 	import Button, { Label } from '@smui/button';
-	import { build, context, creatingBuild, saveBuildDialogOpen } from '$lib/store';
 	import Textfield from '@smui/textfield';
 	import { _ } from 'svelte-i18n';
 	import { createBuild, mapToApi } from '$lib/service/api';
 	import { PUBLIC_TURNSTILE_SITE_KEY } from '$env/static/public';
 	import { ApiError } from '$lib/service/error';
+	import type { VersionedContext } from '$lib/versioning/VersionedContext';
+	import Loading from '$lib/components/Loading.svelte';
+	import { editingBuild } from '$lib/store';
 
-	let buildName: string | null = $build.name || $_('build.new');
+	export let context: VersionedContext;
+	export let open: boolean;
+
+	let creatingBuild: boolean = false;
+	let buildName: string | null = $editingBuild?.name || $_('build.new');
 	let errorSnackbar: Snackbar;
 	let error: string | null = null;
 	let turnstileToken: string = '';
 
 	const handleSave = () => {
 		const newBuild = mapToApi({
-			...$build,
+			...$editingBuild!,
 			name: buildName || $_('build.new'),
-			gameVersion: $context.gameVersion.getSlug(),
+			gameVersion: context.gameVersion.getSlug(),
 		});
-		$creatingBuild = true;
+		creatingBuild = true;
 		createBuild({
 			...newBuild,
 			token: turnstileToken,
@@ -30,20 +36,20 @@
 				window.location.href = `/build/${buildId}`;
 			})
 			.catch((err) => {
-				$creatingBuild = false;
+				creatingBuild = false;
 				error = err instanceof ApiError ? $_(`error.${err.id}`) : err.message;
 				errorSnackbar.open();
 			});
 	};
 </script>
 
-<Dialog
-	bind:open={$saveBuildDialogOpen}
-	aria-labelledby="simple-title"
-	aria-describedby="simple-content"
->
+{#if creatingBuild}
+	<Loading />
+{/if}
+
+<Dialog bind:open aria-labelledby="simple-title" aria-describedby="simple-content">
 	<Title id="simple-title">{$_('build.save.title')}</Title>
-	{#if $build.players.length}
+	{#if $editingBuild?.players.length}
 		<Content id="simple-content">
 			<Textfield
 				type="text"

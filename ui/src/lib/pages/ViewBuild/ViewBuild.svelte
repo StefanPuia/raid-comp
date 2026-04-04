@@ -1,61 +1,52 @@
 <script lang="ts">
-	import RoleDisplay from '$lib/components/RoleDisplay/RoleDisplay.svelte';
 	import { GameVersionFactory } from '$lib/versioning/GameVersionFactory';
-	import { build, context, displayGrouped, editing } from '$lib/store';
-	import GroupDisplay from '$lib/components/GroupDisplay/GroupDisplay.svelte';
-	import ChecklistDisplay from '$lib/components/ChecklistDisplay/ChecklistDisplay.svelte';
-	import RoleCount from '$lib/components/RoleCount.svelte';
-	import { getBuild } from '$lib/service/api';
-	import BottomBar from '$lib/pages/ViewBuild/BottomBar.svelte';
-	import WarcraftIcon from '$lib/components/WarcraftIcon.svelte';
-	import type { ViewBuildPageParams } from '$lib/buildRouting';
-	import { routeToCorrectBuildUrl } from '$lib/buildRouting';
-	import Loading from '$lib/components/Loading.svelte';
 	import { _ } from 'svelte-i18n';
+	import type { Build, BuildPageParams } from '$lib/types';
 	import ErrorPage from '$lib/pages/ErrorPage/ErrorPage.svelte';
+	import WarcraftIcon from '$lib/components/WarcraftIcon.svelte';
+	import RoleCount from '$lib/components/RoleCount.svelte';
+	import GroupDisplay from '$lib/components/GroupDisplay/GroupDisplay.svelte';
+	import RoleDisplay from '$lib/components/RoleDisplay/RoleDisplay.svelte';
+	import ChecklistDisplay from '$lib/components/ChecklistDisplay/ChecklistDisplay.svelte';
+	import ViewingBottomBar from '$lib/pages/ViewBuild/ViewingBottomBar.svelte';
+	import { createBuildData } from '$lib';
 
-	export let params: ViewBuildPageParams;
+	export let params: BuildPageParams;
+	const context = GameVersionFactory.getContext(params.gameVersion);
 
-	$editing = false;
-	$context = GameVersionFactory.getContext(params.gameVersion);
-
-	const iconLabel = $_(`versions.${params.gameVersion}`);
-
-	const fetchBuild = (async () => {
-		const fetchedBuild = (await getBuild(params.buildId)).data;
-		routeToCorrectBuildUrl(params.gameVersion, fetchedBuild);
-		build.set({
-			...fetchedBuild,
-			players: fetchedBuild.players.map((p) => $context.gameVersion.createPlayer(p)),
-			gameVersion: fetchedBuild.gameVersion ?? params.gameVersion,
-		});
-	})();
+	const build: Build | undefined = params.build
+		? createBuildData(params.build, context)
+		: undefined;
 </script>
 
 <svelte:head>
-	<title>{$_('build.page.view.title', { values: { buildName: $build.name } })}</title>
+	{#if build}
+		<title>{$_('build.page.view.title', { values: { buildName: build.name } })}</title>
+		<meta name="description" content={build.meta.description} />
+	{/if}
 </svelte:head>
 
-{#await fetchBuild}
-	<Loading />
-{:then _}
+{#if params.error}
+	<ErrorPage error={params.error} />
+{:else if build}
 	<div class="page content">
 		<div class="title">
-			<WarcraftIcon src={$context.iconProvider.getVersionIcon()} label={iconLabel} />
-			{$build.name}
+			<WarcraftIcon
+				src={context.iconProvider.getVersionIcon()}
+				label={$_(`versions.${params.gameVersion}`)}
+			/>
+			{build.name}
 		</div>
-		{#if $displayGrouped}
-			<RoleCount />
-			<GroupDisplay />
+		{#if params.grouped}
+			<RoleCount {build} {context} />
+			<GroupDisplay {build} {context} />
 		{:else}
-			<RoleDisplay />
+			<RoleDisplay {build} {context} />
 		{/if}
-		<ChecklistDisplay />
+		<ChecklistDisplay {build} {context} />
 	</div>
-	<BottomBar />
-{:catch error}
-	<ErrorPage {error} />
-{/await}
+	<ViewingBottomBar {build} grouped={params.grouped} />
+{/if}
 
 <style>
 	.page {

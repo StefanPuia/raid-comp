@@ -2,23 +2,22 @@
 	import type { BuildPlayer } from '$lib/types';
 	import WarcraftIcon from '$lib/components/WarcraftIcon.svelte';
 	import AttendanceIcon from '$lib/components/AttendanceIcon.svelte';
-	import { context, currentlyEditingPlayerId, editing, editPlayerDialogOpen } from '$lib/store';
 	import { _ } from 'svelte-i18n';
+	import type { VersionedContext } from '$lib/versioning/VersionedContext';
+	import { currentlyEditingPlayerId } from '$lib/store';
 
 	export let player: BuildPlayer;
+	export let context: VersionedContext;
 
-	const handleClick = () => {
-		if ($editing) {
-			$currentlyEditingPlayerId = player.id;
-			$editPlayerDialogOpen = true;
-		}
+	const editPlayerListener = () => {
+		currentlyEditingPlayerId.set(player.id);
 	};
 </script>
 
-<div class="player" on:click={() => handleClick()}>
+<div class="player" on:click={editPlayerListener}>
 	<WarcraftIcon
 		label={$_(player.spec ? `specs.${player.spec.slug}` : `classes.${player.class.slug}`)}
-		src={$context.iconProvider.getSrc(player.spec?.icon ?? player.class.icon)}
+		src={context.iconProvider.getSrc(player.spec?.icon ?? player.class.icon)}
 	/>
 	<span class="name" style="color: var(--player-class-colour-{player.class.slug})"
 		>{player.name}</span

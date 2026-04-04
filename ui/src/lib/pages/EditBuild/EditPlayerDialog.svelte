@@ -2,37 +2,54 @@
 	import SegmentedButton, { Segment } from '@smui/segmented-button';
 	import Dialog, { Actions, Content, Title } from '@smui/dialog';
 	import Button, { Label } from '@smui/button';
-	import { build, context, currentlyEditingPlayerId, editPlayerDialogOpen } from '$lib/store';
 	import { _ } from 'svelte-i18n';
 	import { GROUP_NONE, InviteStatus, UNKNOWN_CLASS, UNKNOWN_SPEC } from '$lib/consts';
 	import Textfield from '@smui/textfield';
 	import WarcraftIcon from '$lib/components/WarcraftIcon.svelte';
+	import AttendanceIcon from '$lib/components/AttendanceIcon.svelte';
+	import type { Build, BuildPlayer, GroupId } from '$lib/types';
+	import type { VersionedContext } from '$lib/versioning/VersionedContext';
+	import { currentlyEditingPlayerId, editingBuild } from '$lib/store';
 	import type { PlayerClass } from '$lib/versioning/PlayerClass';
 	import type { PlayerSpec } from '$lib/versioning/PlayerSpecialisation';
-	import AttendanceIcon from '$lib/components/AttendanceIcon.svelte';
-	import type { BuildPlayer, GroupId } from '$lib/types';
+
+	export let context: VersionedContext;
+	export let open: boolean;
+
+	let currentlyEditing: BuildPlayer | undefined;
 
 	const groups: GroupId[] = [GROUP_NONE, 1, 2, 3, 4, 5, 6, 7, 8];
-	const defaultClass = $context.gameVersion.getClasses()[0];
-	const defaultSpec = $context.gameVersion
+	const defaultClass = context.gameVersion.getClasses()[0];
+	const defaultSpec = context.gameVersion
 		.getSpecs()
 		.filter((s) => s.playerClass === defaultClass)[0];
-	let currentlyEditing: BuildPlayer | undefined = undefined;
 
+	let build: Build | null;
 	let playerName: string | null = null;
 	let selectedClass: PlayerClass | null = defaultClass;
 	let selectedSpec: PlayerSpec | null = defaultSpec;
 	let selectedStatus: InviteStatus | null = InviteStatus.Invited;
 	let selectedGroup: GroupId | null = GROUP_NONE;
 
+	editingBuild.subscribe((b) => {
+		build = b;
+	});
+
 	currentlyEditingPlayerId.subscribe((id) => {
-		currentlyEditing = $build.players.find((p) => p.id === id);
+		currentlyEditing = build?.players.find((p) => p.id === id);
 		playerName = currentlyEditing?.name ?? null;
 		selectedClass = currentlyEditing?.class ?? defaultClass;
 		selectedSpec = currentlyEditing?.spec ?? defaultSpec;
 		selectedStatus = currentlyEditing?.status ?? InviteStatus.Invited;
 		selectedGroup = currentlyEditing?.group ?? GROUP_NONE;
+		open = !!id;
 	});
+
+	$: {
+		if (!open) {
+			currentlyEditingPlayerId.set(null);
+		}
+	}
 
 	const reset = () => {
 		playerName = null;
@@ -42,42 +59,45 @@
 	};
 
 	const handleSave = () => {
-		const players = $build.players;
-		if (currentlyEditing) {
-			players.splice(players.indexOf(currentlyEditing), 1);
-		}
-		players.push(
-			$context.gameVersion.createPlayer({
-				name: playerName ?? '',
-				class: selectedClass?.slug ?? UNKNOWN_CLASS,
-				spec: selectedSpec?.slug ?? UNKNOWN_SPEC,
-				status: selectedStatus ?? InviteStatus.Unknown,
-				group: selectedGroup ?? GROUP_NONE,
-			}),
-		);
-
-		$build = { ...$build, players };
+		editingBuild.update((build) => {
+			if (build) {
+				if (currentlyEditing) {
+					build.players.splice(build.players.indexOf(currentlyEditing), 1);
+				}
+				build.players.push(
+					context.gameVersion.createPlayer({
+						name: playerName ?? '',
+						class: selectedClass?.slug ?? UNKNOWN_CLASS,
+						spec: selectedSpec?.slug ?? UNKNOWN_SPEC,
+						status: selectedStatus ?? InviteStatus.Unknown,
+						group: selectedGroup ?? GROUP_NONE,
+					}),
+				);
+			}
+			return build;
+		});
 		reset();
 	};
 
 	const handleRemove = () => {
-		const players = $build.players;
-		if (currentlyEditing) {
-			players.splice(players.indexOf(currentlyEditing), 1);
-		}
-		$build = { ...$build, players };
+		editingBuild.update((build) => {
+			if (build && currentlyEditing) {
+				build.players.splice(build.players.indexOf(currentlyEditing), 1);
+			}
+			return build;
+		});
 		reset();
 	};
 
 	const findPreselectedSpec = () => {
-		selectedSpec = $context.gameVersion
+		selectedSpec = context.gameVersion
 			.getSpecs()
 			.filter((s) => s.playerClass.slug === selectedClass?.slug)[0];
 	};
 </script>
 
 <Dialog
-	bind:open={$editPlayerDialogOpen}
+	bind:open
 	aria-labelledby="simple-title"
 	aria-describedby="simple-content"
 	surface$style="max-width: calc(100vw - 32px);"
@@ -98,20 +118,20 @@
 				<SegmentedButton
 					on:change={() => findPreselectedSpec()}
 					bind:selected={selectedClass}
-					segments={$context.gameVersion.getClasses()}
+					segments={context.gameVersion.getClasses()}
 					let:segment
 					singleSelect
 					key={(segment) => segment.slug}
 				>
 					<Segment {segment} title={$_(`classes.${segment.slug}`)}>
-						<WarcraftIcon src={$context.iconProvider.getSrc(segment.icon)} />
+						<WarcraftIcon src={context.iconProvider.getSrc(segment.icon)} />
 					</Segment>
 				</SegmentedButton>
 			</div>
 			<div class="spec-wrapper">
 				<SegmentedButton
 					bind:selected={selectedSpec}
-					segments={$context.gameVersion
+					segments={context.gameVersion
 						.getSpecs()
 						.filter((s) => s.playerClass.slug === selectedClass?.slug)}
 					let:segment
@@ -119,7 +139,7 @@
 					key={(segment) => segment.slug}
 				>
 					<Segment {segment} title={$_(`specs.${segment.slug}`)}>
-						<WarcraftIcon src={$context.iconProvider.getSrc(segment.icon)} />
+						<WarcraftIcon src={context.iconProvider.getSrc(segment.icon)} />
 					</Segment>
 				</SegmentedButton>
 			</div>

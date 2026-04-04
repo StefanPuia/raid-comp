@@ -22,16 +22,16 @@
 			</IconButton>
 			<Tooltip yPos="above">{$_('cta.reportBug')}</Tooltip>
 		</Wrapper>
+		<!--    <Wrapper>-->
+		<!--      <IconButton class="material-icons" aria-label="{$_('cta.exportBuild')}"-->
+		<!--                  style="color: var(&#45;&#45;palette-info-main)">-->
+		<!--        file_upload-->
+		<!--      </IconButton>-->
+		<!--      <Tooltip yPos="above">{$_("cta.exportBuild")}</Tooltip>-->
+		<!--    </Wrapper>-->
 	</Section>
 	<Section></Section>
 	<Section>
-		<!--        <Wrapper>-->
-		<!--            <IconButton class="material-icons" aria-label="{$_('cta.importBuild')}"-->
-		<!--                        style="color: var(&#45;&#45;palette-warning-light)">-->
-		<!--                system_update_alt-->
-		<!--            </IconButton>-->
-		<!--            <Tooltip yPos="above">{$_("cta.importBuild")}</Tooltip>-->
-		<!--        </Wrapper>-->
 		<Wrapper>
 			<IconButton
 				class="material-icons"

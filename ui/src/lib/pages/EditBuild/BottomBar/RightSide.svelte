@@ -7,16 +7,16 @@
 	export let openSaveBuildDialog: () => void;
 </script>
 
-<Wrapper>
-	<IconButton
-		class="material-icons"
-		aria-label={$_('cta.importBuild')}
-		style="color: var(--palette-warning-light)"
-	>
-		system_update_alt
-	</IconButton>
-	<Tooltip yPos="above">{$_('cta.importBuild')}</Tooltip>
-</Wrapper>
+<!--<Wrapper>-->
+<!--	<IconButton-->
+<!--		class="material-icons"-->
+<!--		aria-label={$_('cta.importBuild')}-->
+<!--		style="color: var(&#45;&#45;palette-warning-light)"-->
+<!--	>-->
+<!--		system_update_alt-->
+<!--	</IconButton>-->
+<!--	<Tooltip yPos="above">{$_('cta.importBuild')}</Tooltip>-->
+<!--</Wrapper>-->
 <Wrapper>
 	<IconButton
 		class="material-icons"

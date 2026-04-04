@@ -8,6 +8,12 @@ spring:
   datasource:
     url: ${JDBC_URL:jdbc:mysql://root:root@localhost:3306/raidcomp}
 
+server:
+  forward-headers-strategy: native
+  tomcat:
+    remoteip:
+      trusted-proxies: ${TRUSTED_PROXIES:}
+
 wowaudit:
   keys: ${WOWAUDIT_API_KEY:key}
 

@@ -46,6 +46,7 @@ stages:
                       -e WOWAUDIT_API_KEY \
                       -e TURNSTILE_SECRET_KEY \
                       -e BUILD_IMPORT_ALLOWED_IP_RANGE \
+                      -e TRUSTED_PROXIES \
                       $(dockerRegistry)/$(dockerImage):$(dockerImageVersion)
                   displayName: Start container
                   env:
@@ -54,3 +55,4 @@ stages:
                     WOWAUDIT_API_KEY: $(WOWAUDIT_API_KEY)
                     TURNSTILE_SECRET_KEY: $(TURNSTILE_SECRET_KEY)
                     BUILD_IMPORT_ALLOWED_IP_RANGE: $(BUILD_IMPORT_ALLOWED_IP_RANGE)
+                    TRUSTED_PROXIES: $(TRUSTED_PROXIES)

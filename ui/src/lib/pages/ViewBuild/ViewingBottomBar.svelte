@@ -38,6 +38,7 @@
 				aria-label={$_('cta.newBuild')}
 				style="color: var(--palette-success-main)"
 				href="/build"
+        data-sveltekit-reload
 			>
 				add_box
 			</IconButton>

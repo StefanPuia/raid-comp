@@ -7,58 +7,61 @@
 
 	export let build: Build;
 	export let context: VersionedContext;
-
-	const total = build.players.length;
-	const tanks = build.players.filter((p) => p.spec?.isTank()).length;
-	const healers = build.players.filter((p) => p.spec?.isHealer()).length;
-	const rangedDPS = build.players.filter((p) => p.spec?.isRangedDPS()).length;
-	const meleeDPS = build.players.filter((p) => p.spec?.isMeleeDPS()).length;
 </script>
 
 <div class="roles">
-	{#if total}
+	{#if build.meta.total}
 		<div class="role">
 			<WarcraftIcon
 				src={context.iconProvider.getSrc('inv_misc_groupneedmore')}
 				label={$_('build.roles.total')}
 			/>
-			<span>{total}</span>
+			<span>{build.meta.total}</span>
 		</div>
 	{/if}
-	{#if tanks}
+	{#if build.meta.unknown}
+		<div class="role">
+			<WarcraftIcon
+				src={context.iconProvider.getForRole(PlayerRole.Unknown)}
+				label={$_('build.roles.Unknown')}
+			/>
+			<span>{build.meta.unknown}</span>
+		</div>
+	{/if}
+	{#if build.meta.tanks}
 		<div class="role">
 			<WarcraftIcon
 				src={context.iconProvider.getForRole(PlayerRole.Tank)}
 				label={$_('build.roles.Tank')}
 			/>
-			<span>{tanks}</span>
+			<span>{build.meta.tanks}</span>
 		</div>
 	{/if}
-	{#if healers}
+	{#if build.meta.healers}
 		<div class="role">
 			<WarcraftIcon
 				src={context.iconProvider.getForRole(PlayerRole.Healer)}
 				label={$_('build.roles.Healer')}
 			/>
-			<span>{healers}</span>
+			<span>{build.meta.healers}</span>
 		</div>
 	{/if}
-	{#if rangedDPS}
+	{#if build.meta.rangedDps}
 		<div class="role">
 			<WarcraftIcon
 				src={context.iconProvider.getForRole(PlayerRole.RangedDPS)}
 				label={$_('build.roles.RangedDPS')}
 			/>
-			<span>{rangedDPS}</span>
+			<span>{build.meta.rangedDps}</span>
 		</div>
 	{/if}
-	{#if meleeDPS}
+	{#if build.meta.meleeDps}
 		<div class="role">
 			<WarcraftIcon
 				src={context.iconProvider.getForRole(PlayerRole.MeleeDPS)}
 				label={$_('build.roles.MeleeDPS')}
 			/>
-			<span>{meleeDPS}</span>
+			<span>{build.meta.meleeDps}</span>
 		</div>
 	{/if}
 </div>

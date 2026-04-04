@@ -41,6 +41,8 @@
 					tanks: 0,
 					healers: 0,
 					dps: 0,
+					rangedDps: 0,
+					meleeDps: 0,
 					unknown: 0,
 					description: $_('build.new'),
 				},

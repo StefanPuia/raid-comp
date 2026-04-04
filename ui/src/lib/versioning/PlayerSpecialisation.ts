@@ -69,6 +69,10 @@ export class PlayerSpec {
 		return this._role === PlayerRole.MeleeDPS;
 	}
 
+	isUnknown(): boolean {
+		return this._role === PlayerRole.Unknown;
+	}
+
 	static fromSource(
 		source: SourcePlayerSpec,
 		classes: PlayerClass[],

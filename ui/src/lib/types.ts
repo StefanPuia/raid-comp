@@ -28,6 +28,8 @@ export type Build = {
 		tanks: number;
 		healers: number;
 		dps: number;
+		rangedDps: number;
+		meleeDps: number;
 		unknown: number;
 		description: string;
 	};

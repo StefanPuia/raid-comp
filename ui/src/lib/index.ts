@@ -14,12 +14,16 @@ export const createBuildData = (build: ApiBuild, context: VersionedContext): Bui
 		gameVersion: build.gameVersion,
 	};
 
+	const rangedDps = tempData.players.filter((p) => p.spec?.isRangedDPS()).length;
+	const meleeDps = tempData.players.filter((p) => p.spec?.isMeleeDPS()).length;
 	const meta = {
 		total: tempData.players.length,
 		tanks: tempData.players.filter((p) => p.spec?.isTank()).length,
 		healers: tempData.players.filter((p) => p.spec?.isHealer()).length,
-		dps: tempData.players.filter((p) => p.spec?.isMeleeDPS() || p.spec?.isRangedDPS()).length,
-		unknown: tempData.players.filter((p) => p.spec == undefined).length,
+		rangedDps,
+		meleeDps,
+		dps: rangedDps + meleeDps,
+		unknown: tempData.players.filter((p) => p.spec == undefined || p.spec?.isUnknown()).length,
 	};
 	const metaDescription =
 		`RaidComp: A raid composition tool for World of Warcraft\n${meta.total} players: ${meta.tanks} Tanks, ` +

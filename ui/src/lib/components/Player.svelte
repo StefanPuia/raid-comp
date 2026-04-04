@@ -5,20 +5,32 @@
 	import { _ } from 'svelte-i18n';
 	import type { VersionedContext } from '$lib/versioning/VersionedContext';
 	import { currentlyEditingPlayerId } from '$lib/store';
+	import { PlayerRole } from '$lib/consts';
 
 	export let player: BuildPlayer;
 	export let context: VersionedContext;
+	export let grouped: boolean | undefined = undefined;
 
 	const editPlayerListener = () => {
 		currentlyEditingPlayerId.set(player.id);
 	};
 </script>
 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-static-element-interactions -->
 <div class="player" on:click={editPlayerListener}>
-	<WarcraftIcon
-		label={$_(player.spec ? `specs.${player.spec.slug}` : `classes.${player.class.slug}`)}
-		src={context.iconProvider.getSrc(player.spec?.icon ?? player.class.icon)}
-	/>
+	<div class="icon">
+		{#if grouped}
+			<WarcraftIcon
+				label={$_(`build.roles.${player.spec?.role ?? 'Unknown'}`)}
+				src={context.iconProvider.getForRole(player.spec?.role ?? PlayerRole.Unknown)}
+			/>
+		{/if}
+		<WarcraftIcon
+			label={$_(player.spec ? `specs.${player.spec.slug}` : `classes.${player.class.slug}`)}
+			src={context.iconProvider.getSrc(player.spec?.icon ?? player.class.icon)}
+		/>
+	</div>
 	<span class="name" style="color: var(--player-class-colour-{player.class.slug})"
 		>{player.name}</span
 	>
@@ -36,6 +48,11 @@
 		align-items: center;
 		user-select: none;
 		/*cursor: ${isClickable && "pointer"};*/
+
+		& > .icon {
+			display: flex;
+			gap: var(--spacing-xs);
+		}
 
 		&:hover {
 			background-color: var(--palette-secondary-dark);

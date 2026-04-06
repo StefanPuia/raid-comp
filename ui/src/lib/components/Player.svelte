@@ -18,7 +18,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div class="player" on:click={editPlayerListener}>
+<div class="player" onclick={editPlayerListener}>
 	<div class="icon">
 		{#if grouped}
 			<WarcraftIcon

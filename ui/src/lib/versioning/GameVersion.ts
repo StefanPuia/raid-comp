@@ -36,8 +36,22 @@ export abstract class GameVersion {
 		return this.classes;
 	}
 
+	getClassFromSlug(slug: string | undefined) {
+		return (
+			this.getClasses().find((c) => c.slug === slug) ??
+			this.getClasses().find((c) => c.slug === UNKNOWN_CLASS)!
+		);
+	}
+
 	getSpecs(): PlayerSpec[] {
 		return this.specs;
+	}
+
+	getSpecFromSlug(slug: string | undefined) {
+		return (
+			this.getSpecs().find((s) => s.slug === slug) ??
+			this.getSpecs().find((s) => s.slug === UNKNOWN_SPEC)!
+		);
 	}
 
 	getUtilities(): RaidUtility[] {

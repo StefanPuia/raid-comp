@@ -1,5 +1,5 @@
 import adapter from '@sveltejs/adapter-cloudflare';
-import { vitePreprocess } from '@sveltejs/kit/vite';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import("@sveltejs/kit").Config} */
 const config = {
@@ -12,6 +12,8 @@ const config = {
 		// If your environment is not supported or you settled on a specific environment, switch out the adapter.
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter({
+			config: undefined,
+			platformProxy: undefined,
 			// See below for an explanation of these options
 			routes: {
 				include: ['/*'],

@@ -3,15 +3,13 @@
 	import Dialog, { Actions, Content, Title } from '@smui/dialog';
 	import Button, { Label } from '@smui/button';
 	import { _ } from 'svelte-i18n';
-	import { GROUP_NONE, InviteStatus, UNKNOWN_CLASS, UNKNOWN_SPEC } from '$lib/consts';
+	import { GROUP_NONE, InviteStatus } from '$lib/consts';
 	import Textfield from '@smui/textfield';
 	import WarcraftIcon from '$lib/components/WarcraftIcon.svelte';
 	import AttendanceIcon from '$lib/components/AttendanceIcon.svelte';
 	import type { Build, BuildPlayer, GroupId } from '$lib/types';
 	import type { VersionedContext } from '$lib/versioning/VersionedContext';
 	import { currentlyEditingPlayerId, editingBuild } from '$lib/store';
-	import type { PlayerClass } from '$lib/versioning/PlayerClass';
-	import type { PlayerSpec } from '$lib/versioning/PlayerSpecialisation';
 
 	export let context: VersionedContext;
 	export let open: boolean;
@@ -20,16 +18,13 @@
 
 	const groups: GroupId[] = [GROUP_NONE, 1, 2, 3, 4, 5, 6, 7, 8];
 	const defaultClass = context.gameVersion.getClasses()[0];
-	const defaultSpec = context.gameVersion
-		.getSpecs()
-		.filter((s) => s.playerClass === defaultClass)[0];
 
 	let build: Build | null;
 	let playerName: string | null = null;
-	let selectedClass: PlayerClass | null = defaultClass;
-	let selectedSpec: PlayerSpec | null = defaultSpec;
-	let selectedStatus: InviteStatus | null = InviteStatus.Invited;
-	let selectedGroup: GroupId | null = GROUP_NONE;
+	let selectedClass: string | undefined = defaultClass.slug;
+	let selectedSpec: string | undefined = undefined;
+	let selectedStatus: string | undefined = InviteStatus.Invited;
+	let selectedGroup: GroupId | undefined = GROUP_NONE;
 
 	editingBuild.subscribe((b) => {
 		build = b;
@@ -38,8 +33,8 @@
 	currentlyEditingPlayerId.subscribe((id) => {
 		currentlyEditing = build?.players.find((p) => p.id === id);
 		playerName = currentlyEditing?.name ?? null;
-		selectedClass = currentlyEditing?.class ?? defaultClass;
-		selectedSpec = currentlyEditing?.spec ?? defaultSpec;
+		selectedClass = currentlyEditing?.class.slug ?? defaultClass.slug;
+		selectedSpec = currentlyEditing?.spec?.slug ?? undefined;
 		selectedStatus = currentlyEditing?.status ?? InviteStatus.Invited;
 		selectedGroup = currentlyEditing?.group ?? GROUP_NONE;
 		open = !!id;
@@ -53,8 +48,8 @@
 
 	const reset = () => {
 		playerName = null;
-		selectedClass = defaultClass;
-		selectedSpec = defaultSpec;
+		selectedClass = defaultClass.slug;
+		selectedSpec = undefined;
 		selectedStatus = InviteStatus.Invited;
 	};
 
@@ -67,9 +62,9 @@
 				build.players.push(
 					context.gameVersion.createPlayer({
 						name: playerName ?? '',
-						class: selectedClass?.slug ?? UNKNOWN_CLASS,
-						spec: selectedSpec?.slug ?? UNKNOWN_SPEC,
-						status: selectedStatus ?? InviteStatus.Unknown,
+						class: context.gameVersion.getClassFromSlug(selectedClass).slug,
+						spec: context.gameVersion.getSpecFromSlug(selectedSpec).slug,
+						status: (selectedStatus as InviteStatus | null) ?? InviteStatus.Unknown,
 						group: selectedGroup ?? GROUP_NONE,
 					}),
 				);
@@ -92,7 +87,7 @@
 	const findPreselectedSpec = () => {
 		selectedSpec = context.gameVersion
 			.getSpecs()
-			.filter((s) => s.playerClass.slug === selectedClass?.slug)[0];
+			.filter((s) => s.playerClass.slug === selectedClass)[0].slug;
 	};
 </script>
 
@@ -116,16 +111,20 @@
 			</div>
 			<div class="class-wrapper">
 				<SegmentedButton
-					on:change={() => findPreselectedSpec()}
+					onchange={() => findPreselectedSpec()}
 					bind:selected={selectedClass}
-					segments={context.gameVersion.getClasses()}
-					let:segment
+					segments={context.gameVersion.getClasses().map((c) => c.slug)}
 					singleSelect
-					key={(segment) => segment.slug}
 				>
-					<Segment {segment} title={$_(`classes.${segment.slug}`)}>
-						<WarcraftIcon src={context.iconProvider.getSrc(segment.icon)} />
-					</Segment>
+					{#snippet segment(segment)}
+						<Segment {segment} title={$_(`classes.${segment}`)}>
+							<WarcraftIcon
+								src={context.iconProvider.getSrc(
+									context.gameVersion.getClassFromSlug(segment).icon,
+								)}
+							/>
+						</Segment>
+					{/snippet}
 				</SegmentedButton>
 			</div>
 			<div class="spec-wrapper">
@@ -133,49 +132,55 @@
 					bind:selected={selectedSpec}
 					segments={context.gameVersion
 						.getSpecs()
-						.filter((s) => s.playerClass.slug === selectedClass?.slug)}
-					let:segment
+						.filter((s) => s.playerClass.slug === selectedClass)
+						.map((s) => s.slug)}
 					singleSelect
-					key={(segment) => segment.slug}
 				>
-					<Segment {segment} title={$_(`specs.${segment.slug}`)}>
-						<WarcraftIcon src={context.iconProvider.getSrc(segment.icon)} />
-					</Segment>
+					{#snippet segment(segment)}
+						<Segment {segment} title={$_(`specs.${segment}`)}>
+							<WarcraftIcon
+								src={context.iconProvider.getSrc(context.gameVersion.getSpecFromSlug(segment).icon)}
+							/>
+						</Segment>
+					{/snippet}
 				</SegmentedButton>
 			</div>
 			<div class="status-wrapper">
 				<SegmentedButton
 					bind:selected={selectedStatus}
 					segments={Object.values(InviteStatus)}
-					let:segment
 					singleSelect
 				>
-					<Segment {segment} title={$_(`status.${segment}`)}>
-						<AttendanceIcon status={segment} />
-					</Segment>
+					{#snippet segment(segment)}
+						<Segment {segment} title={$_(`status.${segment}`)}>
+							<AttendanceIcon status={segment} />
+						</Segment>
+					{/snippet}
 				</SegmentedButton>
 			</div>
 			<div class="status-wrapper">
-				<SegmentedButton bind:selected={selectedGroup} segments={groups} let:segment singleSelect>
-					<Segment {segment} title={$_(`build.groups.group_${segment}`)}>
-						<Label style="color: var(--palette-text-primary);"
-							>{$_(`build.add.groups.group_${segment}`)}</Label
-						>
-					</Segment>
+				<SegmentedButton bind:selected={selectedGroup} segments={groups} singleSelect>
+					{#snippet segment(segment)}
+						<Segment {segment} title={$_(`build.groups.group_${segment}`)}>
+							<Label style="color: var(--palette-text-primary);"
+								>{$_(`build.add.groups.group_${segment}`)}</Label
+							>
+						</Segment>
+					{/snippet}
 				</SegmentedButton>
 			</div>
 		</div>
 	</Content>
 	<Actions>
 		{#if currentlyEditing}
-			<Button class="button-danger" on:click={() => handleRemove()}>
+			<Button class="button-danger" onclick={() => handleRemove()}>
 				<Label>{$_('buttons.remove')}</Label>
 			</Button>
 		{/if}
 		<Button class="button-cancel">
 			<Label>{$_('buttons.cancel')}</Label>
 		</Button>
-		<Button on:click={() => handleSave()} class="button-safe">
+		<Button onclick={() => handleSave()} class="button-safe">
 			<Label>{$_(currentlyEditing ? 'buttons.save' : 'buttons.add')}</Label>
 		</Button>
 	</Actions>

@@ -43,7 +43,7 @@
 		<List class="demo-list">
 			{#each versions as version}
 				<Item
-					on:SMUI:action={() => (selectedVersion = version.slug)}
+					onSMUIAction={() => (selectedVersion = version.slug)}
 					style="{selectedVersion === version.slug
 						? 'background-color: var(--palette-success-dark);'
 						: ''} border-radius: var(--spacing-xs); display: flex; gap: var(--spacing-s);"
@@ -55,7 +55,7 @@
 		</List>
 	</Content>
 	<Actions>
-		<Button on:click={() => handleChange()} class="button-danger">
+		<Button onclick={() => handleChange()} class="button-danger">
 			<Label>{$_('buttons.ok')}</Label>
 		</Button>
 		<Button class="button-cancel">

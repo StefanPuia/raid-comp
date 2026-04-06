@@ -14,13 +14,13 @@
 		[InviteStatus.Unknown]: ['help', 'secondary-light'],
 	};
 
-	export let status: InviteStatus;
+	export let status: InviteStatus | string;
 
 	let icon = '';
 	let colour = '';
 
 	$: {
-		[icon, colour] = iconMap[status];
+		[icon, colour] = iconMap[status as unknown as InviteStatus] ?? iconMap[InviteStatus.Unknown];
 	}
 </script>
 

@@ -20,7 +20,7 @@
 	<Title id="simple-title">{$_('build.reset.title')}</Title>
 	<Content id="simple-content">{$_('build.reset.confirm')}</Content>
 	<Actions>
-		<Button on:click={() => handleDelete()} class="button-danger">
+		<Button onclick={() => handleDelete()} class="button-danger">
 			<Label>{$_('buttons.ok')}</Label>
 		</Button>
 		<Button class="button-cancel">

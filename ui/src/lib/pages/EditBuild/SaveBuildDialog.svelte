@@ -67,7 +67,7 @@
 			<Button class="button-cancel">
 				<Label>{$_('buttons.cancel')}</Label>
 			</Button>
-			<Button on:click={() => handleSave()} class="button-safe">
+			<Button onclick={() => handleSave()} class="button-safe">
 				<Label>{$_('buttons.save')}</Label>
 			</Button>
 		</Actions>

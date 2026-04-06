@@ -43,7 +43,7 @@
 			<Fab
 				aria-label={$_('cta.addPlayer')}
 				color={'primary'}
-				on:click={() => (editPlayerDialog = true)}
+				onclick={() => (editPlayerDialog = true)}
 			>
 				<Icon class="material-icons">add</Icon>
 			</Fab>

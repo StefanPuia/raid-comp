@@ -16,7 +16,7 @@
 				class="material-icons"
 				aria-label={$_('cta.reportBug')}
 				style="color: var(--palette-warning-main)"
-				on:click={() => window.open('https://github.com/StefanPuia/raid-comp/issues')}
+				onclick={() => window.open('https://github.com/StefanPuia/raid-comp/issues', '_blank')}
 			>
 				bug_report
 			</IconButton>
@@ -38,7 +38,7 @@
 				aria-label={$_('cta.newBuild')}
 				style="color: var(--palette-success-main)"
 				href="/build"
-        data-sveltekit-reload
+				data-sveltekit-reload
 			>
 				add_box
 			</IconButton>

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
-	import Tooltip, { Wrapper } from '@smui/tooltip/src/index.js';
-	import IconButton from '@smui/icon-button/src/index.js';
+	import Tooltip, { Wrapper } from '@smui/tooltip';
+	import IconButton from '@smui/icon-button';
 
 	export let openResetBuildDialog: () => void;
 	export let openChangeGameVersionDialog: () => void;
@@ -12,7 +12,7 @@
 		class="material-icons"
 		aria-label={$_('cta.resetBuild')}
 		style="color: var(--palette-error-main)"
-		on:click={() => openResetBuildDialog()}
+		onclick={() => openResetBuildDialog()}
 	>
 		delete_forever
 	</IconButton>
@@ -23,7 +23,7 @@
 		class="material-icons"
 		aria-label={$_('cta.reportBug')}
 		style="color: var(--palette-warning-main)"
-		on:click={() => window.open('https://github.com/StefanPuia/raid-comp/issues')}
+		onclick={() => window.open('https://github.com/StefanPuia/raid-comp/issues')}
 	>
 		bug_report
 	</IconButton>
@@ -34,7 +34,7 @@
 		class="material-icons"
 		aria-label={$_('cta.changeGameVersion')}
 		style="color: var(--palette-info-main)"
-		on:click={() => openChangeGameVersionDialog()}
+		onclick={() => openChangeGameVersionDialog()}
 	>
 		extension
 	</IconButton>

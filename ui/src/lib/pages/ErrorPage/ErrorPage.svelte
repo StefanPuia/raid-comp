@@ -21,7 +21,7 @@
 			<Label>{$_('error.goBack')}</Label>
 		</Button>
 		<Button
-			on:click={reload}
+			onclick={reload}
 			variant="raised"
 			style="margin-left: var(--spacing-xs); background-color: var(--palette-secondary-main)"
 		>

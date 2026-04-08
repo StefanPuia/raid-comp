@@ -15,7 +15,7 @@
 </script>
 
 <LayoutGrid>
-	{#each { length: 8 } as _, i}
+	{#each { length: 8 } as _, i (i)}
 		<Cell {spanDevices}>
 			<SingleGroupDisplay group={i + 1} {build} {context} />
 		</Cell>

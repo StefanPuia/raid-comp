@@ -28,13 +28,13 @@
 
 		{#if displayAsGrid}
 			<div class="spread">
-				{#each players as player}
+				{#each players as player (player.id)}
 					<Player {player} {context} />
 				{/each}
 			</div>
 		{:else}
 			<div>
-				{#each players as player}
+				{#each players as player (player.id)}
 					<Player {player} {context} />
 				{/each}
 			</div>

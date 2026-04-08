@@ -21,7 +21,7 @@
 	let resetBuildOpen = false;
 </script>
 
-<BottomAppBar variant="static" color={'secondary'}>
+<BottomAppBar variant="static" color="secondary">
 	<Section>
 		<div class="display-small">
 			<BurgerMenu
@@ -42,7 +42,7 @@
 		<Wrapper>
 			<Fab
 				aria-label={$_('cta.addPlayer')}
-				color={'primary'}
+				color="primary"
 				onclick={() => (editPlayerDialog = true)}
 			>
 				<Icon class="material-icons">add</Icon>

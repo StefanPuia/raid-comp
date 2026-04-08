@@ -10,6 +10,7 @@
 	import type { Build, BuildPlayer, GroupId } from '$lib/types';
 	import type { VersionedContext } from '$lib/versioning/VersionedContext';
 	import { currentlyEditingPlayerId, editingBuild } from '$lib/store';
+	import type { PlayerClass } from '$lib/versioning/PlayerClass';
 
 	export let context: VersionedContext;
 	export let open: boolean;
@@ -19,12 +20,25 @@
 	const groups: GroupId[] = [GROUP_NONE, 1, 2, 3, 4, 5, 6, 7, 8];
 	const defaultClass = context.gameVersion.getClasses()[0];
 
+	const findDefaultSpecForClass = (playerClass: PlayerClass) => {
+		return context.gameVersion.getSpecs().find((s) => s.playerClass.slug === playerClass.slug);
+	};
+	const defaultSpec = findDefaultSpecForClass(defaultClass);
+
 	let build: Build | null;
-	let playerName: string | null = null;
-	let selectedClass: string | undefined = defaultClass.slug;
-	let selectedSpec: string | undefined = undefined;
-	let selectedStatus: string | undefined = InviteStatus.Invited;
+	let playerName: string | null;
+	let selectedClass: string | undefined;
+	let selectedSpec: string | undefined;
+	let selectedStatus: string | undefined;
 	let selectedGroup: GroupId | undefined = GROUP_NONE;
+	const reset = () => {
+		playerName = null;
+		selectedClass = defaultClass.slug;
+		selectedSpec = defaultSpec?.slug;
+		selectedStatus = InviteStatus.Invited;
+	};
+
+	reset();
 
 	editingBuild.subscribe((b) => {
 		build = b;
@@ -34,7 +48,10 @@
 		currentlyEditing = build?.players.find((p) => p.id === id);
 		playerName = currentlyEditing?.name ?? null;
 		selectedClass = currentlyEditing?.class.slug ?? defaultClass.slug;
-		selectedSpec = currentlyEditing?.spec?.slug ?? undefined;
+		selectedSpec =
+			currentlyEditing?.spec?.slug ??
+			findDefaultSpecForClass(currentlyEditing?.class ?? defaultClass)?.slug ??
+			defaultSpec?.slug;
 		selectedStatus = currentlyEditing?.status ?? InviteStatus.Invited;
 		selectedGroup = currentlyEditing?.group ?? GROUP_NONE;
 		open = !!id;
@@ -45,13 +62,6 @@
 			currentlyEditingPlayerId.set(null);
 		}
 	}
-
-	const reset = () => {
-		playerName = null;
-		selectedClass = defaultClass.slug;
-		selectedSpec = undefined;
-		selectedStatus = InviteStatus.Invited;
-	};
 
 	const handleSave = () => {
 		editingBuild.update((build) => {
@@ -87,7 +97,7 @@
 	const findPreselectedSpec = () => {
 		selectedSpec = context.gameVersion
 			.getSpecs()
-			.filter((s) => s.playerClass.slug === selectedClass)[0].slug;
+			.find((s) => s.playerClass.slug === selectedClass)?.slug;
 	};
 </script>
 

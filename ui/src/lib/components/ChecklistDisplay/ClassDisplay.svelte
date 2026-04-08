@@ -10,7 +10,7 @@
 </script>
 
 <ChecklistWrapper title={$_(`build.checklist.classes`)}>
-	{#each context.gameVersion.getClasses() as playerClass}
+	{#each context.gameVersion.getClasses() as playerClass (playerClass.slug)}
 		<ChecklistCounter
 			label={$_(`classes.${playerClass.slug}`)}
 			count={context.gameVersion.countClasses(build.players, playerClass)}

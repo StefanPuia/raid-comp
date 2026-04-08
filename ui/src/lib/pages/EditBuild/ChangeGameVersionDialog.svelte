@@ -41,7 +41,7 @@
 		</p>
 
 		<List class="demo-list">
-			{#each versions as version}
+			{#each versions as version (version.slug)}
 				<Item
 					onSMUIAction={() => (selectedVersion = version.slug)}
 					style="{selectedVersion === version.slug

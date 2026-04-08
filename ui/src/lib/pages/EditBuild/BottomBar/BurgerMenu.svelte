@@ -36,12 +36,12 @@
 			<Icon class="material-icons" style="color: var(--palette-info-main)">grid_view</Icon>
 			<Text>{$_('cta.changeViewMode')}</Text>
 		</Item>
-<!--		<Item onSMUIAction={() => {}}>-->
-<!--			<Icon class="material-icons" style="color: var(&#45;&#45;palette-warning-light)"-->
-<!--				>system_update_alt-->
-<!--			</Icon>-->
-<!--			<Text>{$_('cta.importBuild')}</Text>-->
-<!--		</Item>-->
+		<!--		<Item onSMUIAction={() => {}}>-->
+		<!--			<Icon class="material-icons" style="color: var(&#45;&#45;palette-warning-light)"-->
+		<!--				>system_update_alt-->
+		<!--			</Icon>-->
+		<!--			<Text>{$_('cta.importBuild')}</Text>-->
+		<!--		</Item>-->
 
 		<Separator />
 

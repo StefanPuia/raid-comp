@@ -9,7 +9,7 @@
 	export let grouped: boolean | undefined;
 </script>
 
-<BottomAppBar variant="static" color={'secondary'}>
+<BottomAppBar variant="static" color="secondary">
 	<Section>
 		<Wrapper>
 			<IconButton

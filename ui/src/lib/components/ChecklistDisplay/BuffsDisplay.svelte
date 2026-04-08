@@ -10,7 +10,7 @@
 </script>
 
 <ChecklistWrapper title={$_(`build.checklist.buffs`)} warning>
-	{#each context.gameVersion.getBuffs() as raidBuff}
+	{#each context.gameVersion.getBuffs() as raidBuff (raidBuff.slug)}
 		<ChecklistCounter
 			label={$_(`buff.${raidBuff.slug}`)}
 			count={context.gameVersion.countBuffs(build.players, raidBuff)}

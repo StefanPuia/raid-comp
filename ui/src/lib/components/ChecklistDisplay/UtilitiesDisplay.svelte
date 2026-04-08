@@ -10,7 +10,7 @@
 </script>
 
 <ChecklistWrapper title={$_(`build.checklist.utilities`)} warning>
-	{#each context.gameVersion.getUtilities() as utility}
+	{#each context.gameVersion.getUtilities() as utility (utility.slug)}
 		<ChecklistCounter
 			label={$_(`utility.${utility.slug}`)}
 			count={context.gameVersion.countUtilities(build.players, utility)}

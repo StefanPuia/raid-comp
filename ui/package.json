@@ -15,6 +15,7 @@
 		"smui-theme-dark": "smui-theme compile static/smui-dark.css -i src/theme/dark"
 	},
 	"devDependencies": {
+		"@eslint/js": "10.0.1",
 		"@haverstack/axios-fetch-adapter": "0.12.0",
 		"@material/typography": "^14.0.0",
 		"@smui-extra/bottom-app-bar": "^8.0.3",
@@ -37,13 +38,12 @@
 		"@sveltejs/adapter-cloudflare": "7.2.8",
 		"@sveltejs/kit": "^2.57.0",
 		"@sveltejs/vite-plugin-svelte": "^7.0.0",
-		"typescript-eslint": "^8.58.1",
 		"@typescript-eslint/eslint-plugin": "^8.58.1",
 		"@typescript-eslint/parser": "^8.58.1",
 		"axios": "1.15.0",
 		"axios-mock-adapter": "^2.1.0",
-		"eslint": "^9.0.0",
-		"eslint-config-prettier": "^9.1.0",
+		"eslint": "^10.2.0",
+		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte": "^3.17.0",
 		"globals": "^17.4.0",
 		"prettier": "^3.8.1",
@@ -54,6 +54,7 @@
 		"svelte-turnstile": "0.11.0",
 		"tslib": "^2.8.1",
 		"typescript": "^5.9.3",
+		"typescript-eslint": "^8.58.1",
 		"vite": "^8.0.7",
 		"wrangler": "4.81.0"
 	},

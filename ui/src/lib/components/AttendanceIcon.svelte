@@ -16,8 +16,8 @@
 
 	export let status: InviteStatus | string;
 
-	let icon = '';
-	let colour = '';
+	let icon: string;
+	let colour: string;
 
 	$: {
 		[icon, colour] = iconMap[status as unknown as InviteStatus] ?? iconMap[InviteStatus.Unknown];

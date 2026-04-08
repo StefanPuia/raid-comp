@@ -27,7 +27,7 @@
 			return build;
 		}
 
-		let editing: Build | null = null;
+		let editing: Build;
 		if (params.build) {
 			editing = createBuildData(params.build, context);
 		} else {

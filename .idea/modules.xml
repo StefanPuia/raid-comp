@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/raid-comp.iml" filepath="$PROJECT_DIR$/.idea/raid-comp.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/raidcomp-api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/raidcomp-api.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/raidcomp-api.test.iml" filepath="$PROJECT_DIR$/.idea/modules/raidcomp-api.test.iml" />
     </modules>
   </component>
 </project>

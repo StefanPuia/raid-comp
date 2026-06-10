@@ -1300,6 +1300,15 @@
     "@smui/common" "^8.0.3"
     "@smui/ripple" "^8.0.3"
 
+"@smui/button@^9.0.0":
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/@smui/button/-/button-9.0.1.tgz#243ad43d6173c6acfe956d2e724ebeec1cc49435"
+  integrity sha512-lKQUlK7hnFYEDLkHIOa6I6oWxIt1JT2heynz9iaw9+I0WN6b31GBjMxPfWfdeHY2B7FVNnHRwSyF6cWnqmfDFg==
+  dependencies:
+    "@smui/common" "^9.0.1"
+    "@smui/ripple" "^9.0.1"
+    "@smui/touch-target" "^9.0.1"
+
 "@smui/card@^8.0.3":
   version "8.0.3"
   resolved "https://registry.yarnpkg.com/@smui/card/-/card-8.0.3.tgz#c6d6eb5b1b61047cbb227000493edf1290ced626"
@@ -1325,6 +1334,13 @@
   integrity sha512-Zgsp8KE4NH0+eLihHdhxYSzbV8M2w0B53BnM+5WvEEEJWzHcKhpvYNHTT6tG909IsIrU7uNNVJosNIw7leU8Wg==
   dependencies:
     "@material/dom" "^14.0.0"
+
+"@smui/common@^9.0.1":
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/@smui/common/-/common-9.0.1.tgz#a543e6b10313a000131b2ba20d8122d6724d35e9"
+  integrity sha512-tnjQ4n3xmEMQdKtr5qHwl/t4pmjU9ntbit/4eD0N2vsF9kzjql3WDBAf6vhQKMZK5c1SGQ1vKRmoU5tv5tCTSw==
+  dependencies:
+    safevalues "^1.2.0"
 
 "@smui/dialog@^8.0.3":
   version "8.0.3"
@@ -1441,6 +1457,13 @@
     "@material/ripple" "^14.0.0"
     "@smui/common" "^8.0.3"
 
+"@smui/ripple@^9.0.1":
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/@smui/ripple/-/ripple-9.0.1.tgz#cf7f18daf8ab88026ae0def2164c245525141e62"
+  integrity sha512-GHUfIwFlTUy1N3bfjiWC0Rq2jBoDv8XaUhS0qafI2ul1IqkQRxlbQmqM/UTxHvF7rudhDPvr0zol1rPUudWajg==
+  dependencies:
+    "@smui/common" "^9.0.1"
+
 "@smui/segmented-button@^8.0.3":
   version "8.0.3"
   resolved "https://registry.yarnpkg.com/@smui/segmented-button/-/segmented-button-8.0.3.tgz#50743e2e678aad2418105ac5099e49239cef5f42"
@@ -1507,6 +1530,13 @@
   dependencies:
     "@material/tooltip" "^14.0.0"
     "@smui/common" "^8.0.3"
+
+"@smui/touch-target@^9.0.1":
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/@smui/touch-target/-/touch-target-9.0.1.tgz#21a51c6fc6ffa3d7d79a04d18b52bf03359bda6d"
+  integrity sha512-anXbPcWO0zdguq19atMpea3j6TO5Xlb3yppHuvm5jczqgraZN919Lz1Hqs9AdpDp6Kw4773lNEK+JlWa+g4Rog==
+  dependencies:
+    "@smui/common" "^9.0.1"
 
 "@speed-highlight/core@^1.2.7":
   version "1.2.15"
@@ -2879,6 +2909,11 @@ sade@^1.7.4, sade@^1.8.1:
   integrity sha512-xal3CZX1Xlo/k4ApwCFrHVACi9fBqJ7V+mwhBsuf/1IOKbBy098Fex+Wa/5QMubw09pSZ/u8EY8PWgevJsXp1A==
   dependencies:
     mri "^1.1.0"
+
+safevalues@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/safevalues/-/safevalues-1.2.0.tgz#f9e646d6ebf31788004ef192d2a7d646c9896bb2"
+  integrity sha512-zIsuhjYvJCjfsfjoim2ab6gLKFYAnTiDSJGh0cC3T44L/4kNLL90hBG2BzrXPrHA3f8Ms8FSJ1mljKH5dVR1cw==
 
 sass@^1.83.0:
   version "1.99.0"

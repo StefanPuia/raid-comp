@@ -23,7 +23,7 @@
 		"@smui/card": "^8.0.3",
 		"@smui/circular-progress": "^8.0.3",
 		"@smui/common": "^8.0.3",
-		"@smui/dialog": "^8.0.3",
+		"@smui/dialog": "^9.0.0",
 		"@smui/fab": "^8.0.3",
 		"@smui/icon-button": "^8.0.3",
 		"@smui/layout-grid": "^8.0.3",

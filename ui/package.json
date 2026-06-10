@@ -20,7 +20,7 @@
 		"@material/typography": "^14.0.0",
 		"@smui-extra/bottom-app-bar": "^8.0.3",
 		"@smui/button": "^8.0.3",
-		"@smui/card": "^8.0.3",
+		"@smui/card": "^9.0.0",
 		"@smui/circular-progress": "^8.0.3",
 		"@smui/common": "^8.0.3",
 		"@smui/dialog": "^8.0.3",

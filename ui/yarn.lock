@@ -750,25 +750,6 @@
     "@material/theme" "^14.0.0"
     tslib "^2.1.0"
 
-"@material/fab@^14.0.0":
-  version "14.0.0"
-  resolved "https://registry.yarnpkg.com/@material/fab/-/fab-14.0.0.tgz#9561178ff593157ad07a0841c6e213a06d6fe6ce"
-  integrity sha512-s4rrw2TLU8ITKopHSTEHuJEFsGEZsb+ijwW16pQt0h9GArxPGaALT+CCJIPjf75D3wPEEMW0vnLj7oMoII2VFg==
-  dependencies:
-    "@material/animation" "^14.0.0"
-    "@material/dom" "^14.0.0"
-    "@material/elevation" "^14.0.0"
-    "@material/feature-targeting" "^14.0.0"
-    "@material/focus-ring" "^14.0.0"
-    "@material/ripple" "^14.0.0"
-    "@material/rtl" "^14.0.0"
-    "@material/shape" "^14.0.0"
-    "@material/theme" "^14.0.0"
-    "@material/tokens" "^14.0.0"
-    "@material/touch-target" "^14.0.0"
-    "@material/typography" "^14.0.0"
-    tslib "^2.1.0"
-
 "@material/feature-targeting@^14.0.0":
   version "14.0.0"
   resolved "https://registry.yarnpkg.com/@material/feature-targeting/-/feature-targeting-14.0.0.tgz#a6a878ae2be1f88d31b0bb95f05dbf5d486c4b3e"
@@ -1326,6 +1307,13 @@
   dependencies:
     "@material/dom" "^14.0.0"
 
+"@smui/common@^9.0.1":
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/@smui/common/-/common-9.0.1.tgz#a543e6b10313a000131b2ba20d8122d6724d35e9"
+  integrity sha512-tnjQ4n3xmEMQdKtr5qHwl/t4pmjU9ntbit/4eD0N2vsF9kzjql3WDBAf6vhQKMZK5c1SGQ1vKRmoU5tv5tCTSw==
+  dependencies:
+    safevalues "^1.2.0"
+
 "@smui/dialog@^8.0.3":
   version "8.0.3"
   resolved "https://registry.yarnpkg.com/@smui/dialog/-/dialog-8.0.3.tgz#09c36d7921d59234fc2f700ae1fd8b49a5a2deba"
@@ -1336,15 +1324,14 @@
     "@material/dom" "^14.0.0"
     "@smui/common" "^8.0.3"
 
-"@smui/fab@^8.0.3":
-  version "8.0.3"
-  resolved "https://registry.yarnpkg.com/@smui/fab/-/fab-8.0.3.tgz#774fe99bc9aa558c910865d4ab8b99833e6e2fb1"
-  integrity sha512-lCGLnP2AdG0nppirhvCAxnUrvMC3sQrKITZOMk8i986cUwnnOURHTOgN8oLOtLgiIVPotgrDz4IrGzP+ivCzSg==
+"@smui/fab@^9.0.0":
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/@smui/fab/-/fab-9.0.1.tgz#fb809e520fff3db3d8ed62ae9dd9ad51f995815a"
+  integrity sha512-CYFjb7zrML2qgFfYNQ0N/bp9C8F1P5oPnheG2jKvJDR+N1rVO33W8uG3J/0FwyEFh2TL0+PpNBvpsu8+lKFgYg==
   dependencies:
-    "@material/fab" "^14.0.0"
-    "@material/feature-targeting" "^14.0.0"
-    "@smui/common" "^8.0.3"
-    "@smui/ripple" "^8.0.3"
+    "@smui/common" "^9.0.1"
+    "@smui/ripple" "^9.0.1"
+    "@smui/touch-target" "^9.0.1"
 
 "@smui/floating-label@^8.0.3":
   version "8.0.3"
@@ -1441,6 +1428,13 @@
     "@material/ripple" "^14.0.0"
     "@smui/common" "^8.0.3"
 
+"@smui/ripple@^9.0.1":
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/@smui/ripple/-/ripple-9.0.1.tgz#cf7f18daf8ab88026ae0def2164c245525141e62"
+  integrity sha512-GHUfIwFlTUy1N3bfjiWC0Rq2jBoDv8XaUhS0qafI2ul1IqkQRxlbQmqM/UTxHvF7rudhDPvr0zol1rPUudWajg==
+  dependencies:
+    "@smui/common" "^9.0.1"
+
 "@smui/segmented-button@^8.0.3":
   version "8.0.3"
   resolved "https://registry.yarnpkg.com/@smui/segmented-button/-/segmented-button-8.0.3.tgz#50743e2e678aad2418105ac5099e49239cef5f42"
@@ -1507,6 +1501,13 @@
   dependencies:
     "@material/tooltip" "^14.0.0"
     "@smui/common" "^8.0.3"
+
+"@smui/touch-target@^9.0.1":
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/@smui/touch-target/-/touch-target-9.0.1.tgz#21a51c6fc6ffa3d7d79a04d18b52bf03359bda6d"
+  integrity sha512-anXbPcWO0zdguq19atMpea3j6TO5Xlb3yppHuvm5jczqgraZN919Lz1Hqs9AdpDp6Kw4773lNEK+JlWa+g4Rog==
+  dependencies:
+    "@smui/common" "^9.0.1"
 
 "@speed-highlight/core@^1.2.7":
   version "1.2.15"
@@ -2879,6 +2880,11 @@ sade@^1.7.4, sade@^1.8.1:
   integrity sha512-xal3CZX1Xlo/k4ApwCFrHVACi9fBqJ7V+mwhBsuf/1IOKbBy098Fex+Wa/5QMubw09pSZ/u8EY8PWgevJsXp1A==
   dependencies:
     mri "^1.1.0"
+
+safevalues@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/safevalues/-/safevalues-1.2.0.tgz#f9e646d6ebf31788004ef192d2a7d646c9896bb2"
+  integrity sha512-zIsuhjYvJCjfsfjoim2ab6gLKFYAnTiDSJGh0cC3T44L/4kNLL90hBG2BzrXPrHA3f8Ms8FSJ1mljKH5dVR1cw==
 
 sass@^1.83.0:
   version "1.99.0"

@@ -1326,6 +1326,13 @@
   dependencies:
     "@material/dom" "^14.0.0"
 
+"@smui/common@^9.0.0":
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/@smui/common/-/common-9.0.1.tgz#a543e6b10313a000131b2ba20d8122d6724d35e9"
+  integrity sha512-tnjQ4n3xmEMQdKtr5qHwl/t4pmjU9ntbit/4eD0N2vsF9kzjql3WDBAf6vhQKMZK5c1SGQ1vKRmoU5tv5tCTSw==
+  dependencies:
+    safevalues "^1.2.0"
+
 "@smui/dialog@^8.0.3":
   version "8.0.3"
   resolved "https://registry.yarnpkg.com/@smui/dialog/-/dialog-8.0.3.tgz#09c36d7921d59234fc2f700ae1fd8b49a5a2deba"
@@ -2879,6 +2886,11 @@ sade@^1.7.4, sade@^1.8.1:
   integrity sha512-xal3CZX1Xlo/k4ApwCFrHVACi9fBqJ7V+mwhBsuf/1IOKbBy098Fex+Wa/5QMubw09pSZ/u8EY8PWgevJsXp1A==
   dependencies:
     mri "^1.1.0"
+
+safevalues@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/safevalues/-/safevalues-1.2.0.tgz#f9e646d6ebf31788004ef192d2a7d646c9896bb2"
+  integrity sha512-zIsuhjYvJCjfsfjoim2ab6gLKFYAnTiDSJGh0cC3T44L/4kNLL90hBG2BzrXPrHA3f8Ms8FSJ1mljKH5dVR1cw==
 
 sass@^1.83.0:
   version "1.99.0"

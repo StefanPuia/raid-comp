@@ -689,19 +689,6 @@
     "@material/theme" "^14.0.0"
     tslib "^2.1.0"
 
-"@material/circular-progress@^14.0.0":
-  version "14.0.0"
-  resolved "https://registry.yarnpkg.com/@material/circular-progress/-/circular-progress-14.0.0.tgz#95c2859900a0b7dba1f5acb68d6d08923c6c7d2d"
-  integrity sha512-7EdkP6ty54g6qs6zzlsw29vWlUyrcSWr9b4pGGx4D/iNJww+eyxXZ07iWoNOr4uLgguauWEft2axpQiFCwFD0g==
-  dependencies:
-    "@material/animation" "^14.0.0"
-    "@material/base" "^14.0.0"
-    "@material/feature-targeting" "^14.0.0"
-    "@material/progress-indicator" "^14.0.0"
-    "@material/rtl" "^14.0.0"
-    "@material/theme" "^14.0.0"
-    tslib "^2.1.0"
-
 "@material/density@^14.0.0":
   version "14.0.0"
   resolved "https://registry.yarnpkg.com/@material/density/-/density-14.0.0.tgz#584c4f3468c86c96e361ebe7ba6723f4aa6cd548"
@@ -891,13 +878,6 @@
     "@material/rtl" "^14.0.0"
     "@material/shape" "^14.0.0"
     "@material/theme" "^14.0.0"
-    tslib "^2.1.0"
-
-"@material/progress-indicator@^14.0.0":
-  version "14.0.0"
-  resolved "https://registry.yarnpkg.com/@material/progress-indicator/-/progress-indicator-14.0.0.tgz#638e46207746d24e87b7794c0492ee11764481db"
-  integrity sha512-09JRTuIySxs670Tcy4jVlqCUbyrO+Ad6z3nHnAi8pYl74duco4n/9jTROV0mlFdr9NIFifnd08lKbiFLDmfJGQ==
-  dependencies:
     tslib "^2.1.0"
 
 "@material/ripple@^14.0.0":
@@ -1311,13 +1291,12 @@
     "@smui/icon-button" "^8.0.3"
     "@smui/ripple" "^8.0.3"
 
-"@smui/circular-progress@^8.0.3":
-  version "8.0.3"
-  resolved "https://registry.yarnpkg.com/@smui/circular-progress/-/circular-progress-8.0.3.tgz#327721dbf58e32ec7f9e6d7ef25d799e097d0bd2"
-  integrity sha512-K2OZL3oV4D7rCwxnikEVZn0tgnKc875He+WXTZrCYaL3VhON6XijX8xzZCbLbT8V7A72MR/fBtnP7S25yYirUA==
+"@smui/circular-progress@^9.0.0":
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/@smui/circular-progress/-/circular-progress-9.0.1.tgz#d120bdd9497ca96e7f2627a3be820341918854b8"
+  integrity sha512-RlSd97pR9PegVamObHZCEiHSd+YnPqjUkqpAQdhvsfmRwZ4gmTlAPidtICAh0QnOtdHfjPic5crwHcyyJ4qz+Q==
   dependencies:
-    "@material/circular-progress" "^14.0.0"
-    "@smui/common" "^8.0.3"
+    "@smui/common" "^9.0.1"
 
 "@smui/common@^8.0.3":
   version "8.0.3"
@@ -1325,6 +1304,13 @@
   integrity sha512-Zgsp8KE4NH0+eLihHdhxYSzbV8M2w0B53BnM+5WvEEEJWzHcKhpvYNHTT6tG909IsIrU7uNNVJosNIw7leU8Wg==
   dependencies:
     "@material/dom" "^14.0.0"
+
+"@smui/common@^9.0.1":
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/@smui/common/-/common-9.0.1.tgz#a543e6b10313a000131b2ba20d8122d6724d35e9"
+  integrity sha512-tnjQ4n3xmEMQdKtr5qHwl/t4pmjU9ntbit/4eD0N2vsF9kzjql3WDBAf6vhQKMZK5c1SGQ1vKRmoU5tv5tCTSw==
+  dependencies:
+    safevalues "^1.2.0"
 
 "@smui/dialog@^8.0.3":
   version "8.0.3"
@@ -2879,6 +2865,11 @@ sade@^1.7.4, sade@^1.8.1:
   integrity sha512-xal3CZX1Xlo/k4ApwCFrHVACi9fBqJ7V+mwhBsuf/1IOKbBy098Fex+Wa/5QMubw09pSZ/u8EY8PWgevJsXp1A==
   dependencies:
     mri "^1.1.0"
+
+safevalues@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/safevalues/-/safevalues-1.2.0.tgz#f9e646d6ebf31788004ef192d2a7d646c9896bb2"
+  integrity sha512-zIsuhjYvJCjfsfjoim2ab6gLKFYAnTiDSJGh0cC3T44L/4kNLL90hBG2BzrXPrHA3f8Ms8FSJ1mljKH5dVR1cw==
 
 sass@^1.83.0:
   version "1.99.0"

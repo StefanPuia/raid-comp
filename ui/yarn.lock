@@ -1276,15 +1276,13 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-7.2.0.tgz#7c594e1a64336d2008d99d814056d459421504d4"
   integrity sha512-P1Cz1dWaFfR4IR+U13mqqiGsLFf1KbayybWwdd2vfctdV6hDpUkgCY0nKOLLTMSoRd/jJNjtbqzf13K8DCCXQw==
 
-"@smui-extra/bottom-app-bar@^8.0.3":
-  version "8.0.3"
-  resolved "https://registry.yarnpkg.com/@smui-extra/bottom-app-bar/-/bottom-app-bar-8.0.3.tgz#e99825f286fbbcc6d6326708e981eb2fc8317894"
-  integrity sha512-qDSOoy8bXMa956vszkCBc55bs5XRcnbNUuJgCJ52VB/K8Rh0zn8oHWv07HuErw4Qw0x0+RRQslESmmYWNLiSWg==
+"@smui-extra/bottom-app-bar@^9.0.0":
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/@smui-extra/bottom-app-bar/-/bottom-app-bar-9.0.1.tgz#7ea3fc08a34e483ab3e69bf3443e746fed212a8f"
+  integrity sha512-XrY2I4WbUyckoODM7Hk+TSrgZ8n8nCGsrKkFHhTZk2hhcM/XX71lSFuiUG/2CZCvr8T01fBJ7K+wWNbM9Vsy3Q==
   dependencies:
-    "@material/feature-targeting" "^14.0.0"
-    "@material/theme" "^14.0.0"
-    "@smui/common" "^8.0.3"
-    "@smui/paper" "^8.0.3"
+    "@smui/common" "^9.0.1"
+    "@smui/paper" "^9.0.1"
 
 "@smui/button@^8.0.3":
   version "8.0.3"
@@ -1325,6 +1323,13 @@
   integrity sha512-Zgsp8KE4NH0+eLihHdhxYSzbV8M2w0B53BnM+5WvEEEJWzHcKhpvYNHTT6tG909IsIrU7uNNVJosNIw7leU8Wg==
   dependencies:
     "@material/dom" "^14.0.0"
+
+"@smui/common@^9.0.1":
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/@smui/common/-/common-9.0.1.tgz#a543e6b10313a000131b2ba20d8122d6724d35e9"
+  integrity sha512-tnjQ4n3xmEMQdKtr5qHwl/t4pmjU9ntbit/4eD0N2vsF9kzjql3WDBAf6vhQKMZK5c1SGQ1vKRmoU5tv5tCTSw==
+  dependencies:
+    safevalues "^1.2.0"
 
 "@smui/dialog@^8.0.3":
   version "8.0.3"
@@ -1431,6 +1436,13 @@
     "@material/theme" "^14.0.0"
     "@material/typography" "^14.0.0"
     "@smui/common" "^8.0.3"
+
+"@smui/paper@^9.0.1":
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/@smui/paper/-/paper-9.0.1.tgz#d5c478f36153479415dcd849e39ea0b87f9d6263"
+  integrity sha512-t+8n7udFHVuTUdPgFJA7xM5WGhfKpWMbY7+Ga83VufD6KYJ8hsb17F60KfB0QzUSUz5oUoZNBblLDWtzxGXAuA==
+  dependencies:
+    "@smui/common" "^9.0.1"
 
 "@smui/ripple@^8.0.3":
   version "8.0.3"
@@ -2879,6 +2891,11 @@ sade@^1.7.4, sade@^1.8.1:
   integrity sha512-xal3CZX1Xlo/k4ApwCFrHVACi9fBqJ7V+mwhBsuf/1IOKbBy098Fex+Wa/5QMubw09pSZ/u8EY8PWgevJsXp1A==
   dependencies:
     mri "^1.1.0"
+
+safevalues@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/safevalues/-/safevalues-1.2.0.tgz#f9e646d6ebf31788004ef192d2a7d646c9896bb2"
+  integrity sha512-zIsuhjYvJCjfsfjoim2ab6gLKFYAnTiDSJGh0cC3T44L/4kNLL90hBG2BzrXPrHA3f8Ms8FSJ1mljKH5dVR1cw==
 
 sass@^1.83.0:
   version "1.99.0"

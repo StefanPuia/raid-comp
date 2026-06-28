@@ -48,7 +48,7 @@
 		"globals": "^17.4.0",
 		"prettier": "^3.8.1",
 		"prettier-plugin-svelte": "^3.5.1",
-		"smui-theme": "^8.0.3",
+		"smui-theme": "^9.0.0",
 		"svelte": "^5.55.2",
 		"svelte-check": "^4.4.6",
 		"svelte-turnstile": "0.11.0",

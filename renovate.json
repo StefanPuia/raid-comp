@@ -11,5 +11,11 @@
       "depNameTemplate": "com.google.googlejavaformat:google-java-format",
       "datasourceTemplate": "maven"
     }
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": ["/@smui\//"],
+      "groupName": "smui"
+    }
   ]
 }

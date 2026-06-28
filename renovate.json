@@ -14,7 +14,7 @@
   ],
   "packageRules": [
     {
-      "matchPackageNames": ["/@smui\//"],
+      "matchPackageNames": ["/smui(\/|-)/"],
       "groupName": "smui"
     }
   ]

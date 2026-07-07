@@ -1,6 +1,6 @@
 [versions]
 dotenvPlugin="4.0.0"
-flyway = "12.9.0"
+flyway = "12.10.0"
 googleJavaFormat = "1.19.2"
 immutables = "2.12.2"
 lombokMapstructBinding = "0.2.0"
@@ -8,7 +8,7 @@ lombokPlugin = "9.5.0"
 mapstruct = "1.6.3"
 mapstructSpringExtensions = "2.0.0"
 opencsv = "5.12.0"
-spotlessPlugin = "8.7.0"
+spotlessPlugin = "8.8.0"
 springBoot = "4.1.0"
 springDependencyManagement = "1.1.7"
 

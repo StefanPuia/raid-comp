@@ -82,4 +82,5 @@ stages:
                         set -e
                         sudo systemctl stop raidcomp.service
                         sudo mv $(System.ArtifactsDirectory)/drop/raidcomp-api.jar /app/raidcomp-api.jar
+                        sudo chown raidcomp:raidcomp /app/raidcomp-api.jar
                         sudo systemctl enable --now raidcomp.service

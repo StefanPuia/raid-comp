@@ -9,106 +9,77 @@ variables:
   isMain: ${{ eq(variables['Build.SourceBranch'], 'refs/heads/main') }}
   GRADLE_USER_HOME: $(Pipeline.Workspace)/.gradle
   gradleCacheVersion: v1
-  dockerRegistryServiceConnection: azureContainerRegistry2-raidcomp
-  dockerRegistry: stefanpuia.azurecr.io
-  dockerImage: raidcomp
-  dockerImageVersion: $(Build.BuildNumber)
   workingDirectory: $(Build.SourcesDirectory)/api
-  dockerContainerNameDev: raidcomp-dev
-  dockerContainerPortDev: 10030
-  dockerContainerNameProd: raidcomp-prod
-  dockerContainerPortProd: 10031
 
 stages:
-#  - ${{ if ne(variables.isMain, true) }}:
-#      - stage: check
-#        displayName: Check
-#        jobs:
-#          - job: check
-#            displayName: Check
-#            steps:
-#              - task: JavaToolInstaller@0
-#                displayName: Set java version to 25
-#                inputs:
-#                  versionSpec: '25'
-#                  jdkArchitectureOption: 'x64'
-#                  jdkSourceOption: 'PreInstalled'
-#
-#              - task: Cache@2
-#                inputs:
-#                  key: '"$(gradleCacheVersion)" | "gradle" | "$(Agent.OS)" | $(workingDirectory)/**/build.gradle'
-#                  restoreKeys: |
-#                    "$(gradleCacheVersion)" | "gradle" | "$(Agent.OS)"
-#                    "$(gradleCacheVersion)" | "gradle"
-#                    "$(gradleCacheVersion)"
-#                  path: $(GRADLE_USER_HOME)
-#                displayName: Configure gradle caching
-#
-#              - task: Gradle@3
-#                displayName: Gradle Build
-#                env:
-#                  DOCKER_IMAGE: $(dockerRegistry)/$(dockerImage)
-#                  DOCKER_IMAGE_VERSION: $(dockerImageVersion)
-#                inputs:
-#                  options: '--build-cache -Duser.language=en -Duser.country=GB'
-#                  tasks: 'clean check'
-#                  testResultsFiles: '**/TEST-*.xml'
-#                  publishJUnitResults: true
-#                  gradleWrapperFile: $(workingDirectory)/gradlew
-#                  workingDirectory: $(workingDirectory)
-#
-#              # stop the Gradle daemon to ensure no files are left open (impacting the save cache operation later)
-#              - script: |
-#                  ./gradlew --stop
-#                displayName: Stop the Gradle daemon
-#                workingDirectory: $(workingDirectory)
-
   - stage: buildAndPackage
-    displayName: Build and Package
+    displayName: Check
     jobs:
-      - job: build
-        displayName: Build
-        pool: self-hosted-scale-set-02
-        variables:
-          - group: build
+      - job: checkAndPackage
+        displayName: Check
         steps:
-          - task: Docker@2
-            displayName: Build docker image
+          - task: JavaToolInstaller@0
+            displayName: Set java version to 21
             inputs:
-              command: build
-              Dockerfile: $(workingDirectory)/Dockerfile
-              buildContext: $(workingDirectory)
-              repository: $(dockerRegistry)/$(dockerImage)
-              tags: $(dockerImageVersion)
+              versionSpec: '21'
+              jdkArchitectureOption: 'x64'
+              jdkSourceOption: 'PreInstalled'
 
-          - task: Docker@2
-            displayName: Login to ACR
+          - task: Cache@2
             inputs:
-              command: login
-              containerRegistry: $(dockerRegistryServiceConnection)
+              key: '"$(gradleCacheVersion)" | "gradle" | "$(Agent.OS)" | $(workingDirectory)/**/build.gradle'
+              restoreKeys: |
+                "$(gradleCacheVersion)" | "gradle" | "$(Agent.OS)"
+                "$(gradleCacheVersion)" | "gradle"
+                "$(gradleCacheVersion)"
+              path: $(GRADLE_USER_HOME)
+            displayName: Configure gradle caching
 
-          - task: Docker@2
-            displayName: Push image
+          - task: Gradle@3
+            displayName: Gradle Build
             inputs:
-              command: push
-              containerRegistry: $(dockerRegistryServiceConnection)
-              repository: $(dockerImage)
-              tags: $(dockerImageVersion)
+              options: '--build-cache -Duser.language=en -Duser.country=GB'
+              tasks: 'clean bootJar'
+              testResultsFiles: '**/TEST-*.xml'
+              publishJUnitResults: true
+              gradleWrapperFile: $(workingDirectory)/gradlew
+              workingDirectory: $(workingDirectory)
 
-          - task: Docker@2
-            displayName: Docker Logout
-            inputs:
-              command: logout
-              containerRegistry: $(dockerRegistryServiceConnection)
-        condition: always()
+          # stop the Gradle daemon to ensure no files are left open (impacting the save cache operation later)
+          - script: |
+              ./gradlew --stop
+            displayName: Stop the Gradle daemon
+            workingDirectory: $(workingDirectory)
 
-  - template: azure/deploy-environment.yml
-    parameters:
-      environment: dev
-      dependsOn: buildAndPackage
+          - ${{ if eq(variables.isMain, true) }}:
+              - task: PublishBuildArtifacts@1
+                displayName: Publish Artifacts
+                inputs:
+                  pathToPublish: '$(workingDirectory)/build/libs'
+                  artifactName: drop
 
   - ${{ if eq(variables.isMain, true) }}:
-      - template: azure/deploy-environment.yml
-        parameters:
-          environment: prod
-          dependsOn: deploy_env_dev
+      - stage: deployProd
+        displayName: Deploy Prod
+        dependsOn: buildAndPackage
+        jobs:
+          - deployment: deployProd
+            environment:
+              name: prod
+              resourceType: VirtualMachine
+            strategy:
+              runOnce:
+                deploy:
+                  steps:
+                    - download: none
+
+                    - task: DownloadBuildArtifacts@1
+                      inputs:
+                        artifactName: drop
+                        downloadPath: $(System.ArtifactsDirectory)
+
+                    - script: |
+                        set -e
+                        sudo systemctl stop raidcomp.service
+                        sudo mv $(System.ArtifactsDirectory)/drop/raidcomp-api.jar /app/raidcomp-api.jar
+                        sudo systemctl enable --now raidcomp.service

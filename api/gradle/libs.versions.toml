@@ -25,6 +25,7 @@ mapstruct-spring-core = { group = "org.mapstruct.extensions.spring", name = "map
 mapstruct-spring-processor = { group = "org.mapstruct.extensions.spring", name = "mapstruct-spring-extensions", version.ref = "mapstructSpringExtensions" }
 mysql-connector = { group = "com.mysql", name = "mysql-connector-j" }
 opencsv = { group = "com.opencsv", name = "opencsv", version.ref = "opencsv" }
+spring-boot-starter-actuator = { group = "org.springframework.boot", name = "spring-boot-starter-actuator" }
 spring-boot-starter-data-jpa = { group = "org.springframework.boot", name = "spring-boot-starter-data-jpa" }
 spring-boot-starter-flyway = { group = "org.springframework.boot", name = "spring-boot-starter-flyway" }
 spring-boot-starter-oauth2-resource-server = { group = "org.springframework.boot", name = "spring-boot-starter-oauth2-resource-server" }

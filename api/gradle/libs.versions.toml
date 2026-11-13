@@ -1,6 +1,6 @@
 [versions]
 dotenvPlugin="4.0.0"
-flyway = "13.12.0"
+flyway = "13.12.1"
 googleJavaFormat = "1.19.2"
 immutables = "2.12.3"
 lombokMapstructBinding = "0.2.0"

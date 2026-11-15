@@ -21,7 +21,8 @@
 	};
 
 	export let params: BuildPageParams;
-	const context = GameVersionFactory.getContext(params.gameVersion);
+	const gameVersion: GameVersionSlug = params.build?.gameVersion ?? params.gameVersion;
+	const context = GameVersionFactory.getContext(gameVersion);
 	editingBuild.update((build) => {
 		if (build) {
 			return build;

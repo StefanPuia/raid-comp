@@ -1,6 +1,6 @@
 import type { Build } from '$lib/service/api';
 import { GameVersionSlug } from '$lib/versioning/GameVersion';
-import { livePlayers } from './mock.data';
+import { foreverPlayers, livePlayers } from './mock.data';
 
 // only exported as a fallback, there should be no need to export the rest.
 export const liveBuildWithVersion: Build = {
@@ -10,17 +10,17 @@ export const liveBuildWithVersion: Build = {
 	players: livePlayers,
 };
 
-const liveBuildWithNoVersion: Build = {
+const liveBuildWithNoVersion: Build = <Build>{
 	buildId: 'liveNoVerBuild',
 	name: 'Live build without version',
 	players: livePlayers,
 };
 
-const wotlkBuild: Build = {
-	gameVersion: GameVersionSlug.WOTLK,
-	buildId: 'wotlkBuild',
-	name: 'WOTLK build',
-	players: [],
+const foreverBuild: Build = {
+	gameVersion: GameVersionSlug.FOREVER,
+	buildId: 'foreverBuild',
+	name: 'WoW Forever build',
+	players: foreverPlayers,
 };
 
-export const mockBuilds = [liveBuildWithVersion, liveBuildWithNoVersion, wotlkBuild];
+export const mockBuilds = [liveBuildWithVersion, liveBuildWithNoVersion, foreverBuild];

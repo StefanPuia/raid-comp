@@ -7,16 +7,19 @@ import { DragonflightIconProvider } from '$lib/versions/dragonflight/Dragonfligh
 import { MidnightIconProvider } from '$lib/versions/midnight/MidnightIconProvider';
 import { DragonflightGameVersion } from '$lib/versions/dragonflight/DragonflightGameVersion';
 import { MidnightGameVersion } from '$lib/versions/midnight/MidnightGameVersion';
+import { ForeverIconProvider } from '$lib/versions/forever/ForeverIconProvider';
+import { ForeverGameVersion } from '$lib/versions/forever/ForeverGameVersion';
 
 export class GameVersionFactory {
 	static createIconProvider(gameVersion: GameVersionSlug): IconProvider {
+		console.log('Creating icon provider for game version:', gameVersion);
 		switch (gameVersion) {
 			case GameVersionSlug.LIVE:
 				return new MidnightIconProvider();
 			case GameVersionSlug.DRAGONFLIGHT:
 				return new DragonflightIconProvider();
-			// case GameVersionSlug.WOTLK:
-			// 	return new WotlkIconProvider();
+			case GameVersionSlug.FOREVER:
+				return new ForeverIconProvider();
 			default:
 				throw error(400, `Game version ${gameVersion} not supported`);
 		}
@@ -28,6 +31,8 @@ export class GameVersionFactory {
 				return new MidnightGameVersion();
 			case GameVersionSlug.DRAGONFLIGHT:
 				return new DragonflightGameVersion();
+			case GameVersionSlug.FOREVER:
+				return new ForeverGameVersion();
 			// case GameVersionSlug.WOTLK:
 			// 	return new WotlkGameVersion();
 			default:

@@ -10,9 +10,11 @@
 	import ChecklistDisplay from '$lib/components/ChecklistDisplay/ChecklistDisplay.svelte';
 	import ViewingBottomBar from '$lib/pages/ViewBuild/ViewingBottomBar.svelte';
 	import { createBuildData } from '$lib';
+	import { GameVersionSlug } from '$lib/versioning/GameVersion';
 
 	export let params: BuildPageParams;
-	const context = GameVersionFactory.getContext(params.gameVersion);
+	const gameVersion: GameVersionSlug = params.build?.gameVersion ?? params.gameVersion;
+	const context = GameVersionFactory.getContext(gameVersion);
 
 	const build: Build | undefined = params.build
 		? createBuildData(params.build, context)

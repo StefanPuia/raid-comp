@@ -101,4 +101,5 @@ export enum GameVersionSlug {
 	LIVE = 'live',
 	DRAGONFLIGHT = 'dragonflight',
 	// WOTLK = 'wotlk',
+	FOREVER = 'forever',
 }

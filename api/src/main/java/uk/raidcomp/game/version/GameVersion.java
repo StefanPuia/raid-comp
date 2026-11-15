@@ -11,7 +11,8 @@ import lombok.RequiredArgsConstructor;
 public enum GameVersion {
   LIVE("live"),
   DRAGONFLIGHT("dragonflight"),
-  WOTLK("wotlk");
+  WOTLK("wotlk"),
+  FOREVER("forever");
 
   public static final GameVersion DEFAULT = GameVersion.LIVE;
 

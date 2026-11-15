@@ -1,0 +1,235 @@
+import type { GameVersionSource } from '$lib/versioning/GameVersionSource';
+import { PlayerRole, UNKNOWN_CLASS, UNKNOWN_SPEC } from '$lib/consts';
+
+const ICON_QUESTIONMARK = 'inv_misc_questionmark';
+
+/**
+ * World of Warcraft: Forever - classic-style ruleset with the nine original classes.
+ * Only raid-wide buffs are tracked (group-only buffs such as paladin auras or mana spring are not).
+ * There is no raid-wide Bloodlust/Heroism in this version.
+ */
+export const versionSource: GameVersionSource = {
+	buffs: [
+		{ slug: 'Intellect', icon: 'spell_holy_magicalsentry' },
+		{ slug: 'Stamina', icon: 'spell_holy_wordfortitude' },
+		{ slug: 'Spirit', icon: 'spell_holy_divinespirit' },
+		{ slug: 'MarkOfTheWild', icon: 'spell_nature_regeneration' },
+		{ slug: 'AttackPower', icon: 'ability_warrior_battleshout' },
+		{ slug: 'RangedAttackPower', icon: 'ability_trueshot' },
+		{ slug: 'BlessingOfKings', icon: 'spell_magic_greaterblessingofkings' },
+		{ slug: 'BlessingOfMight', icon: 'spell_holy_greaterblessingofkings' },
+		{ slug: 'BlessingOfWisdom', icon: 'spell_holy_greaterblessingofwisdom' },
+		{ slug: 'Salvation', icon: 'spell_holy_greaterblessingofsalvation' },
+		{ slug: 'LeaderOfThePack', icon: 'spell_nature_unyeildingstamina' },
+		{ slug: 'MoonkinAura', icon: 'spell_nature_moonglow' },
+		{ slug: 'WindfuryTotem', icon: 'spell_nature_windfury' },
+		{ slug: 'StrengthOfEarthTotem', icon: 'spell_nature_earthbindtotem' },
+		{ slug: 'GraceOfAirTotem', icon: 'spell_nature_invisibilitytotem' },
+	],
+	utilities: [
+		{ slug: 'CombatResurrection', icon: 'spell_nature_reincarnation' },
+		{ slug: 'Soulstone', icon: 'spell_shadow_soulgem' },
+		{ slug: 'Innervate', icon: 'spell_nature_lightning' },
+		{ slug: 'PowerInfusion', icon: 'spell_holy_powerinfusion' },
+		{ slug: 'FearWard', icon: 'spell_holy_excorcism' },
+		{ slug: 'Summoning', icon: 'spell_shadow_twilight' },
+		{ slug: 'Healthstone', icon: 'warlock_healthstone' },
+		{ slug: 'ManaTideTotem', icon: 'spell_frost_summonwaterelemental' },
+	],
+	classes: [
+		{
+			slug: 'Druid',
+			icon: 'classicon_druid',
+			buffs: ['MarkOfTheWild'],
+			utilities: ['CombatResurrection', 'Innervate'],
+		},
+		{ slug: 'Hunter', icon: 'classicon_hunter' },
+		{ slug: 'Mage', icon: 'classicon_mage', buffs: ['Intellect'] },
+		{
+			slug: 'Paladin',
+			icon: 'classicon_paladin',
+			buffs: ['BlessingOfKings', 'BlessingOfMight', 'BlessingOfWisdom', 'Salvation'],
+		},
+		{
+			slug: 'Priest',
+			icon: 'classicon_priest',
+			buffs: ['Stamina', 'Spirit'],
+			utilities: ['FearWard'],
+		},
+		{ slug: 'Rogue', icon: 'classicon_rogue' },
+		{
+			slug: 'Shaman',
+			icon: 'classicon_shaman',
+			buffs: ['WindfuryTotem', 'StrengthOfEarthTotem', 'GraceOfAirTotem'],
+		},
+		{
+			slug: 'Warlock',
+			icon: 'classicon_warlock',
+			utilities: ['Soulstone', 'Summoning', 'Healthstone'],
+		},
+		{ slug: 'Warrior', icon: 'classicon_warrior', buffs: ['AttackPower'] },
+		{ slug: UNKNOWN_CLASS, icon: ICON_QUESTIONMARK },
+	],
+	specs: [
+		{
+			slug: 'DruidBalance',
+			icon: 'spell_nature_starfall',
+			class: 'Druid',
+			role: PlayerRole.RangedDPS,
+			buffs: ['MoonkinAura'],
+		},
+		{
+			slug: 'DruidFeral',
+			icon: 'ability_druid_catform',
+			class: 'Druid',
+			role: PlayerRole.MeleeDPS,
+			buffs: ['LeaderOfThePack'],
+		},
+		{
+			slug: 'DruidFeralTank',
+			icon: 'ability_racial_bearform',
+			class: 'Druid',
+			role: PlayerRole.Tank,
+			buffs: ['LeaderOfThePack'],
+		},
+		{
+			slug: 'DruidRestoration',
+			icon: 'spell_nature_healingtouch',
+			class: 'Druid',
+			role: PlayerRole.Healer,
+		},
+		{
+			slug: 'HunterBeastmastery',
+			icon: 'ability_hunter_beasttaming',
+			class: 'Hunter',
+			role: PlayerRole.RangedDPS,
+		},
+		{
+			slug: 'HunterMarksmanship',
+			icon: 'ability_marksmanship',
+			class: 'Hunter',
+			role: PlayerRole.RangedDPS,
+			buffs: ['RangedAttackPower'],
+		},
+		{
+			slug: 'HunterSurvival',
+			icon: 'ability_hunter_swiftstrike',
+			class: 'Hunter',
+			role: PlayerRole.RangedDPS,
+		},
+		{
+			slug: 'MageArcane',
+			icon: 'spell_holy_magicalsentry',
+			class: 'Mage',
+			role: PlayerRole.RangedDPS,
+		},
+		{ slug: 'MageFire', icon: 'spell_fire_firebolt02', class: 'Mage', role: PlayerRole.RangedDPS },
+		{
+			slug: 'MageFrost',
+			icon: 'spell_frost_frostbolt02',
+			class: 'Mage',
+			role: PlayerRole.RangedDPS,
+		},
+		{
+			slug: 'PaladinHoly',
+			icon: 'spell_holy_holybolt',
+			class: 'Paladin',
+			role: PlayerRole.Healer,
+		},
+		{
+			slug: 'PaladinProtection',
+			icon: 'spell_holy_devotionaura',
+			class: 'Paladin',
+			role: PlayerRole.Tank,
+		},
+		{
+			slug: 'PaladinRetribution',
+			icon: 'spell_holy_auraoflight',
+			class: 'Paladin',
+			role: PlayerRole.MeleeDPS,
+		},
+		{
+			slug: 'PriestDiscipline',
+			icon: 'spell_holy_powerwordshield',
+			class: 'Priest',
+			role: PlayerRole.Healer,
+			utilities: ['PowerInfusion'],
+		},
+		{
+			slug: 'PriestHoly',
+			icon: 'spell_holy_guardianspirit',
+			class: 'Priest',
+			role: PlayerRole.Healer,
+		},
+		{
+			slug: 'PriestShadow',
+			icon: 'spell_shadow_shadowwordpain',
+			class: 'Priest',
+			role: PlayerRole.RangedDPS,
+		},
+		{
+			slug: 'RogueAssassination',
+			icon: 'ability_rogue_eviscerate',
+			class: 'Rogue',
+			role: PlayerRole.MeleeDPS,
+		},
+		{ slug: 'RogueCombat', icon: 'ability_backstab', class: 'Rogue', role: PlayerRole.MeleeDPS },
+		{ slug: 'RogueSubtlety', icon: 'ability_stealth', class: 'Rogue', role: PlayerRole.MeleeDPS },
+		{
+			slug: 'ShamanElemental',
+			icon: 'spell_nature_lightning',
+			class: 'Shaman',
+			role: PlayerRole.RangedDPS,
+		},
+		{
+			slug: 'ShamanEnhancement',
+			icon: 'spell_nature_lightningshield',
+			class: 'Shaman',
+			role: PlayerRole.MeleeDPS,
+		},
+		{
+			slug: 'ShamanRestoration',
+			icon: 'spell_nature_magicimmunity',
+			class: 'Shaman',
+			role: PlayerRole.Healer,
+			utilities: ['ManaTideTotem'],
+		},
+		{
+			slug: 'WarlockAffliction',
+			icon: 'spell_shadow_deathcoil',
+			class: 'Warlock',
+			role: PlayerRole.RangedDPS,
+		},
+		{
+			slug: 'WarlockDemonology',
+			icon: 'spell_shadow_metamorphosis',
+			class: 'Warlock',
+			role: PlayerRole.RangedDPS,
+		},
+		{
+			slug: 'WarlockDestruction',
+			icon: 'spell_shadow_rainoffire',
+			class: 'Warlock',
+			role: PlayerRole.RangedDPS,
+		},
+		{
+			slug: 'WarriorArms',
+			icon: 'ability_warrior_savageblow',
+			class: 'Warrior',
+			role: PlayerRole.MeleeDPS,
+		},
+		{
+			slug: 'WarriorFury',
+			icon: 'ability_warrior_innerrage',
+			class: 'Warrior',
+			role: PlayerRole.MeleeDPS,
+		},
+		{
+			slug: 'WarriorProtection',
+			icon: 'ability_warrior_defensivestance',
+			class: 'Warrior',
+			role: PlayerRole.Tank,
+		},
+		{ slug: UNKNOWN_SPEC, icon: ICON_QUESTIONMARK, class: UNKNOWN_CLASS, role: PlayerRole.Unknown },
+	],
+};

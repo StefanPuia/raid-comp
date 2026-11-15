@@ -1,6 +1,6 @@
-import type { RaidBuff } from '$lib/versioning/RaidBuff';
-import type { RaidUtility } from '$lib/versioning/RaidUtility';
-import type { SourcePlayerClass } from '$lib/versioning/GameVersionSource';
+import type { RaidBuff } from '#lib/versioning/RaidBuff.ts';
+import type { RaidUtility } from '#lib/versioning/RaidUtility.ts';
+import type { SourcePlayerClass } from '#lib/versioning/GameVersionSource.ts';
 
 export class PlayerClass {
 	private readonly _slug: string;

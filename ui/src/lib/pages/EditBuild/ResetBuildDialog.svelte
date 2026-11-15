@@ -2,7 +2,7 @@
 	import Dialog, { Actions, Content, Title } from '@smui/dialog';
 	import Button, { Label } from '@smui/button';
 	import { _ } from 'svelte-i18n';
-	import { editingBuild } from '$lib/store';
+	import { editingBuild } from '#lib/store.ts';
 
 	export let open: boolean;
 

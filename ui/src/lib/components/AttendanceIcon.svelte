@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { InviteStatus } from '$lib/consts';
+	import { InviteStatus } from '#lib/consts.ts';
 	import { Icon } from '@smui/fab';
 	import Tooltip, { Wrapper } from '@smui/tooltip';
 	import { _ } from 'svelte-i18n';

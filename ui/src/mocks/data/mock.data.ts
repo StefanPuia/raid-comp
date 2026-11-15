@@ -1,5 +1,5 @@
-import type { BuildPlayer } from '$lib/service/api';
-import { InviteStatus } from '$lib/consts';
+import type { BuildPlayer } from '#lib/service/api.ts';
+import { InviteStatus } from '#lib/consts.ts';
 
 export const livePlayers: BuildPlayer[] = [
 	{

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Button, { Label } from '@smui/button';
 	import { _ } from 'svelte-i18n';
-	import { ApiError } from '$lib/service/error';
+	import { ApiError } from '#lib/service/error.ts';
 
 	export let error: unknown;
 	let apiError: ApiError;

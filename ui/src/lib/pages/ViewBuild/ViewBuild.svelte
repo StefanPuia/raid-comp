@@ -1,16 +1,16 @@
 <script lang="ts">
-	import { GameVersionFactory } from '$lib/versioning/GameVersionFactory';
+	import { GameVersionFactory } from '#lib/versioning/GameVersionFactory.ts';
 	import { _ } from 'svelte-i18n';
-	import type { Build, BuildPageParams } from '$lib/types';
-	import ErrorPage from '$lib/pages/ErrorPage/ErrorPage.svelte';
-	import WarcraftIcon from '$lib/components/WarcraftIcon.svelte';
-	import RoleCount from '$lib/components/RoleCount.svelte';
-	import GroupDisplay from '$lib/components/GroupDisplay/GroupDisplay.svelte';
-	import RoleDisplay from '$lib/components/RoleDisplay/RoleDisplay.svelte';
-	import ChecklistDisplay from '$lib/components/ChecklistDisplay/ChecklistDisplay.svelte';
-	import ViewingBottomBar from '$lib/pages/ViewBuild/ViewingBottomBar.svelte';
-	import { createBuildData } from '$lib';
-	import { GameVersionSlug } from '$lib/versioning/GameVersion';
+	import type { Build, BuildPageParams } from '#lib/types.ts';
+	import ErrorPage from '#lib/pages/ErrorPage/ErrorPage.svelte';
+	import WarcraftIcon from '#lib/components/WarcraftIcon.svelte';
+	import RoleCount from '#lib/components/RoleCount.svelte';
+	import GroupDisplay from '#lib/components/GroupDisplay/GroupDisplay.svelte';
+	import RoleDisplay from '#lib/components/RoleDisplay/RoleDisplay.svelte';
+	import ChecklistDisplay from '#lib/components/ChecklistDisplay/ChecklistDisplay.svelte';
+	import ViewingBottomBar from '#lib/pages/ViewBuild/ViewingBottomBar.svelte';
+	import { createBuildData } from '#lib';
+	import { GameVersionSlug } from '#lib/versioning/GameVersion.ts';
 
 	export let params: BuildPageParams;
 	const gameVersion: GameVersionSlug = params.build?.gameVersion ?? params.gameVersion;

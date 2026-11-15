@@ -1,11 +1,11 @@
 <script lang="ts">
 	import Paper, { Content } from '@smui/paper';
-	import type { Build, BuildPlayer } from '$lib/types';
-	import type { PlayerRole } from '$lib/consts';
-	import WarcraftIcon from '$lib/components/WarcraftIcon.svelte';
+	import type { Build, BuildPlayer } from '#lib/types.ts';
+	import type { PlayerRole } from '#lib/consts.ts';
+	import WarcraftIcon from '#lib/components/WarcraftIcon.svelte';
 	import { _ } from 'svelte-i18n';
-	import Player from '$lib/components/Player.svelte';
-	import type { VersionedContext } from '$lib/versioning/VersionedContext';
+	import Player from '#lib/components/Player.svelte';
+	import type { VersionedContext } from '#lib/versioning/VersionedContext.ts';
 
 	export let role: PlayerRole;
 	export let displayAsGrid: boolean = false;

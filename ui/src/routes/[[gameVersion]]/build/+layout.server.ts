@@ -1,7 +1,7 @@
 import type { LayoutServerLoad } from './$types';
-import { validateVersion } from '$lib/versioning/validate';
-import { getBuild } from '$lib/service/api';
-import { ApiError } from '$lib/service/error';
+import { validateVersion } from '#lib/versioning/validate.ts';
+import { getBuild } from '#lib/service/api.ts';
+import { ApiError } from '#lib/service/error.ts';
 
 export const load: LayoutServerLoad = async ({ parent, params, setHeaders }) => {
 	await parent();

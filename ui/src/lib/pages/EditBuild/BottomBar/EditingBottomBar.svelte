@@ -4,13 +4,13 @@
 	import Tooltip, { Wrapper } from '@smui/tooltip';
 	import Fab, { Icon } from '@smui/fab';
 	import ResetBuildDialog from '../ResetBuildDialog.svelte';
-	import SaveBuildDialog from '$lib/pages/EditBuild/SaveBuildDialog.svelte';
-	import EditPlayerDialog from '$lib/pages/EditBuild/EditPlayerDialog.svelte';
-	import ChangeGameVersionDialog from '$lib/pages/EditBuild/ChangeGameVersionDialog.svelte';
-	import LeftSide from '$lib/pages/EditBuild/BottomBar/LeftSide.svelte';
-	import BurgerMenu from '$lib/pages/EditBuild/BottomBar/BurgerMenu.svelte';
-	import RightSide from '$lib/pages/EditBuild/BottomBar/RightSide.svelte';
-	import type { VersionedContext } from '$lib/versioning/VersionedContext';
+	import SaveBuildDialog from '#lib/pages/EditBuild/SaveBuildDialog.svelte';
+	import EditPlayerDialog from '#lib/pages/EditBuild/EditPlayerDialog.svelte';
+	import ChangeGameVersionDialog from '#lib/pages/EditBuild/ChangeGameVersionDialog.svelte';
+	import LeftSide from '#lib/pages/EditBuild/BottomBar/LeftSide.svelte';
+	import BurgerMenu from '#lib/pages/EditBuild/BottomBar/BurgerMenu.svelte';
+	import RightSide from '#lib/pages/EditBuild/BottomBar/RightSide.svelte';
+	import type { VersionedContext } from '#lib/versioning/VersionedContext.ts';
 
 	export let context: VersionedContext;
 	export let toggleGrouped: () => void;

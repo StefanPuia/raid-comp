@@ -1,6 +1,6 @@
 import type MockAdapter from 'axios-mock-adapter';
 import { liveBuildWithVersion, mockBuilds } from './data';
-import type { Build, createBuildRequest } from '$lib/service/api';
+import type { Build, createBuildRequest } from '#lib/service/api.ts';
 
 export const mockRoutes = (ma: MockAdapter) => {
 	const buildMatcher = new RegExp('^/builds/(?<buildId>[^/]+)$');

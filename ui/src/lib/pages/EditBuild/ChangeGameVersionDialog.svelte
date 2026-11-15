@@ -3,10 +3,10 @@
 	import Dialog, { Actions, Content, Title } from '@smui/dialog';
 	import Button, { Label } from '@smui/button';
 	import { _ } from 'svelte-i18n';
-	import { GameVersionSlug } from '$lib/versioning/GameVersion';
-	import WarcraftIcon from '$lib/components/WarcraftIcon.svelte';
-	import { GameVersionFactory } from '$lib/versioning/GameVersionFactory';
-	import type { VersionedContext } from '$lib/versioning/VersionedContext';
+	import { GameVersionSlug } from '#lib/versioning/GameVersion.ts';
+	import WarcraftIcon from '#lib/components/WarcraftIcon.svelte';
+	import { GameVersionFactory } from '#lib/versioning/GameVersionFactory.ts';
+	import type { VersionedContext } from '#lib/versioning/VersionedContext.ts';
 
 	export let context: VersionedContext;
 	export let open: boolean;

@@ -1,4 +1,4 @@
-import { GameVersion, GameVersionSlug } from '$lib/versioning/GameVersion';
+import { GameVersion, GameVersionSlug } from '#lib/versioning/GameVersion.ts';
 import { versionSource } from './source';
 
 export class ForeverGameVersion extends GameVersion {

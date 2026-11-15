@@ -1,5 +1,5 @@
 import type { LayoutLoad } from './$types';
-import { ApiError } from '$lib/service/error';
+import { ApiError } from '#lib/service/error.ts';
 
 export const load: LayoutLoad = async ({ parent, data }) => {
 	await parent();

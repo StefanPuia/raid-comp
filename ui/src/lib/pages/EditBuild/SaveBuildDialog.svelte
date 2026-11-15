@@ -5,12 +5,12 @@
 	import Button, { Label } from '@smui/button';
 	import Textfield from '@smui/textfield';
 	import { _ } from 'svelte-i18n';
-	import { createBuild, mapToApi } from '$lib/service/api';
-	import { PUBLIC_TURNSTILE_SITE_KEY } from '$env/static/public';
-	import { ApiError } from '$lib/service/error';
-	import type { VersionedContext } from '$lib/versioning/VersionedContext';
-	import Loading from '$lib/components/Loading.svelte';
-	import { editingBuild } from '$lib/store';
+	import { createBuild, mapToApi } from '#lib/service/api.ts';
+	import { PUBLIC_TURNSTILE_SITE_KEY } from '$app/env/public';
+	import { ApiError } from '#lib/service/error.ts';
+	import type { VersionedContext } from '#lib/versioning/VersionedContext.ts';
+	import Loading from '#lib/components/Loading.svelte';
+	import { editingBuild } from '#lib/store.ts';
 
 	export let context: VersionedContext;
 	export let open: boolean;

@@ -1,13 +1,13 @@
-import type { BuildPlayer } from '$lib/types';
-import { PlayerClass } from '$lib/versioning/PlayerClass';
-import { PlayerSpec } from '$lib/versioning/PlayerSpecialisation';
-import { RaidBuff } from '$lib/versioning/RaidBuff';
-import { RaidUtility } from '$lib/versioning/RaidUtility';
-import { UNKNOWN_CLASS, UNKNOWN_SPEC } from '$lib/consts';
+import type { BuildPlayer } from '#lib/types.ts';
+import { PlayerClass } from '#lib/versioning/PlayerClass.ts';
+import { PlayerSpec } from '#lib/versioning/PlayerSpecialisation.ts';
+import { RaidBuff } from '#lib/versioning/RaidBuff.ts';
+import { RaidUtility } from '#lib/versioning/RaidUtility.ts';
+import { UNKNOWN_CLASS, UNKNOWN_SPEC } from '#lib/consts.ts';
 import { error } from '@sveltejs/kit';
-import { sortBySlug, sortBySlugMoveLast } from '$lib/sort';
-import type { GameVersionSource } from '$lib/versioning/GameVersionSource';
-import type { BuildPlayer as ApiPlayer } from '$lib/service/api';
+import { sortBySlug, sortBySlugMoveLast } from '#lib/sort.ts';
+import type { GameVersionSource } from '#lib/versioning/GameVersionSource.ts';
+import type { BuildPlayer as ApiPlayer } from '#lib/service/api.ts';
 
 export abstract class GameVersion {
 	protected buffs: RaidBuff[] = [];

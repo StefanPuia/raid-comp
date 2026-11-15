@@ -1,4 +1,4 @@
-import type { SourceBuff } from '$lib/versioning/GameVersionSource';
+import type { SourceBuff } from '#lib/versioning/GameVersionSource.ts';
 
 export class RaidBuff {
 	private readonly _slug: string;

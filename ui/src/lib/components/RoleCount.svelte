@@ -1,9 +1,9 @@
 <script lang="ts">
-	import WarcraftIcon from '$lib/components/WarcraftIcon.svelte';
-	import { PlayerRole } from '$lib/consts';
+	import WarcraftIcon from '#lib/components/WarcraftIcon.svelte';
+	import { PlayerRole } from '#lib/consts.ts';
 	import { _ } from 'svelte-i18n';
-	import type { VersionedContext } from '$lib/versioning/VersionedContext';
-	import type { Build } from '$lib/types';
+	import type { VersionedContext } from '#lib/versioning/VersionedContext.ts';
+	import type { Build } from '#lib/types.ts';
 
 	export let build: Build;
 	export let context: VersionedContext;

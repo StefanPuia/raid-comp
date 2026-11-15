@@ -1,8 +1,8 @@
-import { PlayerRole } from '$lib/consts';
-import type { PlayerClass } from '$lib/versioning/PlayerClass';
-import type { RaidBuff } from '$lib/versioning/RaidBuff';
-import type { RaidUtility } from '$lib/versioning/RaidUtility';
-import type { SourcePlayerSpec } from '$lib/versioning/GameVersionSource';
+import { PlayerRole } from '#lib/consts.ts';
+import type { PlayerClass } from '#lib/versioning/PlayerClass.ts';
+import type { RaidBuff } from '#lib/versioning/RaidBuff.ts';
+import type { RaidUtility } from '#lib/versioning/RaidUtility.ts';
+import type { SourcePlayerSpec } from '#lib/versioning/GameVersionSource.ts';
 import { error } from '@sveltejs/kit';
 
 export class PlayerSpec {

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import LayoutGrid, { Cell } from '@smui/layout-grid';
-	import SingleGroupDisplay from '$lib/components/GroupDisplay/SingleGroupDisplay.svelte';
-	import type { Build } from '$lib/types';
-	import type { VersionedContext } from '$lib/versioning/VersionedContext';
+	import SingleGroupDisplay from '#lib/components/GroupDisplay/SingleGroupDisplay.svelte';
+	import type { Build } from '#lib/types.ts';
+	import type { VersionedContext } from '#lib/versioning/VersionedContext.ts';
 
 	export let build: Build;
 	export let context: VersionedContext;

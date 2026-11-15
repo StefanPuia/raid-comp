@@ -1,9 +1,9 @@
-// place files you want to import through the `$lib` alias in this folder.
-import { dev } from '$app/environment';
-import { PUBLIC_MOCKS_ENABLED } from '$env/static/public';
-import type { Build as ApiBuild } from '$lib/service/api';
-import type { Build } from '$lib/types';
-import type { VersionedContext } from '$lib/versioning/VersionedContext';
+// place files you want to import through the `#lib` alias in this folder.
+import { dev } from '$app/env';
+import { PUBLIC_MOCKS_ENABLED } from '$app/env/public';
+import type { Build as ApiBuild } from '#lib/service/api.ts';
+import type { Build } from '#lib/types.ts';
+import type { VersionedContext } from '#lib/versioning/VersionedContext.ts';
 
 export const isMockEnabled = () => dev && PUBLIC_MOCKS_ENABLED === 'true';
 
@@ -25,16 +25,11 @@ export const createBuildData = (build: ApiBuild, context: VersionedContext): Bui
 		dps: rangedDps + meleeDps,
 		unknown: tempData.players.filter((p) => p.spec == undefined || p.spec?.isUnknown()).length,
 	};
+
 	const metaDescription =
 		`RaidComp: A raid composition tool for World of Warcraft\n${meta.total} players: ${meta.tanks} Tanks, ` +
 		`${meta.healers} Healers, ${meta.dps} DPS` +
 		(meta.unknown ? `, ${meta.unknown} Unknown` : '');
 
-	return {
-		...tempData,
-		meta: {
-			...meta,
-			description: metaDescription,
-		},
-	};
+	return { ...tempData, meta: { ...meta, description: metaDescription } };
 };

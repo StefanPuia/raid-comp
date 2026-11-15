@@ -1,4 +1,4 @@
-import type { PlayerRole } from '$lib/consts';
+import type { PlayerRole } from '#lib/consts.ts';
 
 export type GameVersionSource = {
 	buffs: SourceBuff[];

@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { GameVersionSlug } from '$lib/versioning/GameVersion';
+import { GameVersionSlug } from '#lib/versioning/GameVersion.ts';
 
 export const validateVersion = (version?: string): GameVersionSlug => {
 	if (!version) return GameVersionSlug.LIVE;

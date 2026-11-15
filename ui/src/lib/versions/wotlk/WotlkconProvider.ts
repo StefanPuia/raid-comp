@@ -1,4 +1,4 @@
-import { IconProvider } from '$lib/versioning/IconProvider';
+import { IconProvider } from '#lib/versioning/IconProvider.ts';
 
 export class WotlkIconProvider extends IconProvider {
 	getVersionIcon(size?: string) {

@@ -1,5 +1,5 @@
-import type { GameVersionSource } from '$lib/versioning/GameVersionSource';
-import { PlayerRole, UNKNOWN_CLASS, UNKNOWN_SPEC } from '$lib/consts';
+import type { GameVersionSource } from '#lib/versioning/GameVersionSource.ts';
+import { PlayerRole, UNKNOWN_CLASS, UNKNOWN_SPEC } from '#lib/consts.ts';
 
 const ICON_QUESTIONMARK = 'inv_misc_questionmark';
 

@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { PlayerRole } from '$lib/consts';
+	import { PlayerRole } from '#lib/consts.ts';
 	import LayoutGrid, { Cell, InnerGrid } from '@smui/layout-grid';
-	import SingleRoleDisplay from '$lib/components/RoleDisplay/SingleRoleDisplay.svelte';
-	import type { Build } from '$lib/types';
-	import type { VersionedContext } from '$lib/versioning/VersionedContext';
+	import SingleRoleDisplay from '#lib/components/RoleDisplay/SingleRoleDisplay.svelte';
+	import type { Build } from '#lib/types.ts';
+	import type { VersionedContext } from '#lib/versioning/VersionedContext.ts';
 
 	export let build: Build;
 	export let context: VersionedContext;

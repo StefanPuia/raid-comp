@@ -1,4 +1,4 @@
-import type { SourceUtility } from '$lib/versioning/GameVersionSource';
+import type { SourceUtility } from '#lib/versioning/GameVersionSource.ts';
 
 export class RaidUtility {
 	private readonly _slug: string;

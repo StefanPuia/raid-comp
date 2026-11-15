@@ -1,15 +1,15 @@
 import type { AxiosError, AxiosRequestConfig } from 'axios';
 import axios from 'axios';
-import { isMockEnabled } from '$lib';
+import { isMockEnabled } from '#lib';
 import MockAdapter from 'axios-mock-adapter';
 import { mockRoutes } from '../../mocks/mock.routes';
-import type { InviteStatus } from '$lib/consts';
-import { dev } from '$app/environment';
-import type { Build as ModelBuild } from '$lib/types';
-import type { GameVersionSlug } from '$lib/versioning/GameVersion';
+import type { InviteStatus } from '#lib/consts.ts';
+import { dev } from '$app/env';
+import type { Build as ModelBuild } from '#lib/types.ts';
+import type { GameVersionSlug } from '#lib/versioning/GameVersion.ts';
 import fetchAdapter from '@haverstack/axios-fetch-adapter';
-import { ApiError, AppErrorId } from '$lib/service/error';
-import { PUBLIC_API_BASE_PATH } from '$env/static/public';
+import { ApiError, AppErrorId } from '#lib/service/error.ts';
+import { PUBLIC_API_BASE_PATH } from '$app/env/public';
 
 const service = axios.create({
 	baseURL: dev ? 'http://localhost:8080' : PUBLIC_API_BASE_PATH,
@@ -44,10 +44,8 @@ service.interceptors.response.use(
 
 export const getBuild = (buildId: string, config?: AxiosRequestConfig) =>
 	service.get<Build>(`/builds/${buildId}`, config);
-
 export const getBuildMeta = (buildId: string, config?: AxiosRequestConfig) =>
 	service.get<BuildMetaResponse>(`/builds/${buildId}/meta`, config);
-
 export const createBuild = (data: createBuildRequest, config?: AxiosRequestConfig) =>
 	service.post<{ buildId: string }>(`/builds`, data, config);
 

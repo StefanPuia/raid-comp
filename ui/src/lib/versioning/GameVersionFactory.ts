@@ -1,14 +1,14 @@
 import { error } from '@sveltejs/kit';
-import type { GameVersion } from '$lib/versioning/GameVersion';
-import { GameVersionSlug } from '$lib/versioning/GameVersion';
-import type { IconProvider } from '$lib/versioning/IconProvider';
-import type { VersionedContext } from '$lib/versioning/VersionedContext';
-import { DragonflightIconProvider } from '$lib/versions/dragonflight/DragonflightIconProvider';
-import { MidnightIconProvider } from '$lib/versions/midnight/MidnightIconProvider';
-import { DragonflightGameVersion } from '$lib/versions/dragonflight/DragonflightGameVersion';
-import { MidnightGameVersion } from '$lib/versions/midnight/MidnightGameVersion';
-import { ForeverIconProvider } from '$lib/versions/forever/ForeverIconProvider';
-import { ForeverGameVersion } from '$lib/versions/forever/ForeverGameVersion';
+import type { GameVersion } from '#lib/versioning/GameVersion.ts';
+import { GameVersionSlug } from '#lib/versioning/GameVersion.ts';
+import type { IconProvider } from '#lib/versioning/IconProvider.ts';
+import type { VersionedContext } from '#lib/versioning/VersionedContext.ts';
+import { DragonflightIconProvider } from '#lib/versions/dragonflight/DragonflightIconProvider.ts';
+import { MidnightIconProvider } from '#lib/versions/midnight/MidnightIconProvider.ts';
+import { DragonflightGameVersion } from '#lib/versions/dragonflight/DragonflightGameVersion.ts';
+import { MidnightGameVersion } from '#lib/versions/midnight/MidnightGameVersion.ts';
+import { ForeverIconProvider } from '#lib/versions/forever/ForeverIconProvider.ts';
+import { ForeverGameVersion } from '#lib/versions/forever/ForeverGameVersion.ts';
 
 export class GameVersionFactory {
 	static createIconProvider(gameVersion: GameVersionSlug): IconProvider {

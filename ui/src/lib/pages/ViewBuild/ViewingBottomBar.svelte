@@ -3,7 +3,7 @@
 	import BottomAppBar, { Section } from '@smui-extra/bottom-app-bar';
 	import Tooltip, { Wrapper } from '@smui/tooltip';
 	import IconButton from '@smui/icon-button';
-	import type { Build } from '$lib/types';
+	import type { Build } from '#lib/types.ts';
 
 	export let build: Build;
 	export let grouped: boolean | undefined;

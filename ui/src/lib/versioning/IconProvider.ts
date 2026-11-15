@@ -1,4 +1,4 @@
-import { PlayerRole } from '$lib/consts';
+import { PlayerRole } from '#lib/consts.ts';
 
 export abstract class IconProvider {
 	abstract getVersionIcon(size?: string): string;

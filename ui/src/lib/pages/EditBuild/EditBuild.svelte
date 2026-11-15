@@ -1,17 +1,17 @@
 <script lang="ts">
 	import EditingBottomBar from './BottomBar/EditingBottomBar.svelte';
-	import RoleDisplay from '$lib/components/RoleDisplay/RoleDisplay.svelte';
-	import { GameVersionFactory } from '$lib/versioning/GameVersionFactory';
-	import GroupDisplay from '$lib/components/GroupDisplay/GroupDisplay.svelte';
-	import ChecklistDisplay from '$lib/components/ChecklistDisplay/ChecklistDisplay.svelte';
-	import RoleCount from '$lib/components/RoleCount.svelte';
+	import RoleDisplay from '#lib/components/RoleDisplay/RoleDisplay.svelte';
+	import { GameVersionFactory } from '#lib/versioning/GameVersionFactory.ts';
+	import GroupDisplay from '#lib/components/GroupDisplay/GroupDisplay.svelte';
+	import ChecklistDisplay from '#lib/components/ChecklistDisplay/ChecklistDisplay.svelte';
+	import RoleCount from '#lib/components/RoleCount.svelte';
 	import { _ } from 'svelte-i18n';
-	import Loading from '$lib/components/Loading.svelte';
-	import type { Build, BuildPageParams } from '$lib/types';
-	import ErrorPage from '$lib/pages/ErrorPage/ErrorPage.svelte';
-	import { createBuildData } from '$lib';
-	import { editingBuild } from '$lib/store';
-	import { GameVersionSlug } from '$lib/versioning/GameVersion';
+	import Loading from '#lib/components/Loading.svelte';
+	import type { Build, BuildPageParams } from '#lib/types.ts';
+	import ErrorPage from '#lib/pages/ErrorPage/ErrorPage.svelte';
+	import { createBuildData } from '#lib';
+	import { editingBuild } from '#lib/store.ts';
+	import { GameVersionSlug } from '#lib/versioning/GameVersion.ts';
 
 	const routeToCorrectBuildUrl = (gameVersion: GameVersionSlug, build: Build) => {
 		const buildUrl = `/build/${build.buildId}/edit`;

@@ -3,14 +3,14 @@
 	import Dialog, { Actions, Content, Title } from '@smui/dialog';
 	import Button, { Label } from '@smui/button';
 	import { _ } from 'svelte-i18n';
-	import { GROUP_NONE, InviteStatus } from '$lib/consts';
+	import { GROUP_NONE, InviteStatus } from '#lib/consts.ts';
 	import Textfield from '@smui/textfield';
-	import WarcraftIcon from '$lib/components/WarcraftIcon.svelte';
-	import AttendanceIcon from '$lib/components/AttendanceIcon.svelte';
-	import type { Build, BuildPlayer, GroupId } from '$lib/types';
-	import type { VersionedContext } from '$lib/versioning/VersionedContext';
-	import { currentlyEditingPlayerId, editingBuild } from '$lib/store';
-	import type { PlayerClass } from '$lib/versioning/PlayerClass';
+	import WarcraftIcon from '#lib/components/WarcraftIcon.svelte';
+	import AttendanceIcon from '#lib/components/AttendanceIcon.svelte';
+	import type { Build, BuildPlayer, GroupId } from '#lib/types.ts';
+	import type { VersionedContext } from '#lib/versioning/VersionedContext.ts';
+	import { currentlyEditingPlayerId, editingBuild } from '#lib/store.ts';
+	import type { PlayerClass } from '#lib/versioning/PlayerClass.ts';
 
 	export let context: VersionedContext;
 	export let open: boolean;

@@ -1,11 +1,11 @@
 <script lang="ts">
-	import type { BuildPlayer } from '$lib/types';
-	import WarcraftIcon from '$lib/components/WarcraftIcon.svelte';
-	import AttendanceIcon from '$lib/components/AttendanceIcon.svelte';
+	import type { BuildPlayer } from '#lib/types.ts';
+	import WarcraftIcon from '#lib/components/WarcraftIcon.svelte';
+	import AttendanceIcon from '#lib/components/AttendanceIcon.svelte';
 	import { _ } from 'svelte-i18n';
-	import type { VersionedContext } from '$lib/versioning/VersionedContext';
-	import { currentlyEditingPlayerId } from '$lib/store';
-	import { PlayerRole } from '$lib/consts';
+	import type { VersionedContext } from '#lib/versioning/VersionedContext.ts';
+	import { currentlyEditingPlayerId } from '#lib/store.ts';
+	import { PlayerRole } from '#lib/consts.ts';
 
 	export let player: BuildPlayer;
 	export let context: VersionedContext;

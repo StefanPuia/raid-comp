@@ -1,9 +1,9 @@
 <script lang="ts">
 	import Paper, { Content } from '@smui/paper';
-	import type { Build, BuildPlayer } from '$lib/types';
+	import type { Build, BuildPlayer } from '#lib/types.ts';
 	import { _ } from 'svelte-i18n';
-	import Player from '$lib/components/Player.svelte';
-	import type { VersionedContext } from '$lib/versioning/VersionedContext';
+	import Player from '#lib/components/Player.svelte';
+	import type { VersionedContext } from '#lib/versioning/VersionedContext.ts';
 
 	export let group: number | 'none';
 	export let displayAsGrid: boolean = false;

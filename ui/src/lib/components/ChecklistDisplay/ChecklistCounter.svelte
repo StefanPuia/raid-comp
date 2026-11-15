@@ -1,5 +1,5 @@
 <script lang="ts">
-	import WarcraftIcon from '$lib/components/WarcraftIcon.svelte';
+	import WarcraftIcon from '#lib/components/WarcraftIcon.svelte';
 
 	export let iconSrc: string;
 	export let label: string;

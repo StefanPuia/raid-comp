@@ -1,5 +1,5 @@
-import type { Build } from '$lib/service/api';
-import { GameVersionSlug } from '$lib/versioning/GameVersion';
+import type { Build } from '#lib/service/api.ts';
+import { GameVersionSlug } from '#lib/versioning/GameVersion.ts';
 import { foreverPlayers, livePlayers } from './mock.data';
 
 // only exported as a fallback, there should be no need to export the rest.

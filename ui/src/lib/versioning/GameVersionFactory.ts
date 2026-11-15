@@ -12,7 +12,6 @@ import { ForeverGameVersion } from '#lib/versions/forever/ForeverGameVersion.ts'
 
 export class GameVersionFactory {
 	static createIconProvider(gameVersion: GameVersionSlug): IconProvider {
-		console.log('Creating icon provider for game version:', gameVersion);
 		switch (gameVersion) {
 			case GameVersionSlug.LIVE:
 				return new MidnightIconProvider();

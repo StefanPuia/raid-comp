@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Tooltip, { Wrapper } from '@smui/tooltip';
+	import Tooltip, { Label, Wrapper } from '@smui/tooltip';
 
 	export let src: string;
 	export let label: string = '';
@@ -8,7 +8,7 @@
 <Wrapper>
 	<img {src} alt={label} class="warcraft-icon" />
 	{#if label}
-		<Tooltip>{label}</Tooltip>
+		<Tooltip><Label>{label}</Label></Tooltip>
 	{/if}
 </Wrapper>
 

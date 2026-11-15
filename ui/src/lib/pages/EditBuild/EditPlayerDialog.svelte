@@ -138,22 +138,31 @@
 				</SegmentedButton>
 			</div>
 			<div class="spec-wrapper">
-				<SegmentedButton
-					bind:selected={selectedSpec}
-					segments={context.gameVersion
-						.getSpecs()
-						.filter((s) => s.playerClass.slug === selectedClass)
-						.map((s) => s.slug)}
-					singleSelect
-				>
-					{#snippet segment(segment)}
-						<Segment {segment} title={$_(`specs.${segment}`)}>
-							<WarcraftIcon
-								src={context.iconProvider.getSrc(context.gameVersion.getSpecFromSlug(segment).icon)}
-							/>
-						</Segment>
-					{/snippet}
-				</SegmentedButton>
+				<!--
+					SMUI's SegmentedButton only computes each segment's initial selected state on mount (by index),
+					so when the spec list changes with the class, the stale state would highlight the first spec too.
+					Re-create it per class so it initialises from the current selectedSpec.
+				-->
+				{#key selectedClass}
+					<SegmentedButton
+						bind:selected={selectedSpec}
+						segments={context.gameVersion
+							.getSpecs()
+							.filter((s) => s.playerClass.slug === selectedClass)
+							.map((s) => s.slug)}
+						singleSelect
+					>
+						{#snippet segment(segment)}
+							<Segment {segment} title={$_(`specs.${segment}`)}>
+								<WarcraftIcon
+									src={context.iconProvider.getSrc(
+										context.gameVersion.getSpecFromSlug(segment).icon,
+									)}
+								/>
+							</Segment>
+						{/snippet}
+					</SegmentedButton>
+				{/key}
 			</div>
 			<div class="status-wrapper">
 				<SegmentedButton

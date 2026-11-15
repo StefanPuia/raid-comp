@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
 	import BottomAppBar, { Section } from '@smui-extra/bottom-app-bar';
-	import Tooltip, { Wrapper } from '@smui/tooltip';
+	import Tooltip, { Label, Wrapper } from '@smui/tooltip';
 	import Fab, { Icon } from '@smui/fab';
 	import ResetBuildDialog from '../ResetBuildDialog.svelte';
 	import SaveBuildDialog from '#lib/pages/EditBuild/SaveBuildDialog.svelte';
@@ -47,7 +47,7 @@
 			>
 				<Icon class="material-icons">add</Icon>
 			</Fab>
-			<Tooltip yPos="above">{$_('cta.addPlayer')}</Tooltip>
+			<Tooltip yPos="above"><Label>{$_('cta.addPlayer')}</Label></Tooltip>
 		</Wrapper>
 	</Section>
 	<Section>

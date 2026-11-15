@@ -1,6 +1,6 @@
 @use 'sass:color';
-@use '@material/theme/color-palette';
-@use '@material/theme/index' as theme with (
+@use '@smui/common/theme/color-palette';
+@use '@smui/common/theme/index' as theme with (
 	$primary: #ad0a0a,
 	$secondary: #1d1d1d,
 	$surface: #1d1d1d,

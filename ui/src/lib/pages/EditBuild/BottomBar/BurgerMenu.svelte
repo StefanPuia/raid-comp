@@ -2,7 +2,7 @@
 	import Menu from '@smui/menu';
 	import List, { Item, Separator, Text } from '@smui/list';
 	import { _ } from 'svelte-i18n';
-	import Tooltip, { Wrapper } from '@smui/tooltip';
+	import Tooltip, { Label, Wrapper } from '@smui/tooltip';
 	import IconButton from '@smui/icon-button';
 	import { Icon } from '@smui/fab';
 
@@ -16,14 +16,13 @@
 
 <Wrapper>
 	<IconButton
-		class="material-icons"
 		aria-label={$_('cta.openMenu')}
 		style="color: var(--palette-info-main)"
 		onclick={() => menu.setOpen(true)}
 	>
-		menu
+		<Icon class="material-icons">menu</Icon>
 	</IconButton>
-	<Tooltip yPos="above">{$_('cta.openMenu')}</Tooltip>
+	<Tooltip yPos="above"><Label>{$_('cta.openMenu')}</Label></Tooltip>
 </Wrapper>
 
 <Menu bind:this={menu}>

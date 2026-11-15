@@ -1,4 +1,4 @@
-@use '@material/typography/index' as typography;
+@use '@smui/common/typography/index' as typography;
 
 html {
 	@include typography.typography('body1');

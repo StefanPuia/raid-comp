@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { InviteStatus } from '#lib/consts.ts';
 	import { Icon } from '@smui/fab';
-	import Tooltip, { Wrapper } from '@smui/tooltip';
+	import Tooltip, { Label, Wrapper } from '@smui/tooltip';
 	import { _ } from 'svelte-i18n';
 
 	const iconMap: Record<InviteStatus, [icon: string, colour: string]> = {
@@ -28,5 +28,5 @@
 	<Icon class="material-icons" style="color: var(--palette-{colour})">
 		{icon}
 	</Icon>
-	<Tooltip>{$_(`status.${status}`)}</Tooltip>
+	<Tooltip><Label>{$_(`status.${status}`)}</Label></Tooltip>
 </Wrapper>

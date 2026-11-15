@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Tooltip, { Wrapper } from '@smui/tooltip';
+	import Tooltip, { Label, Wrapper } from '@smui/tooltip';
 	import Paper, { Content } from '@smui/paper';
 	import { _ } from 'svelte-i18n';
 	import { Icon } from '@smui/fab';
@@ -19,7 +19,7 @@
 						<Icon class="material-icons" style="color: var(--palette-warning-main);">
 							warning_amber
 						</Icon>
-						<Tooltip>{$_('warn.talentBasedUtilities')}</Tooltip>
+						<Tooltip><Label>{$_('warn.talentBasedUtilities')}</Label></Tooltip>
 					</Wrapper>
 				</span>
 			{/if}

@@ -39,7 +39,7 @@
 		"@sveltejs/vite-plugin-svelte": "^7.0.0",
 		"@typescript-eslint/eslint-plugin": "^8.58.1",
 		"@typescript-eslint/parser": "^8.58.1",
-		"axios": "1.21.0",
+		"axios": "1.21.1",
 		"axios-mock-adapter": "^2.1.0",
 		"eslint": "^10.2.0",
 		"eslint-config-prettier": "^10.1.8",
@@ -55,7 +55,7 @@
 		"typescript": "~6.0.0",
 		"typescript-eslint": "^8.58.1",
 		"vite": "^8.0.12",
-		"wrangler": "4.158.0"
+		"wrangler": "4.160.1"
 	},
 	"type": "module",
 	"dependencies": {

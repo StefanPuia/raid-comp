@@ -35,7 +35,7 @@
   resolved "https://registry.yarnpkg.com/@cloudflare/unenv-preset/-/unenv-preset-2.16.2.tgz#73444ac5a3e6c78cd498477d8b013dd026b6ecea"
   integrity sha512-JBP1+Z7ZSNG/d4mRP+y8VC5dka3tZVMLEZRvS+rzQ4DGV1EoxRFQckcJTTkXbHSQiTj0DtNI01Zwb/V2fX0mvQ==
 
-"@cloudflare/vite-plugin@^1.50.0":
+"@cloudflare/vite-plugin@^1.69.1":
   version "1.70.2"
   resolved "https://registry.yarnpkg.com/@cloudflare/vite-plugin/-/vite-plugin-1.70.2.tgz#90a45fb3e743b5cb9bb8b1a346f5fdbc0b4f00bc"
   integrity sha512-8bxssxmIrhB2279SyOY6BsmgR5BDVy58qcIeOzxJxPPyMXxm0VNPvh43SgNDM81DZtJQ7gDOoVssdbY4uojYSg==
@@ -1167,12 +1167,12 @@
   resolved "https://registry.yarnpkg.com/@sveltejs/acorn-typescript/-/acorn-typescript-1.0.13.tgz#8c7c3cc7014e212f2e8fccee0159dbecfe602405"
   integrity sha512-wgKggnhZVL9Bfx1OaKKTrYY9BFRk6C8UAkQNUcIv1+llzYrIqy+RZm5HPKzn0NpEBvTVhTqB4kQyllZywsRBRQ==
 
-"@sveltejs/adapter-cloudflare@^8.0.0":
-  version "8.0.4"
-  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-cloudflare/-/adapter-cloudflare-8.0.4.tgz#493f50a069e5fd01a085aa57330ff4fb4552dcf5"
-  integrity sha512-oqM3eD39exKyBq3Y5Lols5n1/dHwUfXkXMONFyCqIqCht2ua83SfCbMnePhPgzBcqp6zMWIBvDTGztKEJ7DFCw==
+"@sveltejs/adapter-cloudflare@^9.0.0":
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-cloudflare/-/adapter-cloudflare-9.0.1.tgz#2504cc81b5999f7cbe6b7fa9a76e3c36101c147e"
+  integrity sha512-4O9aVl6lBzIYpeu5BAMG3kmIo9hsm0lVJih7PXrCxZIeq6CiJiAWfVts5t7Hhcv3S+aurejXWAX3CayxBMnXiA==
   dependencies:
-    "@cloudflare/vite-plugin" "^1.50.0"
+    "@cloudflare/vite-plugin" "^1.69.1"
     "@rolldown/pluginutils" "^1.0.1"
     magic-string "^1.4.1"
 
